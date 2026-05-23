@@ -5,6 +5,7 @@ import { LongTermMemory, LTMPattern } from './components/memory/LTM.js';
 import { ConsolidationEngine } from './components/memory/ConsolidationEngine.js';
 import { DualMemoryController } from './components/memory/DualMemoryController.js';
 import { ExperimentRunner, FREE_PLAY_FLAGS } from './components/ExperimentRunner.js';
+import { ExperimentRunner as ExperimentRunnerV2 } from './components/ExperimentRunner_v2.js';
 
 const N = 25;
 const TRIAL_DURATION = 3600;
@@ -614,6 +615,13 @@ export default function NeuroAgent() {
   const [personalityIndices, setPersonalityIndices] = useState([0, 1, 2]);
   const [noiseOverride, setNoiseOverride] = useState(null); // 0-15%
 
+  // ── Experiment 2 state ──
+  const [selectedExp, setSelectedExp] = useState(1);
+  const [complexityLevel, setComplexityLevel] = useState(1);
+  const exp2RunnerRef = useRef(null);
+  const [exp2Status, setExp2Status] = useState('idle'); // 'idle' | 'running' | 'complete' | 'error'
+  const [exp2Progress, setExp2Progress] = useState(null);
+
   useEffect(()=>{
     const el = brainDiv.current;
     if(!el) return;
@@ -957,6 +965,30 @@ export default function NeuroAgent() {
     setExpUI(null);
   }, []);
 
+  const handleRunExp2 = useCallback(async () => {
+    if (exp2Status === 'running') return;
+    setExp2Status('running');
+    setExp2Progress({ completedTrials: 0, totalTrials: 300, percentComplete: '0.0' });
+    const runner = new ExperimentRunnerV2();
+    exp2RunnerRef.current = runner;
+    runner.onProgressUpdate = (info) => { setExp2Progress({ ...info }); };
+    try {
+      await runner.runExperiment(2);
+      setExp2Status(runner._stopped ? 'idle' : 'complete');
+    } catch (err) {
+      console.error('[App] Experiment 2 failed:', err);
+      setExp2Status('error');
+    } finally {
+      exp2RunnerRef.current = null;
+    }
+  }, [exp2Status]);
+
+  const handleStopExp2 = useCallback(() => {
+    exp2RunnerRef.current?.stop();
+    setExp2Status('idle');
+    setExp2Progress(null);
+  }, []);
+
   const toggleRun = useCallback(()=>{
     if(running){
       if (experimentMode) { stopExperiment(); return; }
@@ -1065,8 +1097,30 @@ export default function NeuroAgent() {
           </div>
         )}
 
-        {/* ── Experiment controls ── */}
+        {/* ── Experiment sub-selector (EXP 1 / EXP 2) ── */}
         {experimentMode && (
+          <div style={{display:"flex", gap:3}}>
+            <button
+              onClick={()=>setSelectedExp(1)}
+              disabled={running || exp2Status==='running'}
+              style={{flex:1, padding:"4px 2px", fontSize:6, letterSpacing:1, fontFamily:"inherit",
+                background: selectedExp===1 ? "#aa00cc" : "#ffffff",
+                color:      selectedExp===1 ? "#ffffff"  : "#aa00cc",
+                border:"1px solid #aa00cc", borderRadius:3, cursor:"pointer"}}
+            >EXP 1</button>
+            <button
+              onClick={()=>setSelectedExp(2)}
+              disabled={running || exp2Status==='running'}
+              style={{flex:1, padding:"4px 2px", fontSize:6, letterSpacing:1, fontFamily:"inherit",
+                background: selectedExp===2 ? "#006699" : "#ffffff",
+                color:      selectedExp===2 ? "#ffffff"  : "#006699",
+                border:"1px solid #006699", borderRadius:3, cursor:"pointer"}}
+            >EXP 2</button>
+          </div>
+        )}
+
+        {/* ── Experiment 1 controls ── */}
+        {experimentMode && selectedExp===1 && (
           <div>
             {!running ? (
               <button onClick={startExperiment} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#aa00cc", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
@@ -1080,8 +1134,60 @@ export default function NeuroAgent() {
           </div>
         )}
 
-        {/* ── Live status ── */}
-        {experimentMode && expUI ? (
+        {/* ── Experiment 2 controls ── */}
+        {experimentMode && selectedExp===2 && (
+          <div>
+            <div style={{fontSize:6, color:"#335577", marginBottom:4, lineHeight:1.6}}>
+              <strong>Env Complexity Scaling</strong><br/>
+              5 levels × 4 conditions × 5 trials × 3 agents = 300 runs<br/>
+              L1: 5 obs / L3: 30 obs / L5: 100 obs
+            </div>
+            {exp2Status !== 'running' ? (
+              <button onClick={handleRunExp2} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#006699", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 2 (300 runs)
+              </button>
+            ) : (
+              <button onClick={handleStopExp2} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 2
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 2 progress panel ── */}
+        {experimentMode && selectedExp===2 && exp2Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#e8f4ff", borderRadius:3, border:"1px solid #88bbdd"}}>
+            <div style={{color:"#006699", fontWeight:700, marginBottom:4}}>
+              {exp2Status==='complete' ? '✓ EXP 2 COMPLETE — JSON saved' : `EXP 2 RUNNING…`}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp2Progress.completedTrials ?? 0}/{exp2Progress.totalTrials ?? 300}</span>
+            </div>
+            <div style={{height:5, background:"#cce0f0", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#006699",
+                width:`${exp2Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            <div style={{marginBottom:2}}>
+              Level: <span style={{float:"right", fontWeight:700}}>{exp2Progress.currentLevel ?? '—'}/5</span>
+            </div>
+            <div style={{marginBottom:2}}>
+              Condition: <span style={{float:"right", fontWeight:700}}>{exp2Progress.currentCondition ?? '—'}</span>
+            </div>
+            <div>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp2Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 2 idle hint ── */}
+        {experimentMode && selectedExp===2 && !exp2Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#f0f8ff", borderRadius:3, border:"1px solid #b0d0e8", color:"#335577"}}>
+            Runs 5 complexity levels (L1–L5) under 4 memory conditions (A/B/C/D). Results auto-download as JSON on completion.
+          </div>
+        )}
+
+        {/* ── Experiment 1 live status ── */}
+        {experimentMode && selectedExp===1 && expUI ? (
           <div style={{fontSize:6, padding:"8px", background:"#f5eeff", borderRadius:3, border:"1px solid #cc88ff"}}>
             <div style={{color:"#aa00cc", fontWeight:700, marginBottom:4}}>
               {expUI.phase === 'complete' ? '✓ EXPERIMENT COMPLETE' : `TRIAL ${expUI.currentTrial}/${expUI.totalTrials}`}
@@ -1111,14 +1217,21 @@ export default function NeuroAgent() {
               ))}
             </div>
           </div>
-        ) : (
+        ) : experimentMode && selectedExp===1 ? (
           <div style={{fontSize:6, padding:"8px", background:"#ffffff", borderRadius:3, border:"1px solid #d0d8e8"}}>
             <div>Frame: <span style={{float:"right", fontWeight:700}}>{frameNum}/{TRIAL_DURATION}</span></div>
             <div>Progress: <span style={{float:"right", fontWeight:700}}>{Math.round(frameNum/TRIAL_DURATION*100)}%</span></div>
             <div>FPS: <span style={{float:"right", fontWeight:700}}>{fps}</span></div>
             <div style={{marginTop:4, borderTop:"1px solid #d0d8e8", paddingTop:4}}>Noise: <span style={{float:"right", fontWeight:700}}>{noiseOverride !== null ? noiseOverride+"%" : "default"}</span></div>
           </div>
-        )}
+        ) : !experimentMode ? (
+          <div style={{fontSize:6, padding:"8px", background:"#ffffff", borderRadius:3, border:"1px solid #d0d8e8"}}>
+            <div>Frame: <span style={{float:"right", fontWeight:700}}>{frameNum}/{TRIAL_DURATION}</span></div>
+            <div>Progress: <span style={{float:"right", fontWeight:700}}>{Math.round(frameNum/TRIAL_DURATION*100)}%</span></div>
+            <div>FPS: <span style={{float:"right", fontWeight:700}}>{fps}</span></div>
+            <div style={{marginTop:4, borderTop:"1px solid #d0d8e8", paddingTop:4}}>Noise: <span style={{float:"right", fontWeight:700}}>{noiseOverride !== null ? noiseOverride+"%" : "default"}</span></div>
+          </div>
+        ) : null}
 
         <div>
           <div style={{fontSize:6, letterSpacing:2, color:"#0066ff", marginBottom:3, fontWeight:700}}>SCORES</div>
@@ -1131,7 +1244,9 @@ export default function NeuroAgent() {
         </div>
 
         <div style={{fontSize:6, lineHeight:2.2, color:"#2a4880", padding:"8px", background:"#ffffff", borderRadius:3, border:"1px solid #d0d8e8", marginTop:"auto"}}>
-          {experimentMode
+          {experimentMode && selectedExp===2
+            ? <><span style={{color:"#006699"}}>▶</span> 300 agent-runs, async<br/><span style={{color:"#006699"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#006699"}}>✓</span> Check downloads folder</>
+            : experimentMode
             ? <><span style={{color:"#aa00cc"}}>▶</span> 20 trials, random order<br/><span style={{color:"#aa00cc"}}>↓</span> JSON per trial + summary<br/><span style={{color:"#aa00cc"}}>✓</span> Check downloads folder</>
             : <><span style={{color:"#0066ff"}}>✓</span> Metrics logged<br/><span style={{color:"#0066ff"}}>✓</span> Analyze at end<br/><span style={{color:"#0066ff"}}>✓</span> Check downloads!</>
           }
