@@ -1,7 +1,7 @@
 # Robot Learning Platform: Adaptive Control Through Structured Memory Consolidation
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/your-username/robot-learning-platform?style=social)](https://github.com/your-username/robot-learning-platform)
+[![GitHub stars](https://img.shields.io/github/stars/sanmute/robot-learning-platform?style=social)](https://github.com/your-username/robot-learning-platform)
 [![Status](https://img.shields.io/badge/status-v0.10%20Release-brightgreen)](releases)
 
 > **Making robots smarter, not bigger.** A biologically-inspired learning platform that enables robots to adapt and improve from experience, without requiring GPUs or cloud infrastructure.
