@@ -1,0 +1,1204 @@
+{
+  "experiment": 6,
+  "name": "Generalization & Transfer",
+  "timestamp": "2026-05-24T11:16:00.427Z",
+  "summary": {
+    "warehouse": {
+      "_domainLabel": "Source: Standard Warehouse",
+      "_domainEmoji": "🏭",
+      "A": {
+        "n": 5,
+        "mean": 29.6,
+        "std": 2.939,
+        "sem": 1.315,
+        "min": 25,
+        "max": 34,
+        "meanFoodEaten": 29.6,
+        "meanWallBounces": 5.6,
+        "meanLtmUsageRate": 0
+      },
+      "frozen_D": {
+        "n": 5,
+        "mean": 27.2,
+        "std": 1.939,
+        "sem": 0.867,
+        "min": 24,
+        "max": 30,
+        "meanFoodEaten": 27.2,
+        "meanWallBounces": 7,
+        "meanLtmUsageRate": 0
+      },
+      "_domainAdvantage": -2.4,
+      "_domainAdvantagePercent": -8.1,
+      "_transferEfficiency": -100
+    },
+    "physics": {
+      "_domainLabel": "Mars Gravity (0.38g)",
+      "_domainEmoji": "🚀",
+      "A": {
+        "n": 5,
+        "mean": 14.4,
+        "std": 3.382,
+        "sem": 1.513,
+        "min": 11,
+        "max": 20,
+        "meanFoodEaten": 14.4,
+        "meanWallBounces": 1.8,
+        "meanLtmUsageRate": 0
+      },
+      "frozen_D": {
+        "n": 5,
+        "mean": 12,
+        "std": 2,
+        "sem": 0.894,
+        "min": 9,
+        "max": 15,
+        "meanFoodEaten": 12,
+        "meanWallBounces": 3.2,
+        "meanLtmUsageRate": 0
+      },
+      "_domainAdvantage": -2.4,
+      "_domainAdvantagePercent": -16.7,
+      "_transferEfficiency": -100
+    },
+    "noise": {
+      "_domainLabel": "High-Noise Sensors (20%)",
+      "_domainEmoji": "📡",
+      "A": {
+        "n": 5,
+        "mean": 23.4,
+        "std": 2.871,
+        "sem": 1.284,
+        "min": 19,
+        "max": 27,
+        "meanFoodEaten": 23.4,
+        "meanWallBounces": 8.4,
+        "meanLtmUsageRate": 0
+      },
+      "frozen_D": {
+        "n": 5,
+        "mean": 17.8,
+        "std": 2.786,
+        "sem": 1.246,
+        "min": 14,
+        "max": 21,
+        "meanFoodEaten": 17.8,
+        "meanWallBounces": 10.2,
+        "meanLtmUsageRate": 0
+      },
+      "_domainAdvantage": -5.6,
+      "_domainAdvantagePercent": -23.9,
+      "_transferEfficiency": -233.3
+    },
+    "speed": {
+      "_domainLabel": "Speed Objective",
+      "_domainEmoji": "⚡",
+      "A": {
+        "n": 5,
+        "mean": 33.6,
+        "std": 9.583,
+        "sem": 4.286,
+        "min": 22,
+        "max": 48,
+        "meanFoodEaten": 28.8,
+        "meanWallBounces": 7.4,
+        "meanLtmUsageRate": 0
+      },
+      "frozen_D": {
+        "n": 5,
+        "mean": 40.4,
+        "std": 8.98,
+        "sem": 4.016,
+        "min": 26,
+        "max": 54,
+        "meanFoodEaten": 32.2,
+        "meanWallBounces": 6.8,
+        "meanLtmUsageRate": 0
+      },
+      "_domainAdvantage": 6.8,
+      "_domainAdvantagePercent": 20.2,
+      "_transferEfficiency": 283.3
+    },
+    "safety": {
+      "_domainLabel": "Safety-Critical Task",
+      "_domainEmoji": "🛡️",
+      "A": {
+        "n": 5,
+        "mean": 26.9,
+        "std": 7.262,
+        "sem": 3.248,
+        "min": 18,
+        "max": 36.5,
+        "meanFoodEaten": 30.4,
+        "meanWallBounces": 7,
+        "meanLtmUsageRate": 0
+      },
+      "frozen_D": {
+        "n": 5,
+        "mean": 25.4,
+        "std": 4.598,
+        "sem": 2.056,
+        "min": 17.5,
+        "max": 31,
+        "meanFoodEaten": 29.4,
+        "meanWallBounces": 8,
+        "meanLtmUsageRate": 0
+      },
+      "_domainAdvantage": -1.5,
+      "_domainAdvantagePercent": -5.6,
+      "_transferEfficiency": -62.5
+    }
+  },
+  "trials": [
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "A",
+      "trial": 0,
+      "results": {
+        "foodEaten": 34,
+        "wallBounces": 3,
+        "finalScore": 34,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:46.199Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "A",
+      "trial": 1,
+      "results": {
+        "foodEaten": 25,
+        "wallBounces": 10,
+        "finalScore": 25,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:46.485Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "A",
+      "trial": 2,
+      "results": {
+        "foodEaten": 31,
+        "wallBounces": 4,
+        "finalScore": 31,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:46.773Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "A",
+      "trial": 3,
+      "results": {
+        "foodEaten": 29,
+        "wallBounces": 4,
+        "finalScore": 29,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:47.056Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "A",
+      "trial": 4,
+      "results": {
+        "foodEaten": 29,
+        "wallBounces": 7,
+        "finalScore": 29,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:47.333Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "frozen_D",
+      "trial": 0,
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 7,
+        "finalScore": 27,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:47.623Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "frozen_D",
+      "trial": 1,
+      "results": {
+        "foodEaten": 30,
+        "wallBounces": 8,
+        "finalScore": 30,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:47.921Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "frozen_D",
+      "trial": 2,
+      "results": {
+        "foodEaten": 24,
+        "wallBounces": 9,
+        "finalScore": 24,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:48.215Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "frozen_D",
+      "trial": 3,
+      "results": {
+        "foodEaten": 28,
+        "wallBounces": 7,
+        "finalScore": 28,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:48.509Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "warehouse",
+      "domainLabel": "Source: Standard Warehouse",
+      "domainEmoji": "🏭",
+      "condition": "frozen_D",
+      "trial": 4,
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 4,
+        "finalScore": 27,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:48.807Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "A",
+      "trial": 0,
+      "results": {
+        "foodEaten": 11,
+        "wallBounces": 2,
+        "finalScore": 11,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:49.089Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "A",
+      "trial": 1,
+      "results": {
+        "foodEaten": 20,
+        "wallBounces": 0,
+        "finalScore": 20,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:49.378Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "A",
+      "trial": 2,
+      "results": {
+        "foodEaten": 11,
+        "wallBounces": 3,
+        "finalScore": 11,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:49.652Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "A",
+      "trial": 3,
+      "results": {
+        "foodEaten": 14,
+        "wallBounces": 1,
+        "finalScore": 14,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:49.935Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "A",
+      "trial": 4,
+      "results": {
+        "foodEaten": 16,
+        "wallBounces": 3,
+        "finalScore": 16,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:50.223Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "frozen_D",
+      "trial": 0,
+      "results": {
+        "foodEaten": 11,
+        "wallBounces": 0,
+        "finalScore": 11,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:50.524Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "frozen_D",
+      "trial": 1,
+      "results": {
+        "foodEaten": 13,
+        "wallBounces": 2,
+        "finalScore": 13,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:50.819Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "frozen_D",
+      "trial": 2,
+      "results": {
+        "foodEaten": 15,
+        "wallBounces": 2,
+        "finalScore": 15,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:51.116Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "frozen_D",
+      "trial": 3,
+      "results": {
+        "foodEaten": 9,
+        "wallBounces": 4,
+        "finalScore": 9,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:51.417Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "physics",
+      "domainLabel": "Mars Gravity (0.38g)",
+      "domainEmoji": "🚀",
+      "condition": "frozen_D",
+      "trial": 4,
+      "results": {
+        "foodEaten": 12,
+        "wallBounces": 8,
+        "finalScore": 12,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 0.38,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:51.715Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "A",
+      "trial": 0,
+      "results": {
+        "foodEaten": 19,
+        "wallBounces": 9,
+        "finalScore": 19,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:52.006Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "A",
+      "trial": 1,
+      "results": {
+        "foodEaten": 23,
+        "wallBounces": 8,
+        "finalScore": 23,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:52.291Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "A",
+      "trial": 2,
+      "results": {
+        "foodEaten": 22,
+        "wallBounces": 9,
+        "finalScore": 22,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:52.572Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "A",
+      "trial": 3,
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 7,
+        "finalScore": 27,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:52.857Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "A",
+      "trial": 4,
+      "results": {
+        "foodEaten": 26,
+        "wallBounces": 9,
+        "finalScore": 26,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:53.142Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "frozen_D",
+      "trial": 0,
+      "results": {
+        "foodEaten": 19,
+        "wallBounces": 8,
+        "finalScore": 19,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:53.446Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "frozen_D",
+      "trial": 1,
+      "results": {
+        "foodEaten": 15,
+        "wallBounces": 8,
+        "finalScore": 15,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:53.744Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "frozen_D",
+      "trial": 2,
+      "results": {
+        "foodEaten": 20,
+        "wallBounces": 8,
+        "finalScore": 20,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:54.039Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "frozen_D",
+      "trial": 3,
+      "results": {
+        "foodEaten": 21,
+        "wallBounces": 11,
+        "finalScore": 21,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:54.344Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "noise",
+      "domainLabel": "High-Noise Sensors (20%)",
+      "domainEmoji": "📡",
+      "condition": "frozen_D",
+      "trial": 4,
+      "results": {
+        "foodEaten": 14,
+        "wallBounces": 16,
+        "finalScore": 14,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0.2
+        },
+        "timestamp": "2026-05-24T11:15:54.639Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "A",
+      "trial": 0,
+      "results": {
+        "foodEaten": 23,
+        "wallBounces": 7,
+        "finalScore": 22,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:54.919Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "A",
+      "trial": 1,
+      "results": {
+        "foodEaten": 24,
+        "wallBounces": 13,
+        "finalScore": 24,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:55.202Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "A",
+      "trial": 2,
+      "results": {
+        "foodEaten": 36,
+        "wallBounces": 4,
+        "finalScore": 48,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:55.489Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "A",
+      "trial": 3,
+      "results": {
+        "foodEaten": 30,
+        "wallBounces": 6,
+        "finalScore": 36,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:55.763Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "A",
+      "trial": 4,
+      "results": {
+        "foodEaten": 31,
+        "wallBounces": 7,
+        "finalScore": 38,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:56.028Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "frozen_D",
+      "trial": 0,
+      "results": {
+        "foodEaten": 25,
+        "wallBounces": 8,
+        "finalScore": 26,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:56.319Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "frozen_D",
+      "trial": 1,
+      "results": {
+        "foodEaten": 31,
+        "wallBounces": 9,
+        "finalScore": 38,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:56.611Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "frozen_D",
+      "trial": 2,
+      "results": {
+        "foodEaten": 33,
+        "wallBounces": 6,
+        "finalScore": 42,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:56.907Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "frozen_D",
+      "trial": 3,
+      "results": {
+        "foodEaten": 39,
+        "wallBounces": 6,
+        "finalScore": 54,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:57.202Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "speed",
+      "domainLabel": "Speed Objective",
+      "domainEmoji": "⚡",
+      "condition": "frozen_D",
+      "trial": 4,
+      "results": {
+        "foodEaten": 33,
+        "wallBounces": 5,
+        "finalScore": 42,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:57.497Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "A",
+      "trial": 0,
+      "results": {
+        "foodEaten": 37,
+        "wallBounces": 5,
+        "finalScore": 34.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:57.783Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "A",
+      "trial": 1,
+      "results": {
+        "foodEaten": 21,
+        "wallBounces": 6,
+        "finalScore": 18,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:58.063Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "A",
+      "trial": 2,
+      "results": {
+        "foodEaten": 40,
+        "wallBounces": 7,
+        "finalScore": 36.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:58.346Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "A",
+      "trial": 3,
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 8,
+        "finalScore": 23,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:58.631Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "A",
+      "trial": 4,
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 9,
+        "finalScore": 22.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:58.928Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "frozen_D",
+      "trial": 0,
+      "results": {
+        "foodEaten": 23,
+        "wallBounces": 11,
+        "finalScore": 17.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:59.231Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "frozen_D",
+      "trial": 1,
+      "results": {
+        "foodEaten": 30,
+        "wallBounces": 8,
+        "finalScore": 26,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:59.529Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "frozen_D",
+      "trial": 2,
+      "results": {
+        "foodEaten": 34,
+        "wallBounces": 6,
+        "finalScore": 31,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:15:59.826Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "frozen_D",
+      "trial": 3,
+      "results": {
+        "foodEaten": 32,
+        "wallBounces": 7,
+        "finalScore": 28.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:16:00.123Z"
+      }
+    },
+    {
+      "experiment": 6,
+      "domain": "safety",
+      "domainLabel": "Safety-Critical Task",
+      "domainEmoji": "🛡️",
+      "condition": "frozen_D",
+      "trial": 4,
+      "results": {
+        "foodEaten": 28,
+        "wallBounces": 8,
+        "finalScore": 24,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "domainStressors": {
+          "gravityMultiplier": 1,
+          "noiseSigma": 0
+        },
+        "timestamp": "2026-05-24T11:16:00.427Z"
+      }
+    }
+  ]
+}

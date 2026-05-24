@@ -23,6 +23,7 @@
  */
 
 import { LTMPattern, VALID_CONTEXTS } from './LTM.js';
+import { MEMORY_CONFIG } from './EXPERIMENT_CONFIG.js';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -545,8 +546,15 @@ class ConsolidationEngine {
       actionSequence:        sequence.actions,
       keyFrames,
       utility:               Math.min(1, sequence.totalReward / Math.max(1, this.rewardThreshold)),
-      reliability:           0.5,
-      consolidationStrength: Math.min(1, 0.3 + trigger.strength * 0.2),
+      // ── Pattern quality — read from central config ─────────────────────
+      // NEW_PATTERN_INITIAL_RELIABILITY × NEW_PATTERN_INITIAL_CONSOLIDATION_STRENGTH
+      // must be < CONTROLLER_CONFIG.LTM_CONFIDENCE_THRESHOLD so freshly created
+      // patterns cannot override the Hopfield network until reinforced.
+      reliability:           MEMORY_CONFIG.NEW_PATTERN_INITIAL_RELIABILITY,
+      consolidationStrength: Math.min(
+        1,
+        MEMORY_CONFIG.NEW_PATTERN_INITIAL_CONSOLIDATION_STRENGTH + trigger.strength * 0.2
+      ),
       abstractDescription:   this.abstractPattern(sequence),
     });
 

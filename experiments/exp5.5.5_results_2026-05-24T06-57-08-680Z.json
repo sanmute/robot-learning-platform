@@ -1,0 +1,5117 @@
+{
+  "experiment": "5.5.5",
+  "name": "Weight Optimisation",
+  "timestamp": "2026-05-24T06:57:08.681Z",
+  "summary": {
+    "current": {
+      "_comboLabel": "Current (Exp 5.5 weighted)",
+      "_comboDescription": "Control — proven baseline from Exp 5.5",
+      "baseline": {
+        "A": {
+          "n": 5,
+          "mean": 31.6,
+          "std": 5.314,
+          "sem": 2.377,
+          "min": 26,
+          "max": 38,
+          "meanFoodEaten": 31.6,
+          "meanWallBounces": 8
+        },
+        "D": {
+          "n": 5,
+          "mean": 28.8,
+          "std": 6.306,
+          "sem": 2.82,
+          "min": 21,
+          "max": 39,
+          "meanFoodEaten": 28.8,
+          "meanWallBounces": 4
+        },
+        "_generalizationIndex": -8.9
+      },
+      "efficiency": {
+        "A": {
+          "n": 5,
+          "mean": 256,
+          "std": 65.422,
+          "sem": 29.257,
+          "min": 166,
+          "max": 356,
+          "meanFoodEaten": 28,
+          "meanWallBounces": 6.6
+        },
+        "D": {
+          "n": 5,
+          "mean": 238,
+          "std": 49.558,
+          "sem": 22.163,
+          "min": 166,
+          "max": 306,
+          "meanFoodEaten": 26.2,
+          "meanWallBounces": 6.4
+        },
+        "_generalizationIndex": -7
+      },
+      "accuracy": {
+        "A": {
+          "n": 5,
+          "mean": 268.8,
+          "std": 20.615,
+          "sem": 9.219,
+          "min": 236,
+          "max": 290,
+          "meanFoodEaten": 29.2,
+          "meanWallBounces": 11.6
+        },
+        "D": {
+          "n": 5,
+          "mean": 293.6,
+          "std": 60.099,
+          "sem": 26.877,
+          "min": 186,
+          "max": 368,
+          "meanFoodEaten": 30.8,
+          "meanWallBounces": 7.2
+        },
+        "_generalizationIndex": 9.2
+      },
+      "speed": {
+        "A": {
+          "n": 5,
+          "mean": 420,
+          "std": 28.284,
+          "sem": 12.649,
+          "min": 380,
+          "max": 460,
+          "meanFoodEaten": 27,
+          "meanWallBounces": 8
+        },
+        "D": {
+          "n": 5,
+          "mean": 512,
+          "std": 62.738,
+          "sem": 28.057,
+          "min": 420,
+          "max": 600,
+          "meanFoodEaten": 31.6,
+          "meanWallBounces": 7.2
+        },
+        "_generalizationIndex": 21.9
+      },
+      "balance": {
+        "A": {
+          "n": 5,
+          "mean": 298.5,
+          "std": 40.636,
+          "sem": 18.173,
+          "min": 246,
+          "max": 354.5,
+          "meanFoodEaten": 32.4,
+          "meanWallBounces": 9
+        },
+        "D": {
+          "n": 5,
+          "mean": 256.5,
+          "std": 66.882,
+          "sem": 29.911,
+          "min": 167,
+          "max": 347.5,
+          "meanFoodEaten": 28.2,
+          "meanWallBounces": 9
+        },
+        "_generalizationIndex": -14.1
+      },
+      "_avgGeneralizationIndex": 0.2
+    },
+    "pro_food": {
+      "_comboLabel": "Pro-Food Baseline Recovery",
+      "_comboDescription": "Boost food weight to recover baseline regression",
+      "baseline": {
+        "A": {
+          "n": 5,
+          "mean": 33,
+          "std": 3.847,
+          "sem": 1.72,
+          "min": 29,
+          "max": 40,
+          "meanFoodEaten": 33,
+          "meanWallBounces": 6.4
+        },
+        "D": {
+          "n": 5,
+          "mean": 30.6,
+          "std": 4.8,
+          "sem": 2.147,
+          "min": 25,
+          "max": 39,
+          "meanFoodEaten": 30.6,
+          "meanWallBounces": 7.6
+        },
+        "_generalizationIndex": -7.3
+      },
+      "efficiency": {
+        "A": {
+          "n": 5,
+          "mean": 212,
+          "std": 38.262,
+          "sem": 17.111,
+          "min": 146,
+          "max": 256,
+          "meanFoodEaten": 23.6,
+          "meanWallBounces": 11.4
+        },
+        "D": {
+          "n": 5,
+          "mean": 260,
+          "std": 32.619,
+          "sem": 14.588,
+          "min": 226,
+          "max": 316,
+          "meanFoodEaten": 28.4,
+          "meanWallBounces": 7.8
+        },
+        "_generalizationIndex": 22.6
+      },
+      "accuracy": {
+        "A": {
+          "n": 5,
+          "mean": 266.8,
+          "std": 69.99,
+          "sem": 31.3,
+          "min": 180,
+          "max": 364,
+          "meanFoodEaten": 27.8,
+          "meanWallBounces": 5.6
+        },
+        "D": {
+          "n": 5,
+          "mean": 328.4,
+          "std": 30.865,
+          "sem": 13.803,
+          "min": 296,
+          "max": 378,
+          "meanFoodEaten": 33.8,
+          "meanWallBounces": 4.8
+        },
+        "_generalizationIndex": 23.1
+      },
+      "speed": {
+        "A": {
+          "n": 5,
+          "mean": 472,
+          "std": 65.238,
+          "sem": 29.175,
+          "min": 380,
+          "max": 560,
+          "meanFoodEaten": 29.6,
+          "meanWallBounces": 7.4
+        },
+        "D": {
+          "n": 5,
+          "mean": 516,
+          "std": 44.542,
+          "sem": 19.92,
+          "min": 480,
+          "max": 580,
+          "meanFoodEaten": 31.8,
+          "meanWallBounces": 7
+        },
+        "_generalizationIndex": 9.3
+      },
+      "balance": {
+        "A": {
+          "n": 5,
+          "mean": 310.5,
+          "std": 35.592,
+          "sem": 15.917,
+          "min": 267.5,
+          "max": 352,
+          "meanFoodEaten": 33,
+          "meanWallBounces": 5
+        },
+        "D": {
+          "n": 5,
+          "mean": 237.6,
+          "std": 43.659,
+          "sem": 19.525,
+          "min": 170,
+          "max": 279,
+          "meanFoodEaten": 26.4,
+          "meanWallBounces": 9.6
+        },
+        "_generalizationIndex": -23.5
+      },
+      "_avgGeneralizationIndex": 4.8
+    },
+    "balanced": {
+      "_comboLabel": "Equal Five-Way Balance",
+      "_comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "baseline": {
+        "A": {
+          "n": 5,
+          "mean": 25.6,
+          "std": 4.758,
+          "sem": 2.128,
+          "min": 17,
+          "max": 30,
+          "meanFoodEaten": 25.6,
+          "meanWallBounces": 7.6
+        },
+        "D": {
+          "n": 5,
+          "mean": 28.4,
+          "std": 4.128,
+          "sem": 1.846,
+          "min": 22,
+          "max": 35,
+          "meanFoodEaten": 28.4,
+          "meanWallBounces": 9.2
+        },
+        "_generalizationIndex": 10.9
+      },
+      "efficiency": {
+        "A": {
+          "n": 5,
+          "mean": 220,
+          "std": 44.989,
+          "sem": 20.12,
+          "min": 166,
+          "max": 276,
+          "meanFoodEaten": 24.4,
+          "meanWallBounces": 8.8
+        },
+        "D": {
+          "n": 5,
+          "mean": 290,
+          "std": 36.111,
+          "sem": 16.149,
+          "min": 226,
+          "max": 326,
+          "meanFoodEaten": 31.4,
+          "meanWallBounces": 7.8
+        },
+        "_generalizationIndex": 31.8
+      },
+      "accuracy": {
+        "A": {
+          "n": 5,
+          "mean": 263.6,
+          "std": 43.256,
+          "sem": 19.344,
+          "min": 216,
+          "max": 326,
+          "meanFoodEaten": 27.6,
+          "meanWallBounces": 6.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 275.6,
+          "std": 33.833,
+          "sem": 15.13,
+          "min": 242,
+          "max": 330,
+          "meanFoodEaten": 29,
+          "meanWallBounces": 7.2
+        },
+        "_generalizationIndex": 4.6
+      },
+      "speed": {
+        "A": {
+          "n": 5,
+          "mean": 424,
+          "std": 95.833,
+          "sem": 42.858,
+          "min": 280,
+          "max": 540,
+          "meanFoodEaten": 27.2,
+          "meanWallBounces": 5.6
+        },
+        "D": {
+          "n": 5,
+          "mean": 468,
+          "std": 77.563,
+          "sem": 34.687,
+          "min": 360,
+          "max": 560,
+          "meanFoodEaten": 29.4,
+          "meanWallBounces": 7.4
+        },
+        "_generalizationIndex": 10.4
+      },
+      "balance": {
+        "A": {
+          "n": 5,
+          "mean": 294.2,
+          "std": 52.202,
+          "sem": 23.345,
+          "min": 235.5,
+          "max": 383,
+          "meanFoodEaten": 32,
+          "meanWallBounces": 9.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 290.2,
+          "std": 76.286,
+          "sem": 34.116,
+          "min": 207.5,
+          "max": 417.5,
+          "meanFoodEaten": 31,
+          "meanWallBounces": 5.2
+        },
+        "_generalizationIndex": -1.4
+      },
+      "_avgGeneralizationIndex": 11.3
+    },
+    "efficiency_first": {
+      "_comboLabel": "Efficiency Priority",
+      "_comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "baseline": {
+        "A": {
+          "n": 5,
+          "mean": 27.6,
+          "std": 3.382,
+          "sem": 1.513,
+          "min": 24,
+          "max": 33,
+          "meanFoodEaten": 27.6,
+          "meanWallBounces": 8.6
+        },
+        "D": {
+          "n": 5,
+          "mean": 29.2,
+          "std": 4.167,
+          "sem": 1.863,
+          "min": 23,
+          "max": 36,
+          "meanFoodEaten": 29.2,
+          "meanWallBounces": 6
+        },
+        "_generalizationIndex": 5.8
+      },
+      "efficiency": {
+        "A": {
+          "n": 5,
+          "mean": 236,
+          "std": 14.142,
+          "sem": 6.325,
+          "min": 216,
+          "max": 256,
+          "meanFoodEaten": 26,
+          "meanWallBounces": 8.8
+        },
+        "D": {
+          "n": 5,
+          "mean": 280,
+          "std": 54.626,
+          "sem": 24.429,
+          "min": 196,
+          "max": 356,
+          "meanFoodEaten": 30.4,
+          "meanWallBounces": 7.4
+        },
+        "_generalizationIndex": 18.6
+      },
+      "accuracy": {
+        "A": {
+          "n": 5,
+          "mean": 294,
+          "std": 33.419,
+          "sem": 14.945,
+          "min": 246,
+          "max": 340,
+          "meanFoodEaten": 31,
+          "meanWallBounces": 8
+        },
+        "D": {
+          "n": 5,
+          "mean": 241.6,
+          "std": 45.929,
+          "sem": 20.54,
+          "min": 180,
+          "max": 308,
+          "meanFoodEaten": 25.6,
+          "meanWallBounces": 7.2
+        },
+        "_generalizationIndex": -17.8
+      },
+      "speed": {
+        "A": {
+          "n": 5,
+          "mean": 436,
+          "std": 57.131,
+          "sem": 25.55,
+          "min": 360,
+          "max": 520,
+          "meanFoodEaten": 27.8,
+          "meanWallBounces": 8.8
+        },
+        "D": {
+          "n": 5,
+          "mean": 472,
+          "std": 46.648,
+          "sem": 20.861,
+          "min": 400,
+          "max": 540,
+          "meanFoodEaten": 29.6,
+          "meanWallBounces": 7.8
+        },
+        "_generalizationIndex": 8.3
+      },
+      "balance": {
+        "A": {
+          "n": 5,
+          "mean": 265.1,
+          "std": 33.698,
+          "sem": 15.07,
+          "min": 217,
+          "max": 310.5,
+          "meanFoodEaten": 29,
+          "meanWallBounces": 8.6
+        },
+        "D": {
+          "n": 5,
+          "mean": 280.4,
+          "std": 36.82,
+          "sem": 16.467,
+          "min": 236,
+          "max": 327.5,
+          "meanFoodEaten": 30.2,
+          "meanWallBounces": 6.4
+        },
+        "_generalizationIndex": 5.8
+      },
+      "_avgGeneralizationIndex": 4.1
+    },
+    "smart_balance": {
+      "_comboLabel": "Smart Optimized Balance",
+      "_comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "baseline": {
+        "A": {
+          "n": 5,
+          "mean": 30.4,
+          "std": 5.463,
+          "sem": 2.443,
+          "min": 24,
+          "max": 40,
+          "meanFoodEaten": 30.4,
+          "meanWallBounces": 6.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 27.8,
+          "std": 3.6,
+          "sem": 1.61,
+          "min": 24,
+          "max": 32,
+          "meanFoodEaten": 27.8,
+          "meanWallBounces": 5.4
+        },
+        "_generalizationIndex": -8.6
+      },
+      "efficiency": {
+        "A": {
+          "n": 5,
+          "mean": 276,
+          "std": 37.417,
+          "sem": 16.733,
+          "min": 236,
+          "max": 326,
+          "meanFoodEaten": 30,
+          "meanWallBounces": 7.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 278,
+          "std": 49.153,
+          "sem": 21.982,
+          "min": 196,
+          "max": 336,
+          "meanFoodEaten": 30.2,
+          "meanWallBounces": 6
+        },
+        "_generalizationIndex": 0.7
+      },
+      "accuracy": {
+        "A": {
+          "n": 5,
+          "mean": 274.4,
+          "std": 71.659,
+          "sem": 32.047,
+          "min": 210,
+          "max": 402,
+          "meanFoodEaten": 28.8,
+          "meanWallBounces": 6.8
+        },
+        "D": {
+          "n": 5,
+          "mean": 246.8,
+          "std": 51.855,
+          "sem": 23.19,
+          "min": 170,
+          "max": 322,
+          "meanFoodEaten": 25.6,
+          "meanWallBounces": 4.6
+        },
+        "_generalizationIndex": -10.1
+      },
+      "speed": {
+        "A": {
+          "n": 5,
+          "mean": 428,
+          "std": 44.9,
+          "sem": 20.08,
+          "min": 360,
+          "max": 500,
+          "meanFoodEaten": 27.4,
+          "meanWallBounces": 6.8
+        },
+        "D": {
+          "n": 5,
+          "mean": 496,
+          "std": 32,
+          "sem": 14.311,
+          "min": 460,
+          "max": 540,
+          "meanFoodEaten": 30.8,
+          "meanWallBounces": 10.8
+        },
+        "_generalizationIndex": 15.9
+      },
+      "balance": {
+        "A": {
+          "n": 5,
+          "mean": 249.5,
+          "std": 34.482,
+          "sem": 15.421,
+          "min": 196,
+          "max": 302,
+          "meanFoodEaten": 27.2,
+          "meanWallBounces": 7
+        },
+        "D": {
+          "n": 5,
+          "mean": 273.8,
+          "std": 73.833,
+          "sem": 33.019,
+          "min": 154,
+          "max": 357.5,
+          "meanFoodEaten": 30.2,
+          "meanWallBounces": 10.8
+        },
+        "_generalizationIndex": 9.7
+      },
+      "_avgGeneralizationIndex": 1.5
+    },
+    "_ranking": [
+      "balanced",
+      "pro_food",
+      "efficiency_first",
+      "smart_balance",
+      "current"
+    ],
+    "_winner": "balanced"
+  },
+  "trials": [
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 8,
+        "objectiveScore": 38,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:45.089Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:45.355Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 9,
+        "objectiveScore": 27,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:45.636Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 6,
+        "objectiveScore": 38,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:45.916Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 9,
+        "objectiveScore": 26,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:46.194Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:46.506Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 1,
+        "objectiveScore": 21,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:46.796Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 4,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:47.097Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 39,
+        "wallBounces": 3,
+        "objectiveScore": 39,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:47.404Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 5,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:47.703Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 7,
+        "objectiveScore": 166,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:47.985Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 5,
+        "objectiveScore": 356,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:48.281Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:48.569Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 6,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:48.861Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 8,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:49.150Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 6,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:49.457Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 8,
+        "objectiveScore": 206,
+        "ltmUsageRate": 0.001,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:49.751Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 7,
+        "objectiveScore": 306,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:50.048Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 3,
+        "objectiveScore": 166,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:50.343Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 276,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:50.642Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 12,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:50.914Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 10,
+        "objectiveScore": 290,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:51.195Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 18,
+        "objectiveScore": 254,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:51.487Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 278,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:51.763Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 12,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:52.041Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 6,
+        "objectiveScore": 368,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:52.350Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 4,
+        "objectiveScore": 292,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:52.651Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 12,
+        "objectiveScore": 186,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:52.952Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 8,
+        "objectiveScore": 324,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:53.248Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 6,
+        "objectiveScore": 298,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:53.548Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 6,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:53.811Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 8,
+        "objectiveScore": 380,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:54.102Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 10,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:54.386Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 9,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:54.673Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:54.962Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 14,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:55.264Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 5,
+        "objectiveScore": 560,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:55.560Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 6,
+        "objectiveScore": 600,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:55.849Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:56.142Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 4,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:56.440Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 13,
+        "objectiveScore": 328.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:56.727Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 8,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:57.011Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 10,
+        "objectiveScore": 303,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:57.302Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 260.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:57.591Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 9,
+        "objectiveScore": 354.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:57.880Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 7,
+        "objectiveScore": 347.5,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:58.188Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 20,
+        "wallBounces": 14,
+        "objectiveScore": 167,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:58.483Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 6,
+        "objectiveScore": 309,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:58.782Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 6,
+        "objectiveScore": 199,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:59.064Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "current",
+      "comboLabel": "Current (Exp 5.5 weighted)",
+      "comboDescription": "Control — proven baseline from Exp 5.5",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 12,
+        "objectiveScore": 260,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T06:55:59.356Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 8,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:02.519Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 40,
+        "wallBounces": 7,
+        "objectiveScore": 40,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:02.800Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 12,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:03.077Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 2,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:03.332Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 3,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:03.607Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 10,
+        "objectiveScore": 31,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 30,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:03.906Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 9,
+        "objectiveScore": 31,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:04.195Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 25,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:04.482Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 39,
+        "wallBounces": 6,
+        "objectiveScore": 39,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 37,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:04.770Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 27,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 37,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:05.068Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 12,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:05.341Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 9,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:05.631Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 12,
+        "objectiveScore": 196,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:05.919Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 13,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:06.208Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 17,
+        "wallBounces": 11,
+        "objectiveScore": 146,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:06.493Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 34,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:06.787Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 276,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:07.069Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 8,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:07.353Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 8,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0.014,
+        "ltmPatternCount": 41,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:07.635Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 9,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:07.920Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 5,
+        "objectiveScore": 200,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:08.200Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 4,
+        "objectiveScore": 322,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:08.487Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 6,
+        "objectiveScore": 268,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:08.772Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 3,
+        "objectiveScore": 364,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:09.060Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 20,
+        "wallBounces": 10,
+        "objectiveScore": 180,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:09.346Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 3,
+        "objectiveScore": 324,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:09.657Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 39,
+        "wallBounces": 6,
+        "objectiveScore": 378,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:09.932Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 2,
+        "objectiveScore": 346,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:10.217Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 6,
+        "objectiveScore": 298,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:10.508Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 7,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:10.800Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:11.080Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 560,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:11.367Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 10,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:11.641Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 380,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:11.911Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 6,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:12.200Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:12.498Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 5,
+        "objectiveScore": 560,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:12.785Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 3,
+        "objectiveScore": 580,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:13.079Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 11,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:13.366Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:13.657Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 8,
+        "objectiveScore": 346,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:13.937Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 4,
+        "objectiveScore": 272,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:14.221Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 7,
+        "objectiveScore": 267.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:14.510Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 2,
+        "objectiveScore": 315,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:14.803Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 4,
+        "objectiveScore": 352,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:15.091Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 6,
+        "objectiveScore": 279,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:15.394Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 12,
+        "objectiveScore": 270,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:15.682Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 11,
+        "objectiveScore": 201.5,
+        "ltmUsageRate": 0.014,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:15.969Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 7,
+        "objectiveScore": 267.5,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 26,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:16.260Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "pro_food",
+      "comboLabel": "Pro-Food Baseline Recovery",
+      "comboDescription": "Boost food weight to recover baseline regression",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 20,
+        "wallBounces": 12,
+        "objectiveScore": 170,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 26,
+        "timestamp": "2026-05-24T06:56:16.549Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 8,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:19.741Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 14,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:20.011Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 17,
+        "wallBounces": 5,
+        "objectiveScore": 17,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:20.278Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:20.562Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 4,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:20.849Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 8,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0.001,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:21.145Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 10,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:21.442Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 8,
+        "objectiveScore": 35,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:21.738Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 9,
+        "objectiveScore": 22,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:22.034Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 11,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:22.325Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 12,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:22.603Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 6,
+        "objectiveScore": 166,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:22.889Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 20,
+        "wallBounces": 13,
+        "objectiveScore": 176,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:23.177Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 3,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:23.462Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 10,
+        "objectiveScore": 276,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:23.744Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0.001,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:24.041Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 7,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:24.326Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 7,
+        "objectiveScore": 326,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:24.613Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 10,
+        "objectiveScore": 276,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:24.919Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 8,
+        "objectiveScore": 306,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:25.216Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:25.487Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 7,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:25.775Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 7,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:26.063Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 3,
+        "objectiveScore": 294,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:26.349Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 326,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:26.637Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 10,
+        "objectiveScore": 300,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:26.945Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 12,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:27.241Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 5,
+        "objectiveScore": 250,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:27.538Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 4,
+        "objectiveScore": 242,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:27.830Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 5,
+        "objectiveScore": 330,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:28.126Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 7,
+        "objectiveScore": 540,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:28.385Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 8,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:28.664Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 2,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:28.948Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 20,
+        "wallBounces": 4,
+        "objectiveScore": 280,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:29.235Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 7,
+        "objectiveScore": 380,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:29.527Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 6,
+        "objectiveScore": 560,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:29.825Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 8,
+        "objectiveScore": 360,
+        "ltmUsageRate": 0.001,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:30.119Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 7,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:30.416Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 7,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:30.705Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 9,
+        "objectiveScore": 540,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:30.997Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 4,
+        "objectiveScore": 272,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:31.275Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 15,
+        "objectiveScore": 235.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:31.565Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 41,
+        "wallBounces": 10,
+        "objectiveScore": 383,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:31.853Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 260.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:32.137Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 12,
+        "objectiveScore": 320,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:32.411Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 2,
+        "objectiveScore": 335,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:32.700Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 5,
+        "objectiveScore": 250.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:32.993Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 7,
+        "objectiveScore": 207.5,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:33.287Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 5,
+        "objectiveScore": 240.5,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:33.580Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "balanced",
+      "comboLabel": "Equal Five-Way Balance",
+      "comboDescription": "Same as Exp 5.5 \"average\" — perfect 20 % on all objectives",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 44,
+        "wallBounces": 7,
+        "objectiveScore": 417.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T06:56:33.873Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 7,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:37.077Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 7,
+        "objectiveScore": 26,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:37.354Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 11,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:37.631Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 7,
+        "objectiveScore": 25,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:37.924Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 11,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:38.209Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 7,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:38.516Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 5,
+        "objectiveScore": 23,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:38.811Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 4,
+        "objectiveScore": 36,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 48,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:39.112Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 9,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:39.416Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:39.709Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 9,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:39.994Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:40.275Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 9,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:40.555Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 12,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:40.823Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 8,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:41.104Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 8,
+        "objectiveScore": 196,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:41.406Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:41.703Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 7,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:42.002Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 6,
+        "objectiveScore": 306,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:42.299Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 9,
+        "objectiveScore": 356,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:42.598Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 15,
+        "objectiveScore": 340,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:42.875Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 7,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:43.162Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 9,
+        "objectiveScore": 292,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:43.448Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 4,
+        "objectiveScore": 272,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:43.736Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 5,
+        "objectiveScore": 320,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:44.012Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 8,
+        "objectiveScore": 244,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:44.324Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 5,
+        "objectiveScore": 180,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:44.613Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 9,
+        "objectiveScore": 272,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:44.913Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 8,
+        "objectiveScore": 204,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:45.206Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 6,
+        "objectiveScore": 308,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:45.499Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 8,
+        "objectiveScore": 360,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:45.765Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 9,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:46.042Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 5,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:46.328Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 11,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:46.615Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 11,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:46.898Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 12,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:47.205Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:47.503Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 2,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:47.805Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 11,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:48.108Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 6,
+        "objectiveScore": 540,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:48.401Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 5,
+        "objectiveScore": 240.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:48.676Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 14,
+        "objectiveScore": 217,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:48.963Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 11,
+        "objectiveScore": 291.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:49.232Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:49.499Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 5,
+        "objectiveScore": 310.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:49.793Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 2,
+        "objectiveScore": 275,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:50.103Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 8,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:50.402Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 317.5,
+        "ltmUsageRate": 0.001,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:50.694Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 8,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:50.993Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "efficiency_first",
+      "comboLabel": "Efficiency Priority",
+      "comboDescription": "Maximum efficiency weight — upper bound for that objective",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 7,
+        "objectiveScore": 327.5,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T06:56:51.295Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:54.482Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 5,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:54.763Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 7,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:55.048Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 40,
+        "wallBounces": 5,
+        "objectiveScore": 40,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:55.337Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 8,
+        "objectiveScore": 27,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:55.625Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 3,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:55.930Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 7,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:56.225Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 7,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:56.523Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 6,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:56.822Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 4,
+        "objectiveScore": 27,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:57.123Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:57.393Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 12,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:57.658Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 8,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:57.938Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 5,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:58.226Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 4,
+        "objectiveScore": 326,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:58.515Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:58.827Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 8,
+        "objectiveScore": 196,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:59.127Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 2,
+        "objectiveScore": 336,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:59.425Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 8,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:56:59.721Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 7,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:00.020Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 10,
+        "objectiveScore": 210,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:00.299Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 9,
+        "objectiveScore": 212,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:00.578Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 5,
+        "objectiveScore": 300,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:00.863Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 41,
+        "wallBounces": 4,
+        "objectiveScore": 402,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:01.158Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 6,
+        "objectiveScore": 248,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:01.440Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 4,
+        "objectiveScore": 212,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:01.733Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 18,
+        "wallBounces": 5,
+        "objectiveScore": 170,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:02.026Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 4,
+        "objectiveScore": 322,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:02.325Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 6,
+        "objectiveScore": 268,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:02.621Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 4,
+        "objectiveScore": 262,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:02.913Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 4,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:03.190Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:03.475Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 13,
+        "objectiveScore": 360,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:03.768Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 6,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:04.053Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 4,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:04.338Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 29,
+        "objectiveScore": 540,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:04.647Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 8,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:04.942Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 7,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:05.240Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:05.531Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 4,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:05.827Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 6,
+        "objectiveScore": 249,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:06.094Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 7,
+        "objectiveScore": 237.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:06.373Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 10,
+        "objectiveScore": 263,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:06.645Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 4,
+        "objectiveScore": 302,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:06.927Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 8,
+        "objectiveScore": 196,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:07.197Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 9,
+        "objectiveScore": 314.5,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:07.498Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 15,
+        "objectiveScore": 225.5,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:07.794Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 16,
+        "objectiveScore": 154,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:08.085Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 317.5,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:08.382Z"
+      }
+    },
+    {
+      "experiment": "5.5.5",
+      "weightCombo": "smart_balance",
+      "comboLabel": "Smart Optimized Balance",
+      "comboDescription": "Hypothesis winner: heavy food + speed with moderate efficiency boost",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 7,
+        "objectiveScore": 357.5,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 45,
+        "trainedPatternsAvailable": 45,
+        "timestamp": "2026-05-24T06:57:08.680Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4888 @@
+{
+  "experiment": 9,
+  "name": "Learning Dynamics & Curves",
+  "timestamp": "2026-05-24T12:03:32.136Z",
+  "summary": {
+    "0": {
+      "baseline": {
+        "A": {
+          "n": 4,
+          "mean": 29.75,
+          "std": 4.023,
+          "sem": 2.012,
+          "min": 24,
+          "max": 34,
+          "meanFoodEaten": 29.75,
+          "meanWallBounces": 5.5
+        },
+        "D": {
+          "n": 4,
+          "mean": 34.25,
+          "std": 0.829,
+          "sem": 0.415,
+          "min": 33,
+          "max": 35,
+          "meanFoodEaten": 34.25,
+          "meanWallBounces": 7.5
+        },
+        "_generalizationIndex": 15.1
+      },
+      "efficiency": {
+        "A": {
+          "n": 4,
+          "mean": 268.5,
+          "std": 28.614,
+          "sem": 14.307,
+          "min": 226,
+          "max": 306,
+          "meanFoodEaten": 29.25,
+          "meanWallBounces": 5.5
+        },
+        "D": {
+          "n": 4,
+          "mean": 328.5,
+          "std": 37.666,
+          "sem": 18.833,
+          "min": 286,
+          "max": 366,
+          "meanFoodEaten": 35.25,
+          "meanWallBounces": 7.8
+        },
+        "_generalizationIndex": 22.3
+      },
+      "accuracy": {
+        "A": {
+          "n": 4,
+          "mean": 275,
+          "std": 28.792,
+          "sem": 14.396,
+          "min": 246,
+          "max": 316,
+          "meanFoodEaten": 28.75,
+          "meanWallBounces": 6.3
+        },
+        "D": {
+          "n": 4,
+          "mean": 262,
+          "std": 51.127,
+          "sem": 25.564,
+          "min": 192,
+          "max": 336,
+          "meanFoodEaten": 28,
+          "meanWallBounces": 9
+        },
+        "_generalizationIndex": -4.7
+      },
+      "speed": {
+        "A": {
+          "n": 4,
+          "mean": 535,
+          "std": 40.927,
+          "sem": 20.463,
+          "min": 500,
+          "max": 600,
+          "meanFoodEaten": 32.75,
+          "meanWallBounces": 7.8
+        },
+        "D": {
+          "n": 4,
+          "mean": 510,
+          "std": 70,
+          "sem": 35,
+          "min": 440,
+          "max": 620,
+          "meanFoodEaten": 31.5,
+          "meanWallBounces": 5.5
+        },
+        "_generalizationIndex": -4.7
+      },
+      "balance": {
+        "A": {
+          "n": 4,
+          "mean": 325.375,
+          "std": 54.5,
+          "sem": 27.25,
+          "min": 242,
+          "max": 394.5,
+          "meanFoodEaten": 34.75,
+          "meanWallBounces": 6.8
+        },
+        "D": {
+          "n": 4,
+          "mean": 212.375,
+          "std": 25.745,
+          "sem": 12.872,
+          "min": 181.5,
+          "max": 253,
+          "meanFoodEaten": 23.75,
+          "meanWallBounces": 8.8
+        },
+        "_generalizationIndex": -34.7
+      },
+      "_meanAdvantage": -1.34,
+      "_stdAdvantage": 19.82,
+      "_ltmPatternsMean": 24.8
+    },
+    "2": {
+      "baseline": {
+        "A": {
+          "n": 4,
+          "mean": 28.75,
+          "std": 4.206,
+          "sem": 2.103,
+          "min": 24,
+          "max": 35,
+          "meanFoodEaten": 28.75,
+          "meanWallBounces": 7
+        },
+        "D": {
+          "n": 4,
+          "mean": 26.75,
+          "std": 2.861,
+          "sem": 1.431,
+          "min": 22,
+          "max": 29,
+          "meanFoodEaten": 26.75,
+          "meanWallBounces": 9.8
+        },
+        "_generalizationIndex": -7
+      },
+      "efficiency": {
+        "A": {
+          "n": 4,
+          "mean": 293.5,
+          "std": 50.683,
+          "sem": 25.341,
+          "min": 226,
+          "max": 356,
+          "meanFoodEaten": 31.75,
+          "meanWallBounces": 6.8
+        },
+        "D": {
+          "n": 4,
+          "mean": 286,
+          "std": 23.452,
+          "sem": 11.726,
+          "min": 246,
+          "max": 306,
+          "meanFoodEaten": 31,
+          "meanWallBounces": 5.3
+        },
+        "_generalizationIndex": -2.6
+      },
+      "accuracy": {
+        "A": {
+          "n": 4,
+          "mean": 275,
+          "std": 17.521,
+          "sem": 8.761,
+          "min": 250,
+          "max": 298,
+          "meanFoodEaten": 28.75,
+          "meanWallBounces": 6.3
+        },
+        "D": {
+          "n": 4,
+          "mean": 280,
+          "std": 19.442,
+          "sem": 9.721,
+          "min": 256,
+          "max": 302,
+          "meanFoodEaten": 30,
+          "meanWallBounces": 10
+        },
+        "_generalizationIndex": 1.8
+      },
+      "speed": {
+        "A": {
+          "n": 4,
+          "mean": 455,
+          "std": 120.312,
+          "sem": 60.156,
+          "min": 280,
+          "max": 620,
+          "meanFoodEaten": 28.75,
+          "meanWallBounces": 8
+        },
+        "D": {
+          "n": 4,
+          "mean": 505,
+          "std": 63.836,
+          "sem": 31.918,
+          "min": 420,
+          "max": 600,
+          "meanFoodEaten": 31.25,
+          "meanWallBounces": 5.5
+        },
+        "_generalizationIndex": 11
+      },
+      "balance": {
+        "A": {
+          "n": 4,
+          "mean": 246,
+          "std": 33.913,
+          "sem": 16.957,
+          "min": 196,
+          "max": 290.5,
+          "meanFoodEaten": 27,
+          "meanWallBounces": 8
+        },
+        "D": {
+          "n": 4,
+          "mean": 276.5,
+          "std": 70.773,
+          "sem": 35.386,
+          "min": 160,
+          "max": 348,
+          "meanFoodEaten": 29.75,
+          "meanWallBounces": 6
+        },
+        "_generalizationIndex": 12.4
+      },
+      "_meanAdvantage": 3.12,
+      "_stdAdvantage": 7.55,
+      "_ltmPatternsMean": 43
+    },
+    "5": {
+      "baseline": {
+        "A": {
+          "n": 4,
+          "mean": 35.5,
+          "std": 2.179,
+          "sem": 1.09,
+          "min": 33,
+          "max": 39,
+          "meanFoodEaten": 35.5,
+          "meanWallBounces": 7
+        },
+        "D": {
+          "n": 4,
+          "mean": 29.25,
+          "std": 4.023,
+          "sem": 2.012,
+          "min": 23,
+          "max": 34,
+          "meanFoodEaten": 29.25,
+          "meanWallBounces": 6.5
+        },
+        "_generalizationIndex": -17.6
+      },
+      "efficiency": {
+        "A": {
+          "n": 4,
+          "mean": 251,
+          "std": 55,
+          "sem": 27.5,
+          "min": 216,
+          "max": 346,
+          "meanFoodEaten": 27.5,
+          "meanWallBounces": 7
+        },
+        "D": {
+          "n": 4,
+          "mean": 298.5,
+          "std": 17.854,
+          "sem": 8.927,
+          "min": 276,
+          "max": 316,
+          "meanFoodEaten": 32.25,
+          "meanWallBounces": 6.5
+        },
+        "_generalizationIndex": 18.9
+      },
+      "accuracy": {
+        "A": {
+          "n": 4,
+          "mean": 270,
+          "std": 41.11,
+          "sem": 20.555,
+          "min": 232,
+          "max": 338,
+          "meanFoodEaten": 28.5,
+          "meanWallBounces": 7.5
+        },
+        "D": {
+          "n": 4,
+          "mean": 254,
+          "std": 31.906,
+          "sem": 15.953,
+          "min": 220,
+          "max": 304,
+          "meanFoodEaten": 26.5,
+          "meanWallBounces": 5.5
+        },
+        "_generalizationIndex": -5.9
+      },
+      "speed": {
+        "A": {
+          "n": 4,
+          "mean": 450,
+          "std": 108.167,
+          "sem": 54.083,
+          "min": 300,
+          "max": 580,
+          "meanFoodEaten": 28.5,
+          "meanWallBounces": 6.8
+        },
+        "D": {
+          "n": 4,
+          "mean": 455,
+          "std": 40.927,
+          "sem": 20.463,
+          "min": 420,
+          "max": 520,
+          "meanFoodEaten": 28.75,
+          "meanWallBounces": 8
+        },
+        "_generalizationIndex": 1.1
+      },
+      "balance": {
+        "A": {
+          "n": 4,
+          "mean": 271.125,
+          "std": 10.917,
+          "sem": 5.458,
+          "min": 260.5,
+          "max": 289,
+          "meanFoodEaten": 29.25,
+          "meanWallBounces": 6.3
+        },
+        "D": {
+          "n": 4,
+          "mean": 249.375,
+          "std": 29.607,
+          "sem": 14.803,
+          "min": 220.5,
+          "max": 297.5,
+          "meanFoodEaten": 27,
+          "meanWallBounces": 5.8
+        },
+        "_generalizationIndex": -8
+      },
+      "_meanAdvantage": -2.3,
+      "_stdAdvantage": 12.17,
+      "_ltmPatternsMean": 32.7
+    },
+    "10": {
+      "baseline": {
+        "A": {
+          "n": 4,
+          "mean": 31.25,
+          "std": 3.562,
+          "sem": 1.781,
+          "min": 26,
+          "max": 35,
+          "meanFoodEaten": 31.25,
+          "meanWallBounces": 4.8
+        },
+        "D": {
+          "n": 4,
+          "mean": 29.5,
+          "std": 6.576,
+          "sem": 3.288,
+          "min": 19,
+          "max": 37,
+          "meanFoodEaten": 29.5,
+          "meanWallBounces": 10.3
+        },
+        "_generalizationIndex": -5.6
+      },
+      "efficiency": {
+        "A": {
+          "n": 4,
+          "mean": 281,
+          "std": 22.913,
+          "sem": 11.456,
+          "min": 256,
+          "max": 316,
+          "meanFoodEaten": 30.5,
+          "meanWallBounces": 6.3
+        },
+        "D": {
+          "n": 4,
+          "mean": 253.5,
+          "std": 33.448,
+          "sem": 16.724,
+          "min": 216,
+          "max": 306,
+          "meanFoodEaten": 27.75,
+          "meanWallBounces": 8
+        },
+        "_generalizationIndex": -9.8
+      },
+      "accuracy": {
+        "A": {
+          "n": 4,
+          "mean": 290.5,
+          "std": 38.997,
+          "sem": 19.498,
+          "min": 226,
+          "max": 326,
+          "meanFoodEaten": 30.75,
+          "meanWallBounces": 8.5
+        },
+        "D": {
+          "n": 4,
+          "mean": 268,
+          "std": 45.585,
+          "sem": 22.793,
+          "min": 190,
+          "max": 304,
+          "meanFoodEaten": 28.25,
+          "meanWallBounces": 7.3
+        },
+        "_generalizationIndex": -7.7
+      },
+      "speed": {
+        "A": {
+          "n": 4,
+          "mean": 495,
+          "std": 75.333,
+          "sem": 37.666,
+          "min": 420,
+          "max": 620,
+          "meanFoodEaten": 30.75,
+          "meanWallBounces": 7
+        },
+        "D": {
+          "n": 4,
+          "mean": 465,
+          "std": 103.32,
+          "sem": 51.66,
+          "min": 380,
+          "max": 640,
+          "meanFoodEaten": 29.25,
+          "meanWallBounces": 7.8
+        },
+        "_generalizationIndex": -6.1
+      },
+      "balance": {
+        "A": {
+          "n": 4,
+          "mean": 236.375,
+          "std": 34.459,
+          "sem": 17.229,
+          "min": 186,
+          "max": 269,
+          "meanFoodEaten": 26,
+          "meanWallBounces": 7.8
+        },
+        "D": {
+          "n": 4,
+          "mean": 260.25,
+          "std": 69.406,
+          "sem": 34.703,
+          "min": 180,
+          "max": 336,
+          "meanFoodEaten": 28.5,
+          "meanWallBounces": 8.5
+        },
+        "_generalizationIndex": 10.1
+      },
+      "_meanAdvantage": -3.82,
+      "_stdAdvantage": 7.11,
+      "_ltmPatternsMean": 35.8
+    },
+    "20": {
+      "baseline": {
+        "A": {
+          "n": 4,
+          "mean": 30.25,
+          "std": 2.046,
+          "sem": 1.023,
+          "min": 27,
+          "max": 32,
+          "meanFoodEaten": 30.25,
+          "meanWallBounces": 6.8
+        },
+        "D": {
+          "n": 4,
+          "mean": 30.25,
+          "std": 6.61,
+          "sem": 3.305,
+          "min": 19,
+          "max": 36,
+          "meanFoodEaten": 30.25,
+          "meanWallBounces": 6.3
+        },
+        "_generalizationIndex": 0
+      },
+      "efficiency": {
+        "A": {
+          "n": 4,
+          "mean": 263.5,
+          "std": 35.62,
+          "sem": 17.81,
+          "min": 216,
+          "max": 316,
+          "meanFoodEaten": 28.75,
+          "meanWallBounces": 9.5
+        },
+        "D": {
+          "n": 4,
+          "mean": 263.5,
+          "std": 17.854,
+          "sem": 8.927,
+          "min": 236,
+          "max": 286,
+          "meanFoodEaten": 28.75,
+          "meanWallBounces": 6.8
+        },
+        "_generalizationIndex": 0
+      },
+      "accuracy": {
+        "A": {
+          "n": 4,
+          "mean": 306.5,
+          "std": 50.998,
+          "sem": 25.499,
+          "min": 258,
+          "max": 386,
+          "meanFoodEaten": 31.75,
+          "meanWallBounces": 5.5
+        },
+        "D": {
+          "n": 4,
+          "mean": 274,
+          "std": 43.566,
+          "sem": 21.783,
+          "min": 238,
+          "max": 348,
+          "meanFoodEaten": 29.5,
+          "meanWallBounces": 10.5
+        },
+        "_generalizationIndex": -10.6
+      },
+      "speed": {
+        "A": {
+          "n": 4,
+          "mean": 470,
+          "std": 104.403,
+          "sem": 52.202,
+          "min": 300,
+          "max": 580,
+          "meanFoodEaten": 29.5,
+          "meanWallBounces": 6
+        },
+        "D": {
+          "n": 4,
+          "mean": 530,
+          "std": 33.166,
+          "sem": 16.583,
+          "min": 500,
+          "max": 580,
+          "meanFoodEaten": 32.5,
+          "meanWallBounces": 4.3
+        },
+        "_generalizationIndex": 12.8
+      },
+      "balance": {
+        "A": {
+          "n": 4,
+          "mean": 272.5,
+          "std": 5.799,
+          "sem": 2.899,
+          "min": 266,
+          "max": 279,
+          "meanFoodEaten": 29.5,
+          "meanWallBounces": 7
+        },
+        "D": {
+          "n": 4,
+          "mean": 248.25,
+          "std": 79.38,
+          "sem": 39.69,
+          "min": 170.5,
+          "max": 357.5,
+          "meanFoodEaten": 27,
+          "meanWallBounces": 6.5
+        },
+        "_generalizationIndex": -8.9
+      },
+      "_meanAdvantage": -1.34,
+      "_stdAdvantage": 8.32,
+      "_ltmPatternsMean": 37.5
+    },
+    "40": {
+      "baseline": {
+        "A": {
+          "n": 4,
+          "mean": 27.5,
+          "std": 4.153,
+          "sem": 2.077,
+          "min": 23,
+          "max": 34,
+          "meanFoodEaten": 27.5,
+          "meanWallBounces": 8
+        },
+        "D": {
+          "n": 4,
+          "mean": 29.25,
+          "std": 3.031,
+          "sem": 1.516,
+          "min": 25,
+          "max": 33,
+          "meanFoodEaten": 29.25,
+          "meanWallBounces": 6.3
+        },
+        "_generalizationIndex": 6.4
+      },
+      "efficiency": {
+        "A": {
+          "n": 4,
+          "mean": 273.5,
+          "std": 32.692,
+          "sem": 16.346,
+          "min": 236,
+          "max": 306,
+          "meanFoodEaten": 29.75,
+          "meanWallBounces": 6.8
+        },
+        "D": {
+          "n": 4,
+          "mean": 256,
+          "std": 25.495,
+          "sem": 12.748,
+          "min": 226,
+          "max": 296,
+          "meanFoodEaten": 28,
+          "meanWallBounces": 5.8
+        },
+        "_generalizationIndex": -6.4
+      },
+      "accuracy": {
+        "A": {
+          "n": 4,
+          "mean": 261,
+          "std": 23.854,
+          "sem": 11.927,
+          "min": 238,
+          "max": 296,
+          "meanFoodEaten": 27.75,
+          "meanWallBounces": 8.3
+        },
+        "D": {
+          "n": 4,
+          "mean": 259,
+          "std": 43.463,
+          "sem": 21.731,
+          "min": 198,
+          "max": 304,
+          "meanFoodEaten": 27.75,
+          "meanWallBounces": 9.3
+        },
+        "_generalizationIndex": -0.8
+      },
+      "speed": {
+        "A": {
+          "n": 4,
+          "mean": 470,
+          "std": 172.916,
+          "sem": 86.458,
+          "min": 320,
+          "max": 760,
+          "meanFoodEaten": 29.5,
+          "meanWallBounces": 7.3
+        },
+        "D": {
+          "n": 4,
+          "mean": 405,
+          "std": 40.927,
+          "sem": 20.463,
+          "min": 340,
+          "max": 440,
+          "meanFoodEaten": 26.25,
+          "meanWallBounces": 7.3
+        },
+        "_generalizationIndex": -13.8
+      },
+      "balance": {
+        "A": {
+          "n": 4,
+          "mean": 269,
+          "std": 75.984,
+          "sem": 37.992,
+          "min": 163,
+          "max": 352,
+          "meanFoodEaten": 29,
+          "meanWallBounces": 6
+        },
+        "D": {
+          "n": 4,
+          "mean": 281,
+          "std": 38.942,
+          "sem": 19.471,
+          "min": 227,
+          "max": 332,
+          "meanFoodEaten": 30.5,
+          "meanWallBounces": 8
+        },
+        "_generalizationIndex": 4.5
+      },
+      "_meanAdvantage": -2.02,
+      "_stdAdvantage": 7.39,
+      "_ltmPatternsMean": 45.5
+    },
+    "_advantageCurve": [
+      {
+        "trials": 0,
+        "advantage": -1.34,
+        "std": 19.82,
+        "ltmPatterns": 24.8
+      },
+      {
+        "trials": 2,
+        "advantage": 3.12,
+        "std": 7.55,
+        "ltmPatterns": 43
+      },
+      {
+        "trials": 5,
+        "advantage": -2.3,
+        "std": 12.17,
+        "ltmPatterns": 32.7
+      },
+      {
+        "trials": 10,
+        "advantage": -3.82,
+        "std": 7.11,
+        "ltmPatterns": 35.8
+      },
+      {
+        "trials": 20,
+        "advantage": -1.34,
+        "std": 8.32,
+        "ltmPatterns": 37.5
+      },
+      {
+        "trials": 40,
+        "advantage": -2.02,
+        "std": 7.39,
+        "ltmPatterns": 45.5
+      }
+    ],
+    "_checkpoints": [
+      0,
+      2,
+      5,
+      10,
+      20,
+      40
+    ],
+    "_maxAdvantage": 3.12,
+    "_convergencePoint": 2,
+    "_minViablePoint": 2,
+    "_curveType": "sigmoid",
+    "_overfitting": {
+      "detected": true,
+      "degradation": 0.68,
+      "fromCheckpoint": 20,
+      "toCheckpoint": 40
+    },
+    "_deploymentGuidance": {
+      "quickDeployment": {
+        "trials": 2,
+        "advantage": "+3.12%",
+        "explanation": "90% of peak advantage at 2 trials",
+        "useCase": "Time-critical deployments"
+      },
+      "standardDeployment": {
+        "trials": 2,
+        "advantage": "+3.12%",
+        "explanation": "Converges (95% of peak) at 2 trials",
+        "useCase": "Standard production deployment"
+      },
+      "maximumPerformance": {
+        "trials": 40,
+        "advantage": "+-2.02%",
+        "caveat": "Possible degradation from 20 to 40 trials",
+        "useCase": "Performance-critical applications"
+      }
+    },
+    "_baselineAdvantage": 11.27,
+    "_interpretation": "sigmoid curve — reaches 95% of peak at ~2 training trials",
+    "_recommendation": "Min viable: 2 trials (90% of peak). Full convergence: 2 trials. ⚠ Overfitting at 20→40 trials."
+  },
+  "trials": [
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 9,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:38.343Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 3,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:38.642Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 13,
+        "objectiveScore": 35,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 22,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:38.950Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 4,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 14,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:39.222Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 1,
+        "objectiveScore": 306,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:39.491Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 7,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:39.763Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 39,
+        "wallBounces": 11,
+        "objectiveScore": 366,
+        "ltmUsageRate": 0.013,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:40.057Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 8,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 13,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:40.339Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 2,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:40.614Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 7,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:40.900Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 7,
+        "objectiveScore": 336,
+        "ltmUsageRate": 0.015,
+        "ltmPatternCount": 35,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:41.191Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 9,
+        "objectiveScore": 192,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:41.479Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 9,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:41.747Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 10,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:42.030Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 24,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:42.329Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 21,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:42.615Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 42,
+        "wallBounces": 9,
+        "objectiveScore": 394.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:42.900Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 7,
+        "objectiveScore": 337.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:43.191Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 7,
+        "objectiveScore": 207.5,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 25,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:43.481Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 7,
+        "objectiveScore": 207.5,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 23,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:43.771Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 4,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:44.045Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 6,
+        "objectiveScore": 34,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:44.327Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 7,
+        "objectiveScore": 35,
+        "ltmUsageRate": 0.013,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:44.625Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 6,
+        "objectiveScore": 34,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 19,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:44.910Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:45.185Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 276,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:45.472Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 6,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.019,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:45.779Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 39,
+        "wallBounces": 6,
+        "objectiveScore": 366,
+        "ltmUsageRate": 0.013,
+        "ltmPatternCount": 35,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:46.068Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 5,
+        "objectiveScore": 250,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:46.349Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 11,
+        "objectiveScore": 288,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:46.629Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 13,
+        "objectiveScore": 254,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 19,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:46.924Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 16,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:47.210Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 7,
+        "objectiveScore": 540,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:47.484Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 5,
+        "objectiveScore": 600,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:47.770Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 6,
+        "objectiveScore": 620,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 14,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:48.063Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 3,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 20,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:48.351Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 7,
+        "objectiveScore": 327.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:48.610Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 4,
+        "objectiveScore": 242,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:48.886Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 11,
+        "objectiveScore": 181.5,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:49.163Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 0,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 10,
+        "objectiveScore": 253,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 23,
+        "trainedPatternsAvailable": 0,
+        "timestamp": "2026-05-24T12:01:49.438Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 6,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:50.289Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 6,
+        "objectiveScore": 26,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:50.574Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 9,
+        "objectiveScore": 22,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:50.860Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:51.145Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 6,
+        "objectiveScore": 356,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:51.403Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 13,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:51.688Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 0,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:51.996Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 8,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:52.295Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 5,
+        "objectiveScore": 250,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:52.568Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 6,
+        "objectiveScore": 298,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:52.851Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 14,
+        "objectiveScore": 302,
+        "ltmUsageRate": 0.013,
+        "ltmPatternCount": 39,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:53.158Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:53.451Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 8,
+        "objectiveScore": 620,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:53.723Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 4,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:54.000Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 5,
+        "objectiveScore": 600,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:54.303Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 5,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:54.593Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 5,
+        "objectiveScore": 290.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:54.873Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 8,
+        "objectiveScore": 196,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:55.161Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 4,
+        "objectiveScore": 312,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:55.456Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 8,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T12:01:55.745Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 7,
+        "objectiveScore": 35,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:56.605Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 9,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:56.892Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 46,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:57.197Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 14,
+        "objectiveScore": 27,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 46,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:57.493Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 2,
+        "objectiveScore": 326,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:57.773Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:58.053Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 8,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 46,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:58.367Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 5,
+        "objectiveScore": 306,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 48,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:58.661Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 270,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:58.939Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 9,
+        "objectiveScore": 282,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:59.224Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 12,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 48,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:59.520Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 7,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 46,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:01:59.810Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 12,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:02:00.083Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 20,
+        "wallBounces": 8,
+        "objectiveScore": 280,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:02:00.374Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 4,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 49,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:02:00.677Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 8,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0.013,
+        "ltmPatternCount": 50,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:02:00.970Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 11,
+        "objectiveScore": 241.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:02:01.238Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 8,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:02:01.525Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 0,
+        "objectiveScore": 348,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 46,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:02:01.840Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 2,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 12,
+        "objectiveScore": 160,
+        "ltmUsageRate": 0.021,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 46,
+        "timestamp": "2026-05-24T12:02:02.140Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 5,
+        "objectiveScore": 35,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:03.852Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 39,
+        "wallBounces": 8,
+        "objectiveScore": 39,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:04.133Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:04.433Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 9,
+        "objectiveScore": 31,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:04.728Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 4,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:05.004Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 9,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:05.290Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 6,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0.013,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:05.587Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 9,
+        "objectiveScore": 276,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:05.871Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 8,
+        "objectiveScore": 244,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:06.136Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 9,
+        "objectiveScore": 232,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:06.424Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 3,
+        "objectiveScore": 234,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:06.721Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 6,
+        "objectiveScore": 258,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:07.022Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 6,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:07.287Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 5,
+        "objectiveScore": 580,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:07.568Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 8,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:07.871Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:08.152Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 6,
+        "objectiveScore": 289,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:08.424Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 9,
+        "objectiveScore": 264.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:08.709Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 5,
+        "objectiveScore": 230.5,
+        "ltmUsageRate": 0.013,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:09.011Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 5,
+        "objectiveScore": 220.5,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 36,
+        "trainedPatternsAvailable": 36,
+        "timestamp": "2026-05-24T12:02:09.305Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 10,
+        "objectiveScore": 35,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:11.030Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 5,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:11.318Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 2,
+        "objectiveScore": 23,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:11.616Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 34,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:11.909Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 2,
+        "objectiveScore": 346,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:12.177Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 13,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:12.452Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:12.749Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 4,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:13.037Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:13.311Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 6,
+        "objectiveScore": 338,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:13.600Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 10,
+        "objectiveScore": 220,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 29,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:13.906Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 3,
+        "objectiveScore": 304,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 28,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:14.190Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 7,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:14.461Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 9,
+        "objectiveScore": 300,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:14.749Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:15.056Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 11,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 30,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:15.349Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 260.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:15.621Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 5,
+        "objectiveScore": 270.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:15.919Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 6,
+        "objectiveScore": 249,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 29,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:16.220Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 5,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 7,
+        "objectiveScore": 297.5,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 27,
+        "trainedPatternsAvailable": 27,
+        "timestamp": "2026-05-24T12:02:16.495Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 4,
+        "objectiveScore": 34,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:19.683Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 6,
+        "objectiveScore": 35,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:19.969Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 9,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:20.276Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 10,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:20.562Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:20.827Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 4,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:21.115Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 8,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:21.426Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 10,
+        "objectiveScore": 306,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:21.722Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 7,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:21.999Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 8,
+        "objectiveScore": 294,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:22.286Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 8,
+        "objectiveScore": 294,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:22.588Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 284,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:22.881Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 3,
+        "objectiveScore": 620,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:23.165Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 5,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:23.445Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 9,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:23.751Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 8,
+        "objectiveScore": 640,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:24.051Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 269,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:24.336Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 10,
+        "objectiveScore": 223,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:24.614Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 4,
+        "objectiveScore": 322,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 40,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:24.904Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 10,
+        "objectiveScore": 203,
+        "ltmUsageRate": 0.014,
+        "ltmPatternCount": 41,
+        "trainedPatternsAvailable": 40,
+        "timestamp": "2026-05-24T12:02:25.194Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 4,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:28.364Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 5,
+        "objectiveScore": 26,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:28.655Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 10,
+        "objectiveScore": 19,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:28.948Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 12,
+        "objectiveScore": 37,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:29.252Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 5,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:29.540Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 8,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:29.816Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 7,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:30.105Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 32,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:30.401Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 12,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:30.668Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 7,
+        "objectiveScore": 326,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:30.953Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 10,
+        "objectiveScore": 190,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 32,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:31.252Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 3,
+        "objectiveScore": 304,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:31.542Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 12,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:31.825Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:32.112Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 8,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:32.414Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 380,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:32.706Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 8,
+        "objectiveScore": 186,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:32.985Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 7,
+        "objectiveScore": 267.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:33.252Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 8,
+        "objectiveScore": 336,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:33.543Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 10,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 12,
+        "objectiveScore": 180,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 31,
+        "trainedPatternsAvailable": 31,
+        "timestamp": "2026-05-24T12:02:33.834Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 6,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:39.938Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 4,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:40.220Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 5,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:40.516Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 4,
+        "objectiveScore": 19,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:40.808Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 10,
+        "objectiveScore": 216,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:41.089Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 10,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:41.363Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 7,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:41.652Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 12,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:41.943Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 6,
+        "objectiveScore": 258,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:42.216Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 2,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:42.495Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 4,
+        "objectiveScore": 262,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:42.797Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 11,
+        "objectiveScore": 248,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:43.092Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 6,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:43.371Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 3,
+        "objectiveScore": 580,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:43.653Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 3,
+        "objectiveScore": 540,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:43.958Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 6,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:44.250Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 7,
+        "objectiveScore": 267.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:44.534Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 7,
+        "objectiveScore": 277.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:44.816Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 7,
+        "objectiveScore": 357.5,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:45.116Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 5,
+        "objectiveScore": 290.5,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 33,
+        "trainedPatternsAvailable": 33,
+        "timestamp": "2026-05-24T12:02:45.411Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 12,
+        "objectiveScore": 27,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:51.598Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 5,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:51.880Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 5,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:52.176Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 11,
+        "objectiveScore": 36,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:52.471Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 12,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:52.750Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:53.034Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:53.343Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 2,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:53.644Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 7,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:53.899Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 40,
+        "wallBounces": 7,
+        "objectiveScore": 386,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:54.173Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 16,
+        "objectiveScore": 238,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:54.469Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 11,
+        "objectiveScore": 348,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:54.761Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 8,
+        "objectiveScore": 300,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:55.038Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 7,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:55.324Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 5,
+        "objectiveScore": 500,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:55.627Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 3,
+        "objectiveScore": 580,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:55.925Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:56.205Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 6,
+        "objectiveScore": 279,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:56.502Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 5,
+        "objectiveScore": 170.5,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:56.795Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 20,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 20,
+        "wallBounces": 9,
+        "objectiveScore": 174.5,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 42,
+        "timestamp": "2026-05-24T12:02:57.095Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 8,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:09.125Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 5,
+        "objectiveScore": 23,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:09.408Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 9,
+        "objectiveScore": 33,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:09.715Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 5,
+        "objectiveScore": 25,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:10.005Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 7,
+        "objectiveScore": 306,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:10.280Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 9,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:10.541Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 9,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:10.834Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:11.126Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 238,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:11.392Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 270,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:11.668Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 7,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:11.975Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 8,
+        "objectiveScore": 304,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:12.268Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 44,
+        "wallBounces": 9,
+        "objectiveScore": 760,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:12.543Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:12.825Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 8,
+        "objectiveScore": 340,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:13.126Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 9,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:13.424Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 4,
+        "objectiveScore": 352,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:13.705Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 6,
+        "objectiveScore": 329,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:13.991Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 4,
+        "objectiveScore": 332,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:14.290Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 0,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 6,
+        "objectiveScore": 299,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 44,
+        "trainedPatternsAvailable": 44,
+        "timestamp": "2026-05-24T12:03:14.584Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 5,
+        "objectiveScore": 34,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:26.621Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 14,
+        "objectiveScore": 25,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:26.908Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 4,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:27.200Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 7,
+        "objectiveScore": 31,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:27.490Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 6,
+        "objectiveScore": 306,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:27.766Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 5,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:28.051Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 4,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0.001,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:28.357Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 5,
+        "objectiveScore": 246,
+        "ltmUsageRate": 0.002,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:28.649Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 15,
+        "objectiveScore": 240,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:28.934Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 7,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:29.222Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 11,
+        "objectiveScore": 238,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:29.527Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 11,
+        "objectiveScore": 198,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:29.821Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 7,
+        "objectiveScore": 360,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:30.089Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 6,
+        "objectiveScore": 320,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:30.375Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 5,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:30.678Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:30.982Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 4,
+        "objectiveScore": 232,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:31.254Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 10,
+        "objectiveScore": 163,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:31.529Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 14,
+        "objectiveScore": 227,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:31.852Z"
+      }
+    },
+    {
+      "experiment": 9,
+      "checkpoint": 40,
+      "rep": 1,
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 47,
+        "trainedPatternsAvailable": 47,
+        "timestamp": "2026-05-24T12:03:32.136Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2244 @@
+{
+  "experiment": 5,
+  "name": "Reward Structure Variation",
+  "timestamp": "2026-05-24T06:21:04.743Z",
+  "summary": {
+    "baseline": {
+      "A": {
+        "n": 5,
+        "variantLabel": "Baseline: Maximize Food",
+        "variantEmoji": "📦",
+        "mean": 28.4,
+        "std": 5.314,
+        "sem": 2.377,
+        "min": 22,
+        "max": 36,
+        "meanFoodEaten": 28.4,
+        "meanWallBounces": 6.2
+      },
+      "D": {
+        "n": 5,
+        "variantLabel": "Baseline: Maximize Food",
+        "variantEmoji": "📦",
+        "mean": 29,
+        "std": 7.537,
+        "sem": 3.37,
+        "min": 24,
+        "max": 44,
+        "meanFoodEaten": 29,
+        "meanWallBounces": 8.4
+      },
+      "_generalizationIndex": 2.1
+    },
+    "efficiency": {
+      "A": {
+        "n": 5,
+        "variantLabel": "Efficiency: Food per Energy",
+        "variantEmoji": "🔋",
+        "mean": 28.4,
+        "std": 1.939,
+        "sem": 0.867,
+        "min": 25.6,
+        "max": 30.6,
+        "meanFoodEaten": 30.8,
+        "meanWallBounces": 10
+      },
+      "D": {
+        "n": 5,
+        "variantLabel": "Efficiency: Food per Energy",
+        "variantEmoji": "🔋",
+        "mean": 25,
+        "std": 4.758,
+        "sem": 2.128,
+        "min": 19.6,
+        "max": 32.6,
+        "meanFoodEaten": 27.4,
+        "meanWallBounces": 6.2
+      },
+      "_generalizationIndex": -12
+    },
+    "accuracy": {
+      "A": {
+        "n": 5,
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "variantEmoji": "🛡️",
+        "mean": 27.05,
+        "std": 5.043,
+        "sem": 2.255,
+        "min": 22.75,
+        "max": 36.8,
+        "meanFoodEaten": 27.4,
+        "meanWallBounces": 7
+      },
+      "D": {
+        "n": 5,
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "variantEmoji": "🛡️",
+        "mean": 27.12,
+        "std": 3.338,
+        "sem": 1.493,
+        "min": 23.5,
+        "max": 32.5,
+        "meanFoodEaten": 27.6,
+        "meanWallBounces": 9.6
+      },
+      "_generalizationIndex": 0.3
+    },
+    "speed": {
+      "A": {
+        "n": 5,
+        "variantLabel": "Speed: Time Pressure",
+        "variantEmoji": "⚡",
+        "mean": 31.6,
+        "std": 4.63,
+        "sem": 2.071,
+        "min": 24,
+        "max": 38,
+        "meanFoodEaten": 27.8,
+        "meanWallBounces": 9.2
+      },
+      "D": {
+        "n": 5,
+        "variantLabel": "Speed: Time Pressure",
+        "variantEmoji": "⚡",
+        "mean": 32.8,
+        "std": 4.49,
+        "sem": 2.008,
+        "min": 28,
+        "max": 40,
+        "meanFoodEaten": 28.4,
+        "meanWallBounces": 8.6
+      },
+      "_generalizationIndex": 3.8
+    },
+    "balance": {
+      "A": {
+        "n": 5,
+        "variantLabel": "Balance: Multi-Objective",
+        "variantEmoji": "⚖️",
+        "mean": 41.88,
+        "std": 13.016,
+        "sem": 5.821,
+        "min": 16.2,
+        "max": 51,
+        "meanFoodEaten": 29,
+        "meanWallBounces": 8.4
+      },
+      "D": {
+        "n": 5,
+        "variantLabel": "Balance: Multi-Objective",
+        "variantEmoji": "⚖️",
+        "mean": 39.83,
+        "std": 6.088,
+        "sem": 2.723,
+        "min": 28.45,
+        "max": 44.85,
+        "meanFoodEaten": 27.6,
+        "meanWallBounces": 7.4
+      },
+      "_generalizationIndex": -4.9
+    }
+  },
+  "trials": [
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 36,
+        "wallBounces": 6,
+        "finalScore": 36,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          4,
+          5,
+          8,
+          15,
+          19,
+          26,
+          28,
+          30,
+          33,
+          36
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:50.695Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 7,
+        "finalScore": 27,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          3,
+          3,
+          9,
+          12,
+          16,
+          17,
+          19,
+          23,
+          26,
+          27
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:50.983Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 22,
+        "wallBounces": 4,
+        "finalScore": 22,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          5,
+          7,
+          10,
+          12,
+          14,
+          17,
+          19,
+          20,
+          22
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:51.259Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 24,
+        "wallBounces": 4,
+        "finalScore": 24,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          1,
+          3,
+          7,
+          9,
+          12,
+          15,
+          17,
+          18,
+          21,
+          24
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:51.537Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 33,
+        "wallBounces": 10,
+        "finalScore": 33,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          3,
+          5,
+          8,
+          10,
+          14,
+          17,
+          19,
+          21,
+          26,
+          33
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:51.807Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 44,
+        "wallBounces": 13,
+        "finalScore": 44,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 24,
+        "consolidationsTriggered": 735,
+        "avgPatternReliability": 0.08430501128157918,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 24,
+        "learningCurve": [
+          3,
+          6,
+          12,
+          20,
+          26,
+          31,
+          36,
+          39,
+          41,
+          44
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:52.105Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 26,
+        "wallBounces": 9,
+        "finalScore": 26,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 54,
+        "consolidationsTriggered": 858,
+        "avgPatternReliability": 0.0744317015472846,
+        "ltmUsageRate": 0.019,
+        "ltmPatternCount": 54,
+        "learningCurve": [
+          3,
+          5,
+          9,
+          10,
+          12,
+          12,
+          17,
+          18,
+          23,
+          26
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:52.399Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 25,
+        "wallBounces": 4,
+        "finalScore": 25,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 18,
+        "consolidationsTriggered": 721,
+        "avgPatternReliability": 0.04399152889683693,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 18,
+        "learningCurve": [
+          4,
+          5,
+          6,
+          9,
+          13,
+          15,
+          17,
+          19,
+          22,
+          25
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:52.686Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 26,
+        "wallBounces": 9,
+        "finalScore": 26,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 9,
+        "consolidationsTriggered": 811,
+        "avgPatternReliability": 0.07570426073153068,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 9,
+        "learningCurve": [
+          5,
+          6,
+          8,
+          11,
+          15,
+          18,
+          20,
+          22,
+          24,
+          26
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:52.967Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "baseline",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 24,
+        "wallBounces": 7,
+        "finalScore": 24,
+        "rewardVariant": "baseline",
+        "variantLabel": "Baseline: Maximize Food",
+        "patternsConsolidated": 31,
+        "consolidationsTriggered": 827,
+        "avgPatternReliability": 0.05676475094073284,
+        "ltmUsageRate": 0.013,
+        "ltmPatternCount": 31,
+        "learningCurve": [
+          3,
+          3,
+          6,
+          6,
+          9,
+          12,
+          14,
+          17,
+          22,
+          24
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:53.253Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 28,
+        "wallBounces": 9,
+        "finalScore": 25.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          3,
+          6,
+          9,
+          11,
+          14,
+          16,
+          20,
+          22,
+          26,
+          28
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:53.522Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 33,
+        "wallBounces": 7,
+        "finalScore": 30.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          6,
+          11,
+          15,
+          16,
+          19,
+          23,
+          26,
+          31,
+          33
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:53.810Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 30,
+        "wallBounces": 11,
+        "finalScore": 27.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          3,
+          5,
+          6,
+          10,
+          15,
+          17,
+          22,
+          23,
+          23,
+          30
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:54.090Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 30,
+        "wallBounces": 15,
+        "finalScore": 27.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          3,
+          3,
+          5,
+          6,
+          10,
+          15,
+          20,
+          24,
+          26,
+          30
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:54.386Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 33,
+        "wallBounces": 8,
+        "finalScore": 30.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          4,
+          6,
+          14,
+          18,
+          22,
+          25,
+          28,
+          30,
+          33
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:54.674Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 35,
+        "wallBounces": 7,
+        "finalScore": 32.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 20,
+        "consolidationsTriggered": 842,
+        "avgPatternReliability": 0.05310590406975074,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 20,
+        "learningCurve": [
+          6,
+          8,
+          12,
+          15,
+          17,
+          19,
+          20,
+          22,
+          30,
+          35
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:54.968Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 22,
+        "wallBounces": 8,
+        "finalScore": 19.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 12,
+        "consolidationsTriggered": 831,
+        "avgPatternReliability": 0.043006224507763736,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 12,
+        "learningCurve": [
+          3,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          17,
+          19,
+          22
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:55.254Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 23,
+        "wallBounces": 3,
+        "finalScore": 20.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 21,
+        "consolidationsTriggered": 765,
+        "avgPatternReliability": 0.029771645112068344,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 21,
+        "learningCurve": [
+          0,
+          2,
+          4,
+          9,
+          10,
+          15,
+          16,
+          19,
+          21,
+          23
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:55.544Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 30,
+        "wallBounces": 8,
+        "finalScore": 27.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 42,
+        "consolidationsTriggered": 815,
+        "avgPatternReliability": 0.06249449651160451,
+        "ltmUsageRate": 0.017,
+        "ltmPatternCount": 42,
+        "learningCurve": [
+          1,
+          5,
+          8,
+          13,
+          16,
+          18,
+          22,
+          26,
+          30,
+          30
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:55.843Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "efficiency",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 5,
+        "finalScore": 24.6,
+        "rewardVariant": "efficiency",
+        "variantLabel": "Efficiency: Food per Energy",
+        "patternsConsolidated": 10,
+        "consolidationsTriggered": 812,
+        "avgPatternReliability": 0.03214538419798524,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 10,
+        "learningCurve": [
+          3,
+          6,
+          7,
+          11,
+          15,
+          18,
+          21,
+          23,
+          23,
+          27
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:56.123Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 24,
+        "wallBounces": 6,
+        "finalScore": 23.7,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          4,
+          8,
+          11,
+          16,
+          17,
+          19,
+          22,
+          24,
+          24
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:56.400Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 14,
+        "finalScore": 26.3,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          5,
+          7,
+          10,
+          13,
+          17,
+          21,
+          24,
+          27,
+          27
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:56.683Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 26,
+        "wallBounces": 6,
+        "finalScore": 25.7,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          1,
+          2,
+          6,
+          10,
+          14,
+          14,
+          15,
+          19,
+          23,
+          26
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:56.974Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 23,
+        "wallBounces": 5,
+        "finalScore": 22.75,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          4,
+          8,
+          10,
+          15,
+          17,
+          19,
+          21,
+          21,
+          23
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:57.262Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 37,
+        "wallBounces": 4,
+        "finalScore": 36.8,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          3,
+          8,
+          13,
+          15,
+          23,
+          25,
+          28,
+          30,
+          33,
+          37
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:57.548Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 24,
+        "wallBounces": 7,
+        "finalScore": 23.65,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 32,
+        "consolidationsTriggered": 775,
+        "avgPatternReliability": 0.07203884870785467,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 32,
+        "learningCurve": [
+          6,
+          8,
+          11,
+          12,
+          17,
+          19,
+          21,
+          22,
+          23,
+          24
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:57.843Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 29,
+        "wallBounces": 15,
+        "finalScore": 28.25,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 55,
+        "consolidationsTriggered": 845,
+        "avgPatternReliability": 0.07718285345903303,
+        "ltmUsageRate": 0.02,
+        "ltmPatternCount": 55,
+        "learningCurve": [
+          1,
+          3,
+          5,
+          8,
+          9,
+          15,
+          18,
+          21,
+          27,
+          29
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:58.142Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 28,
+        "wallBounces": 6,
+        "finalScore": 27.7,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 12,
+        "consolidationsTriggered": 833,
+        "avgPatternReliability": 0.031377448425202945,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 12,
+        "learningCurve": [
+          4,
+          7,
+          9,
+          10,
+          13,
+          14,
+          18,
+          25,
+          27,
+          28
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:58.442Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 33,
+        "wallBounces": 10,
+        "finalScore": 32.5,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 28,
+        "consolidationsTriggered": 757,
+        "avgPatternReliability": 0.0735768890075758,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 28,
+        "learningCurve": [
+          3,
+          6,
+          9,
+          13,
+          18,
+          21,
+          23,
+          23,
+          27,
+          33
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:58.723Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "accuracy",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 24,
+        "wallBounces": 10,
+        "finalScore": 23.5,
+        "rewardVariant": "accuracy",
+        "variantLabel": "Safety: Minimal Wall Contact",
+        "patternsConsolidated": 19,
+        "consolidationsTriggered": 779,
+        "avgPatternReliability": 0.034380250855505314,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 19,
+        "learningCurve": [
+          4,
+          7,
+          12,
+          14,
+          17,
+          19,
+          21,
+          21,
+          22,
+          24
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:59.012Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 31,
+        "wallBounces": 2,
+        "finalScore": 38,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          4,
+          10,
+          15,
+          15,
+          19,
+          21,
+          23,
+          25,
+          29,
+          31
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:59.286Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 28,
+        "wallBounces": 11,
+        "finalScore": 32,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          5,
+          6,
+          7,
+          11,
+          12,
+          12,
+          14,
+          18,
+          24,
+          28
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:59.565Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 18,
+        "finalScore": 30,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          5,
+          6,
+          6,
+          7,
+          10,
+          11,
+          14,
+          19,
+          24,
+          27
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:20:59.851Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 24,
+        "wallBounces": 8,
+        "finalScore": 24,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          3,
+          4,
+          6,
+          7,
+          9,
+          12,
+          14,
+          16,
+          18,
+          24
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:00.140Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 29,
+        "wallBounces": 7,
+        "finalScore": 34,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          1,
+          6,
+          10,
+          13,
+          16,
+          18,
+          18,
+          20,
+          25,
+          29
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:00.427Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 7,
+        "finalScore": 30,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 41,
+        "consolidationsTriggered": 787,
+        "avgPatternReliability": 0.05471610613727692,
+        "ltmUsageRate": 0.015,
+        "ltmPatternCount": 41,
+        "learningCurve": [
+          3,
+          7,
+          12,
+          14,
+          16,
+          17,
+          17,
+          22,
+          24,
+          27
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:00.725Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 30,
+        "wallBounces": 4,
+        "finalScore": 36,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 38,
+        "consolidationsTriggered": 822,
+        "avgPatternReliability": 0.06102864358460207,
+        "ltmUsageRate": 0.014,
+        "ltmPatternCount": 38,
+        "learningCurve": [
+          3,
+          5,
+          11,
+          12,
+          13,
+          16,
+          22,
+          24,
+          29,
+          30
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:01.014Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 32,
+        "wallBounces": 12,
+        "finalScore": 40,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 16,
+        "consolidationsTriggered": 819,
+        "avgPatternReliability": 0.020695620026411232,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 16,
+        "learningCurve": [
+          2,
+          4,
+          10,
+          11,
+          14,
+          17,
+          19,
+          23,
+          27,
+          32
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:01.304Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 8,
+        "finalScore": 30,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 17,
+        "consolidationsTriggered": 855,
+        "avgPatternReliability": 0.04811003724351994,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 17,
+        "learningCurve": [
+          4,
+          5,
+          7,
+          9,
+          12,
+          15,
+          18,
+          21,
+          23,
+          27
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:01.582Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "speed",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 26,
+        "wallBounces": 12,
+        "finalScore": 28,
+        "rewardVariant": "speed",
+        "variantLabel": "Speed: Time Pressure",
+        "patternsConsolidated": 28,
+        "consolidationsTriggered": 778,
+        "avgPatternReliability": 0.0378143237554751,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 28,
+        "learningCurve": [
+          3,
+          5,
+          11,
+          14,
+          17,
+          20,
+          21,
+          22,
+          24,
+          26
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:01.875Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 33,
+        "wallBounces": 3,
+        "finalScore": 48.15,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          5,
+          8,
+          10,
+          14,
+          18,
+          22,
+          26,
+          29,
+          33
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:02.156Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 34,
+        "wallBounces": 6,
+        "finalScore": 49.5,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          7,
+          8,
+          13,
+          19,
+          22,
+          22,
+          25,
+          29,
+          34
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:02.441Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 12,
+        "wallBounces": 12,
+        "finalScore": 16.2,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          2,
+          5,
+          6,
+          11,
+          11,
+          11,
+          12,
+          12,
+          12,
+          12
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:02.728Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 35,
+        "wallBounces": 6,
+        "finalScore": 51,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          5,
+          7,
+          9,
+          10,
+          14,
+          15,
+          20,
+          26,
+          31,
+          35
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:03.016Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "A",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 31,
+        "wallBounces": 15,
+        "finalScore": 44.55,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 0,
+        "consolidationsTriggered": 0,
+        "avgPatternReliability": 0,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "learningCurve": [
+          3,
+          6,
+          7,
+          9,
+          9,
+          13,
+          19,
+          23,
+          27,
+          31
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:03.299Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 0,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 27,
+        "wallBounces": 7,
+        "finalScore": 38.949999999999996,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 30,
+        "consolidationsTriggered": 819,
+        "avgPatternReliability": 0.058097847122204865,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 30,
+        "learningCurve": [
+          6,
+          7,
+          8,
+          13,
+          15,
+          19,
+          20,
+          23,
+          25,
+          27
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:03.595Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 1,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 31,
+        "wallBounces": 9,
+        "finalScore": 44.849999999999994,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 15,
+        "consolidationsTriggered": 816,
+        "avgPatternReliability": 0.030350658276561866,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 15,
+        "learningCurve": [
+          5,
+          8,
+          10,
+          14,
+          15,
+          18,
+          19,
+          25,
+          28,
+          31
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:03.876Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 2,
+      "agent": 2,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 20,
+        "wallBounces": 7,
+        "finalScore": 28.45,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 18,
+        "consolidationsTriggered": 853,
+        "avgPatternReliability": 0.03890224436801001,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 18,
+        "learningCurve": [
+          1,
+          3,
+          9,
+          11,
+          13,
+          15,
+          15,
+          16,
+          17,
+          20
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:04.162Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 3,
+      "agent": 0,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 31,
+        "wallBounces": 10,
+        "finalScore": 44.8,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 38,
+        "consolidationsTriggered": 763,
+        "avgPatternReliability": 0.06247026047941381,
+        "ltmUsageRate": 0.015,
+        "ltmPatternCount": 38,
+        "learningCurve": [
+          2,
+          6,
+          10,
+          14,
+          17,
+          20,
+          23,
+          26,
+          29,
+          31
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:04.459Z"
+      }
+    },
+    {
+      "experiment": 5,
+      "condition": "D",
+      "trial": 4,
+      "agent": 1,
+      "params": {
+        "rewardVariantName": "balance",
+        "obstacleCount": 15,
+        "foodCount": 20
+      },
+      "results": {
+        "foodEaten": 29,
+        "wallBounces": 4,
+        "finalScore": 42.099999999999994,
+        "rewardVariant": "balance",
+        "variantLabel": "Balance: Multi-Objective",
+        "patternsConsolidated": 39,
+        "consolidationsTriggered": 798,
+        "avgPatternReliability": 0.06527459930337895,
+        "ltmUsageRate": 0.015,
+        "ltmPatternCount": 39,
+        "learningCurve": [
+          2,
+          7,
+          9,
+          10,
+          15,
+          17,
+          20,
+          23,
+          24,
+          29
+        ],
+        "stressors": {
+          "noiseSigma": 0,
+          "gravityMultiplier": 1,
+          "radiationRate": 0,
+          "driftRate": 0
+        },
+        "timestamp": "2026-05-24T06:21:04.742Z"
+      }
+    }
+  ]
+}

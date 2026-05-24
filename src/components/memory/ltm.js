@@ -26,6 +26,14 @@ const VALID_CONTEXTS = ['exploration', 'foraging', 'avoidance'];
 /** z-score for 95 % Wilson confidence interval. */
 const Z_95 = 1.96;
 
+/**
+ * Reliability floor applied in recordUsage().
+ * Keeps the value above zero so a run of early failures cannot permanently
+ * suppress a pattern before it has accumulated enough positive evidence.
+ * Must match MEMORY_CONFIG.RELIABILITY_FLOOR in EXPERIMENT_CONFIG.js.
+ */
+const RELIABILITY_FLOOR = 0.10;
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 /**
@@ -238,6 +246,8 @@ class LTMPattern {
 
     // Reliability: Laplace-smoothed frequency (avoids 0 and 1 extremes early on)
     this.reliability = (this.successCount + 1) / (this.usageCount + 2);
+    // Floor prevents a few early failures from permanently zeroing out a pattern
+    this.reliability = Math.max(RELIABILITY_FLOOR, this.reliability);
 
     // Utility: exponential moving average of reward signal
     const alpha = 0.1;

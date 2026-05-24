@@ -6,11 +6,15 @@ import { ConsolidationEngine } from './components/memory/ConsolidationEngine.js'
 import { DualMemoryController } from './components/memory/DualMemoryController.js';
 import { ExperimentRunner, FREE_PLAY_FLAGS } from './components/ExperimentRunner.js';
 import { ExperimentRunner as ExperimentRunnerV2 } from './components/ExperimentRunner_v2.js';
+import { SIMULATION_CONFIG, EXPERIMENT_CONFIG as EXP_CFG } from './components/EXPERIMENT_CONFIG.js';
 
-const N = 25;
-const TRIAL_DURATION = 3600;
-const OBS_R = 85, FOOD_R = 150, AGENT_R = 9, FOOD_R_PX = 7;
-const SA = [0, Math.PI/4, Math.PI/2, -Math.PI/4, -Math.PI/2];
+const N            = SIMULATION_CONFIG.HOPFIELD_NEURONS;
+const TRIAL_DURATION = 3600;   // free-play UI timer; experiments use EXP_CFG.TRIAL_DURATION_FRAMES
+const OBS_R        = SIMULATION_CONFIG.OBSTACLE_DETECTION_RANGE;
+const FOOD_R       = SIMULATION_CONFIG.FOOD_DETECTION_RANGE;
+const AGENT_R      = SIMULATION_CONFIG.AGENT_RADIUS;
+const FOOD_R_PX    = SIMULATION_CONFIG.FOOD_RADIUS;
+const SA           = SIMULATION_CONFIG.SENSOR_ANGLES;
 
 function makePat(obs, food, motor) {
   const d = Array(N).fill(-1);
@@ -313,7 +317,7 @@ function initWorld(W, H, personalityIndices) {
       // 0.25: fresh patterns start at reliability≈0.5 × cs≈0.4 = 0.20, so anything
       // above ~0.22 requires at least one successful strengthening pass first.
       // 0.30 (old default) was still too high — patterns were never usable early on.
-      ltmConfidenceThreshold: 0.25,
+      ltmConfidenceThreshold: 0.01,
       explorationRate:        0.2,
       actionWeightSTM:        0.6,
     });
@@ -615,12 +619,39 @@ export default function NeuroAgent() {
   const [personalityIndices, setPersonalityIndices] = useState([0, 1, 2]);
   const [noiseOverride, setNoiseOverride] = useState(null); // 0-15%
 
-  // ── Experiment 2 state ──
+  // ── Experiment 2 & 3 state ──
   const [selectedExp, setSelectedExp] = useState(1);
   const [complexityLevel, setComplexityLevel] = useState(1);
   const exp2RunnerRef = useRef(null);
   const [exp2Status, setExp2Status] = useState('idle'); // 'idle' | 'running' | 'complete' | 'error'
   const [exp2Progress, setExp2Progress] = useState(null);
+  const exp3RunnerRef = useRef(null);
+  const [exp3Status, setExp3Status] = useState('idle');
+  const [exp3Progress, setExp3Progress] = useState(null);
+  const exp4RunnerRef = useRef(null);
+  const [exp4Status, setExp4Status] = useState('idle');
+  const [exp4Progress, setExp4Progress] = useState(null);
+  const exp45RunnerRef = useRef(null);
+  const [exp45Status, setExp45Status] = useState('idle');
+  const [exp45Progress, setExp45Progress] = useState(null);
+  const exp5RunnerRef = useRef(null);
+  const [exp5Status, setExp5Status] = useState('idle');
+  const [exp5Progress, setExp5Progress] = useState(null);
+  const exp55RunnerRef = useRef(null);
+  const [exp55Status, setExp55Status] = useState('idle');
+  const [exp55Progress, setExp55Progress] = useState(null);
+  const exp555RunnerRef = useRef(null);
+  const [exp555Status, setExp555Status] = useState('idle');
+  const [exp555Progress, setExp555Progress] = useState(null);
+  const exp6RunnerRef = useRef(null);
+  const [exp6Status, setExp6Status] = useState('idle');
+  const [exp6Progress, setExp6Progress] = useState(null);
+  const exp8RunnerRef = useRef(null);
+  const [exp8Status, setExp8Status] = useState('idle');
+  const [exp8Progress, setExp8Progress] = useState(null);
+  const exp9RunnerRef = useRef(null);
+  const [exp9Status, setExp9Status] = useState('idle');
+  const [exp9Progress, setExp9Progress] = useState(null);
 
   useEffect(()=>{
     const el = brainDiv.current;
@@ -989,6 +1020,232 @@ export default function NeuroAgent() {
     setExp2Progress(null);
   }, []);
 
+  const handleRunExp3 = useCallback(async () => {
+    if (exp3Status === 'running' || exp2Status === 'running') return;
+    setExp3Status('running');
+    // 3 profiles × 5 levels × 4 conditions × 15 trials = 900
+    setExp3Progress({ completedTrials: 0, totalTrials: 900, percentComplete: '0.0' });
+    const runner = new ExperimentRunnerV2();
+    exp3RunnerRef.current = runner;
+    runner.onProgressUpdate = (info) => { setExp3Progress({ ...info }); };
+    try {
+      await runner.runExperiment(3);
+      setExp3Status(runner._stopped ? 'idle' : 'complete');
+    } catch (err) {
+      console.error('[App] Experiment 3 failed:', err);
+      setExp3Status('error');
+    } finally {
+      exp3RunnerRef.current = null;
+    }
+  }, [exp3Status, exp2Status]);
+
+  const handleStopExp3 = useCallback(() => {
+    exp3RunnerRef.current?.stop();
+    setExp3Status('idle');
+    setExp3Progress(null);
+  }, []);
+
+  const handleRunExp4 = useCallback(async () => {
+    if (exp4Status === 'running' || exp3Status === 'running' || exp2Status === 'running') return;
+    setExp4Status('running');
+    // Phase 1 scaling: 4×2×4×5=160  |  Phase 2 interference: 3×2×2×5=60  → 220 total
+    setExp4Progress({ completedTrials: 0, totalTrials: 220, percentComplete: '0.0' });
+    const runner = new ExperimentRunnerV2();
+    exp4RunnerRef.current = runner;
+    runner.onProgressUpdate = (info) => { setExp4Progress({ ...info }); };
+    try {
+      await runner.runExperiment(4);
+      setExp4Status(runner._stopped ? 'idle' : 'complete');
+    } catch (err) {
+      console.error('[App] Experiment 4 failed:', err);
+      setExp4Status('error');
+    } finally {
+      exp4RunnerRef.current = null;
+    }
+  }, [exp4Status, exp3Status, exp2Status]);
+
+  const handleStopExp4 = useCallback(() => {
+    exp4RunnerRef.current?.stop();
+    setExp4Status('idle');
+    setExp4Progress(null);
+  }, []);
+
+  const handleRunExp45 = useCallback(async () => {
+    if (exp45Status === 'running' || exp4Status === 'running' || exp3Status === 'running' || exp2Status === 'running') return;
+    setExp45Status('running');
+    // 2 variants × 4 counts × 2 levels × 2 conditions × 5 trials = 160
+    setExp45Progress({ completedTrials: 0, totalTrials: 160, percentComplete: '0.0' });
+    const runner = new ExperimentRunnerV2();
+    exp45RunnerRef.current = runner;
+    runner.onProgressUpdate = (info) => { setExp45Progress({ ...info }); };
+    try {
+      await runner.runExperiment(4.5);
+      setExp45Status(runner._stopped ? 'idle' : 'complete');
+    } catch (err) {
+      console.error('[App] Experiment 4.5 failed:', err);
+      setExp45Status('error');
+    } finally {
+      exp45RunnerRef.current = null;
+    }
+  }, [exp45Status, exp4Status, exp3Status, exp2Status]);
+
+  const handleStopExp45 = useCallback(() => {
+    exp45RunnerRef.current?.stop();
+    setExp45Status('idle');
+    setExp45Progress(null);
+  }, []);
+
+  const handleRunExp5 = useCallback(async () => {
+    if (exp5Status === 'running' || exp45Status === 'running' || exp4Status === 'running'
+        || exp3Status === 'running' || exp2Status === 'running') return;
+    setExp5Status('running');
+    // 5 variants × 2 conditions × 5 trials = 50
+    setExp5Progress({ completedTrials: 0, totalTrials: 50, percentComplete: '0.0' });
+    const runner = new ExperimentRunnerV2();
+    exp5RunnerRef.current = runner;
+    runner.onProgressUpdate = (info) => { setExp5Progress({ ...info }); };
+    try {
+      await runner.runExperiment(5);
+      setExp5Status(runner._stopped ? 'idle' : 'complete');
+    } catch (err) {
+      console.error('[App] Experiment 5 failed:', err);
+      setExp5Status('error');
+    } finally {
+      exp5RunnerRef.current = null;
+    }
+  }, [exp5Status, exp45Status, exp4Status, exp3Status, exp2Status]);
+
+  const handleStopExp5 = useCallback(() => {
+    exp5RunnerRef.current?.stop();
+    setExp5Status('idle');
+    setExp5Progress(null);
+  }, []);
+
+  const handleRunExp55 = useCallback(async () => {
+    if (exp55Status === 'running' || exp5Status === 'running' || exp45Status === 'running'
+        || exp4Status === 'running' || exp3Status === 'running' || exp2Status === 'running') return;
+    setExp55Status('running');
+    // 2 × 10 training + 2 × 5 obj × 2 cond × 5 testing = 120
+    setExp55Progress({ completedTrials: 0, totalTrials: 120, percentComplete: '0.0',
+                       phase: 'training', trainedPatterns: 0 });
+    const runner = new ExperimentRunnerV2();
+    exp55RunnerRef.current = runner;
+    runner.onProgressUpdate = (info) => { setExp55Progress({ ...info }); };
+    try {
+      await runner.runExperiment(5.5);
+      setExp55Status(runner._stopped ? 'idle' : 'complete');
+    } catch (err) {
+      console.error('[App] Experiment 5.5 failed:', err);
+      setExp55Status('error');
+    } finally {
+      exp55RunnerRef.current = null;
+    }
+  }, [exp55Status, exp5Status, exp45Status, exp4Status, exp3Status, exp2Status]);
+
+  const handleStopExp55 = useCallback(() => {
+    exp55RunnerRef.current?.stop();
+    setExp55Status('idle');
+    setExp55Progress(null);
+  }, []);
+
+  const handleRunExp555 = useCallback(async () => {
+    if (exp555Status === 'running' || exp55Status === 'running' || exp5Status === 'running'
+        || exp45Status === 'running' || exp4Status === 'running'
+        || exp3Status === 'running'  || exp2Status === 'running') return;
+    setExp555Status('running');
+    // 5 × 10 training + 5 × 5 obj × 2 cond × 5 testing = 300
+    setExp555Progress({ completedTrials: 0, totalTrials: 300, percentComplete: '0.0',
+                        phase: 'training', trainedPatterns: 0 });
+    const runner = new ExperimentRunnerV2();
+    exp555RunnerRef.current = runner;
+    runner.onProgressUpdate = (info) => { setExp555Progress({ ...info }); };
+    try {
+      await runner.runExperiment('5.5.5');
+      setExp555Status(runner._stopped ? 'idle' : 'complete');
+    } catch (err) {
+      console.error('[App] Experiment 5.5.5 failed:', err);
+      setExp555Status('error');
+    } finally {
+      exp555RunnerRef.current = null;
+    }
+  }, [exp555Status, exp55Status, exp5Status, exp45Status, exp4Status, exp3Status, exp2Status]);
+
+  const handleStopExp555 = useCallback(() => {
+    exp555RunnerRef.current?.stop();
+    setExp555Status('idle');
+    setExp555Progress(null);
+  }, []);
+
+  const handleRunExp6 = useCallback(async () => {
+    if (exp6Status === 'running' || exp555Status === 'running' || exp55Status === 'running'
+      || exp5Status === 'running' || exp45Status === 'running' || exp4Status === 'running'
+      || exp3Status === 'running' || exp2Status === 'running') return;
+    setExp6Status('running');
+    setExp6Progress(null);
+    const runner = new ExperimentRunnerV2();
+    runner.onProgressUpdate = (info) => setExp6Progress(info);
+    exp6RunnerRef.current = runner;
+    try {
+      await runner.runExperiment(6);
+      setExp6Status('complete');
+    } finally {
+      exp6RunnerRef.current = null;
+    }
+  }, [exp6Status, exp555Status, exp55Status, exp5Status, exp45Status, exp4Status, exp3Status, exp2Status]);
+
+  const handleStopExp6 = useCallback(() => {
+    exp6RunnerRef.current?.stop();
+    setExp6Status('idle');
+    setExp6Progress(null);
+  }, []);
+
+  const handleRunExp8 = useCallback(async () => {
+    if (exp8Status === 'running' || exp6Status === 'running' || exp555Status === 'running'
+      || exp55Status === 'running' || exp5Status === 'running' || exp45Status === 'running'
+      || exp4Status === 'running' || exp3Status === 'running' || exp2Status === 'running') return;
+    setExp8Status('running');
+    setExp8Progress(null);
+    const runner = new ExperimentRunnerV2();
+    runner.onProgressUpdate = (info) => setExp8Progress(info);
+    exp8RunnerRef.current = runner;
+    try {
+      await runner.runExperiment(8);
+      setExp8Status('complete');
+    } finally {
+      exp8RunnerRef.current = null;
+    }
+  }, [exp8Status, exp6Status, exp555Status, exp55Status, exp5Status, exp45Status, exp4Status, exp3Status, exp2Status]);
+
+  const handleStopExp8 = useCallback(() => {
+    exp8RunnerRef.current?.stop();
+    setExp8Status('idle');
+    setExp8Progress(null);
+  }, []);
+
+  const handleRunExp9 = useCallback(async () => {
+    if (exp9Status === 'running' || exp8Status === 'running' || exp6Status === 'running'
+      || exp555Status === 'running' || exp55Status === 'running' || exp5Status === 'running'
+      || exp45Status === 'running' || exp4Status === 'running'
+      || exp3Status === 'running' || exp2Status === 'running') return;
+    setExp9Status('running');
+    setExp9Progress(null);
+    const runner = new ExperimentRunnerV2();
+    runner.onProgressUpdate = (info) => setExp9Progress(info);
+    exp9RunnerRef.current = runner;
+    try {
+      await runner.runExperiment(9);
+      setExp9Status('complete');
+    } finally {
+      exp9RunnerRef.current = null;
+    }
+  }, [exp9Status, exp8Status, exp6Status, exp555Status, exp55Status, exp5Status, exp45Status, exp4Status, exp3Status, exp2Status]);
+
+  const handleStopExp9 = useCallback(() => {
+    exp9RunnerRef.current?.stop();
+    setExp9Status('idle');
+    setExp9Progress(null);
+  }, []);
+
   const toggleRun = useCallback(()=>{
     if(running){
       if (experimentMode) { stopExperiment(); return; }
@@ -1097,27 +1354,43 @@ export default function NeuroAgent() {
           </div>
         )}
 
-        {/* ── Experiment sub-selector (EXP 1 / EXP 2) ── */}
-        {experimentMode && (
-          <div style={{display:"flex", gap:3}}>
-            <button
-              onClick={()=>setSelectedExp(1)}
-              disabled={running || exp2Status==='running'}
-              style={{flex:1, padding:"4px 2px", fontSize:6, letterSpacing:1, fontFamily:"inherit",
-                background: selectedExp===1 ? "#aa00cc" : "#ffffff",
-                color:      selectedExp===1 ? "#ffffff"  : "#aa00cc",
-                border:"1px solid #aa00cc", borderRadius:3, cursor:"pointer"}}
-            >EXP 1</button>
-            <button
-              onClick={()=>setSelectedExp(2)}
-              disabled={running || exp2Status==='running'}
-              style={{flex:1, padding:"4px 2px", fontSize:6, letterSpacing:1, fontFamily:"inherit",
-                background: selectedExp===2 ? "#006699" : "#ffffff",
-                color:      selectedExp===2 ? "#ffffff"  : "#006699",
-                border:"1px solid #006699", borderRadius:3, cursor:"pointer"}}
-            >EXP 2</button>
-          </div>
-        )}
+        {/* ── Experiment sub-selector (two rows) ── */}
+        {experimentMode && (() => {
+          const anyRunning = running || exp2Status==='running' || exp3Status==='running' || exp4Status==='running' || exp45Status==='running' || exp5Status==='running' || exp55Status==='running' || exp555Status==='running' || exp6Status==='running' || exp8Status==='running' || exp9Status==='running';
+          const btn = (n, color, label) => (
+            <button key={n}
+              onClick={()=>setSelectedExp(n)}
+              disabled={anyRunning}
+              style={{flex:1, padding:"4px 1px", fontSize:5.5, letterSpacing:0.5, fontFamily:"inherit",
+                background: selectedExp===n ? color : "#ffffff",
+                color:      selectedExp===n ? "#ffffff" : color,
+                border:`1px solid ${color}`, borderRadius:3, cursor:"pointer"}}
+            >{label}</button>
+          );
+          return (
+            <div style={{display:"flex", flexDirection:"column", gap:3}}>
+              <div style={{display:"flex", gap:3}}>
+                {btn(1, "#aa00cc", "EXP 1")}
+                {btn(2, "#006699", "EXP 2")}
+                {btn(3, "#cc6600", "EXP 3")}
+              </div>
+              <div style={{display:"flex", gap:3}}>
+                {btn(4,   "#006644", "EXP 4")}
+                {btn(4.5, "#007755", "EXP 4.5")}
+                {btn(5,   "#884400", "EXP 5")}
+              </div>
+              <div style={{display:"flex", gap:3}}>
+                {btn(5.5,   "#5500aa", "EXP 5.5")}
+                {btn('5.5.5', "#770077", "EXP 5.5.5")}
+              </div>
+              <div style={{display:"flex", gap:3}}>
+                {btn(6, "#004488", "EXP 6")}
+                {btn(8, "#224400", "EXP 8")}
+                {btn(9, "#005566", "EXP 9")}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* ── Experiment 1 controls ── */}
         {experimentMode && selectedExp===1 && (
@@ -1186,6 +1459,817 @@ export default function NeuroAgent() {
           </div>
         )}
 
+        {/* ── Experiment 3 controls ── */}
+        {experimentMode && selectedExp===3 && (
+          <div>
+            <div style={{fontSize:6, color:"#553311", marginBottom:4, lineHeight:1.6}}>
+              <strong>Robustness: Real-World &amp; Space</strong><br/>
+              3 profiles × 5 levels × 4 cond × 15 trials = 900 runs<br/>
+              Warehouse · Physics · Space stressors
+            </div>
+            {exp3Status !== 'running' ? (
+              <button onClick={handleRunExp3} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#cc6600", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 3 (900 runs)
+              </button>
+            ) : (
+              <button onClick={handleStopExp3} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 3
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 3 progress panel ── */}
+        {experimentMode && selectedExp===3 && exp3Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#fff3e8", borderRadius:3, border:"1px solid #ddaa77"}}>
+            <div style={{color:"#cc6600", fontWeight:700, marginBottom:4}}>
+              {exp3Status==='complete' ? '✓ EXP 3 COMPLETE — JSON saved' : 'EXP 3 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp3Progress.completedTrials ?? 0}/{exp3Progress.totalTrials ?? 900}</span>
+            </div>
+            <div style={{height:5, background:"#f0d8b0", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#cc6600",
+                width:`${exp3Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Profile badges */}
+            <div style={{display:"flex", gap:3, marginBottom:3}}>
+              {['warehouse','physics','space'].map(p => (
+                <div key={p} style={{flex:1, textAlign:"center", padding:"2px",
+                  background: exp3Progress.currentProfile===p ? "#cc6600" : "#f0d8b0",
+                  color:      exp3Progress.currentProfile===p ? "#fff"    : "#885500",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {p === 'warehouse' ? '🏭' : p === 'physics' ? '🌍' : '🚀'}
+                </div>
+              ))}
+            </div>
+            <div style={{marginBottom:2}}>
+              Level: <span style={{float:"right", fontWeight:700}}>{exp3Progress.currentLevel ?? '—'}/4</span>
+            </div>
+            <div style={{marginBottom:2}}>
+              Stressor: <span style={{float:"right", fontWeight:700, maxWidth:"55%", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{exp3Progress.stressorLabel ?? '—'}</span>
+            </div>
+            <div style={{marginBottom:2}}>
+              Condition: <span style={{float:"right", fontWeight:700}}>{exp3Progress.currentCondition ?? '—'}</span>
+            </div>
+            <div>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp3Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 3 idle hint ── */}
+        {experimentMode && selectedExp===3 && !exp3Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#fff8f0", borderRadius:3, border:"1px solid #e0c090", color:"#553311"}}>
+            <strong>Warehouse</strong> — sensor noise (σ 0→50%)<br/>
+            <strong>Physics</strong> — gravity (1g→0g)<br/>
+            <strong>Space</strong> — radiation + drift + gravity<br/>
+            Results auto-download as JSON.
+          </div>
+        )}
+
+        {/* ── Experiment 4 controls ── */}
+        {experimentMode && selectedExp===4 && (
+          <div>
+            <div style={{fontSize:6, color:"#224433", marginBottom:4, lineHeight:1.6}}>
+              <strong>Multi-Agent Coordination</strong><br/>
+              📈 Scaling: 4 counts × 2 levels × 4 cond × 5 = 160<br/>
+              🔀 Interference: 3 envs × 2 levels × 2 cond × 5 = 60<br/>
+              Total: <strong>220 trials</strong>
+            </div>
+            {exp4Status !== 'running' ? (
+              <button onClick={handleRunExp4} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#006644", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 4 (220 runs)
+              </button>
+            ) : (
+              <button onClick={handleStopExp4} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 4
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 4 progress panel ── */}
+        {experimentMode && selectedExp===4 && exp4Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#e8fff4", borderRadius:3, border:"1px solid #77dd99"}}>
+            <div style={{color:"#006644", fontWeight:700, marginBottom:4}}>
+              {exp4Status==='complete' ? '✓ EXP 4 COMPLETE — JSON saved' : 'EXP 4 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp4Progress.completedTrials ?? 0}/{exp4Progress.totalTrials ?? 220}</span>
+            </div>
+            <div style={{height:5, background:"#b0eece", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#006644",
+                width:`${exp4Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Phase badges */}
+            <div style={{display:"flex", gap:3, marginBottom:3}}>
+              {['scaling','interference'].map(p => (
+                <div key={p} style={{flex:1, textAlign:"center", padding:"2px",
+                  background: exp4Progress.testType===p ? "#006644" : "#b0eece",
+                  color:      exp4Progress.testType===p ? "#fff"    : "#224433",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {p === 'scaling' ? '📈 Scaling' : '🔀 Interference'}
+                </div>
+              ))}
+            </div>
+            {exp4Progress.testType === 'scaling' && (
+              <div style={{marginBottom:2}}>
+                Agents: <span style={{float:"right", fontWeight:700}}>{exp4Progress.currentAgentCount ?? '—'}</span>
+              </div>
+            )}
+            {exp4Progress.testType === 'interference' && (
+              <div style={{marginBottom:2}}>
+                Env: <span style={{float:"right", fontWeight:700, maxWidth:"55%", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{exp4Progress.currentEnvLabel ?? '—'}</span>
+              </div>
+            )}
+            <div style={{marginBottom:2}}>
+              Level: <span style={{float:"right", fontWeight:700}}>{exp4Progress.currentLevel ?? '—'}</span>
+            </div>
+            <div style={{marginBottom:2}}>
+              Condition: <span style={{float:"right", fontWeight:700}}>{exp4Progress.currentCondition ?? '—'}</span>
+            </div>
+            <div>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp4Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 4 idle hint ── */}
+        {experimentMode && selectedExp===4 && !exp4Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#f0fff8", borderRadius:3, border:"1px solid #a0ddbc", color:"#224433"}}>
+            <strong>Scaling</strong> — 1, 2, 3, 5 agents · L2 &amp; L3<br/>
+            <strong>Interference</strong> — 400×300 · 800×600 · 1200×900<br/>
+            Tests per-agent perf degradation &amp; collision impact.<br/>
+            Results auto-download as JSON.
+          </div>
+        )}
+
+        {/* ── Experiment 4.5 controls ── */}
+        {experimentMode && selectedExp===4.5 && (
+          <div>
+            <div style={{fontSize:6, color:"#1a3328", marginBottom:4, lineHeight:1.6}}>
+              <strong>Shared LTM Consolidation</strong><br/>
+              🔒 Independent vs 🔗 Shared LTM pool<br/>
+              2 variants × 4 counts × 2 levels × 2 cond × 5 = <strong>160 trials</strong><br/>
+              Does sharing restore learning at scale?
+            </div>
+            {exp45Status !== 'running' ? (
+              <button onClick={handleRunExp45} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#007755", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 4.5 (160 runs)
+              </button>
+            ) : (
+              <button onClick={handleStopExp45} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 4.5
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 4.5 progress panel ── */}
+        {experimentMode && selectedExp===4.5 && exp45Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#e8fff4", borderRadius:3, border:"1px solid #55cc99"}}>
+            <div style={{color:"#007755", fontWeight:700, marginBottom:4}}>
+              {exp45Status==='complete' ? '✓ EXP 4.5 COMPLETE — JSON saved' : 'EXP 4.5 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp45Progress.completedTrials ?? 0}/{exp45Progress.totalTrials ?? 160}</span>
+            </div>
+            <div style={{height:5, background:"#aaeedd", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#007755",
+                width:`${exp45Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Variant badges */}
+            <div style={{display:"flex", gap:3, marginBottom:3}}>
+              {['independent','shared'].map(v => (
+                <div key={v} style={{flex:1, textAlign:"center", padding:"2px",
+                  background: exp45Progress.currentVariant===v ? "#007755" : "#aaeedd",
+                  color:      exp45Progress.currentVariant===v ? "#fff"    : "#1a3328",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {v === 'independent' ? '🔒 Indep.' : '🔗 Shared'}
+                </div>
+              ))}
+            </div>
+            <div style={{marginBottom:2}}>
+              Agents: <span style={{float:"right", fontWeight:700}}>{exp45Progress.currentAgentCount ?? '—'}</span>
+            </div>
+            <div style={{marginBottom:2}}>
+              Level: <span style={{float:"right", fontWeight:700}}>{exp45Progress.currentLevel ?? '—'}</span>
+            </div>
+            <div style={{marginBottom:2}}>
+              Condition: <span style={{float:"right", fontWeight:700}}>{exp45Progress.currentCondition ?? '—'}</span>
+            </div>
+            {exp45Progress.sharedPoolSize > 0 && (
+              <div style={{marginBottom:2}}>
+                Pool patterns: <span style={{float:"right", fontWeight:700, color:"#007755"}}>{exp45Progress.sharedPoolSize}</span>
+              </div>
+            )}
+            <div>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp45Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 4.5 idle hint ── */}
+        {experimentMode && selectedExp===4.5 && !exp45Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#f0fff8", borderRadius:3, border:"1px solid #88ddbb", color:"#1a3328"}}>
+            <strong>🔒 Independent</strong> — Exp 4 baseline, private LTMs<br/>
+            <strong>🔗 Shared</strong> — all agents read/write one LTM pool<br/>
+            Same scaling grid: 1, 2, 3, 5 agents × L2/L3.<br/>
+            Tests if shared memory restores D vs A advantage.<br/>
+            Results auto-download as JSON.
+          </div>
+        )}
+
+        {/* ── Experiment 5 controls ── */}
+        {experimentMode && selectedExp===5 && (
+          <div>
+            <div style={{fontSize:6, color:"#553311", marginBottom:4, lineHeight:1.6}}>
+              <strong>Reward Structure Variation</strong><br/>
+              5 variants × 2 cond (A/D) × 5 trials = <strong>50 runs</strong><br/>
+              📦🔋🛡️⚡⚖️ Do memories generalise?
+            </div>
+            {exp5Status !== 'running' ? (
+              <button onClick={handleRunExp5} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#884400", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 5 (50 runs)
+              </button>
+            ) : (
+              <button onClick={handleStopExp5} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 5
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 5 progress panel ── */}
+        {experimentMode && selectedExp===5 && exp5Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#fff4e8", borderRadius:3, border:"1px solid #ddaa66"}}>
+            <div style={{color:"#884400", fontWeight:700, marginBottom:4}}>
+              {exp5Status==='complete' ? '✓ EXP 5 COMPLETE — JSON saved' : 'EXP 5 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp5Progress.completedTrials ?? 0}/{exp5Progress.totalTrials ?? 50}</span>
+            </div>
+            <div style={{height:5, background:"#f0d0a0", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#884400",
+                width:`${exp5Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Variant badges */}
+            <div style={{display:"flex", gap:2, marginBottom:3, flexWrap:"wrap"}}>
+              {[
+                {name:'baseline',   emoji:'📦'},
+                {name:'efficiency', emoji:'🔋'},
+                {name:'accuracy',   emoji:'🛡️'},
+                {name:'speed',      emoji:'⚡'},
+                {name:'balance',    emoji:'⚖️'},
+              ].map(v => (
+                <div key={v.name} style={{flex:"0 0 auto", padding:"2px 4px",
+                  background: exp5Progress.currentVariant===v.name ? "#884400" : "#f0d0a0",
+                  color:      exp5Progress.currentVariant===v.name ? "#fff"    : "#553311",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {v.emoji}
+                </div>
+              ))}
+            </div>
+            <div style={{marginBottom:2}}>
+              Variant: <span style={{float:"right", fontWeight:700, maxWidth:"55%", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{exp5Progress.variantLabel ?? '—'}</span>
+            </div>
+            <div style={{marginBottom:2}}>
+              Condition: <span style={{float:"right", fontWeight:700}}>{exp5Progress.currentCondition ?? '—'}</span>
+            </div>
+            <div>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp5Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 5 idle hint ── */}
+        {experimentMode && selectedExp===5 && !exp5Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#fff8f0", borderRadius:3, border:"1px solid #e0c090", color:"#553311"}}>
+            <strong>📦 Baseline</strong> — maximise food collected<br/>
+            <strong>🔋 Efficiency</strong> — food per energy spent<br/>
+            <strong>🛡️ Accuracy</strong> — minimal wall contact<br/>
+            <strong>⚡ Speed</strong> — time-pressured double reward<br/>
+            <strong>⚖️ Balance</strong> — multi-objective combined<br/>
+            Compares A (no memory) vs D (full dual).<br/>
+            Results auto-download as JSON.
+          </div>
+        )}
+
+        {/* ── Experiment 5.5 controls ── */}
+        {experimentMode && selectedExp===5.5 && (
+          <div>
+            <div style={{fontSize:6, color:"#330066", marginBottom:4, lineHeight:1.6}}>
+              <strong>Multi-Objective Learning</strong><br/>
+              🎯 Train on ALL 5 rewards simultaneously<br/>
+              Phase 1: 2 × 10 training trials → shared LTM<br/>
+              Phase 2: 5 obj × 2 cond × 5 = 50 test trials/variant<br/>
+              Total: <strong>120 trials</strong> · avg vs weighted
+            </div>
+            {exp55Status !== 'running' ? (
+              <button onClick={handleRunExp55} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#5500aa", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 5.5 (120 runs)
+              </button>
+            ) : (
+              <button onClick={handleStopExp55} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 5.5
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 5.5 progress panel ── */}
+        {experimentMode && selectedExp===5.5 && exp55Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#f3e8ff", borderRadius:3, border:"1px solid #bb88ee"}}>
+            <div style={{color:"#5500aa", fontWeight:700, marginBottom:4}}>
+              {exp55Status==='complete' ? '✓ EXP 5.5 COMPLETE — JSON saved' : 'EXP 5.5 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp55Progress.completedTrials ?? 0}/{exp55Progress.totalTrials ?? 120}</span>
+            </div>
+            <div style={{height:5, background:"#ddbcff", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#5500aa",
+                width:`${exp55Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Phase badges */}
+            <div style={{display:"flex", gap:3, marginBottom:3}}>
+              {['training','testing'].map(p => (
+                <div key={p} style={{flex:1, textAlign:"center", padding:"2px",
+                  background: exp55Progress.phase===p ? "#5500aa" : "#ddbcff",
+                  color:      exp55Progress.phase===p ? "#fff"    : "#330066",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {p === 'training' ? '🏋️ Training' : '🧪 Testing'}
+                </div>
+              ))}
+            </div>
+            {/* Variant badges */}
+            <div style={{display:"flex", gap:3, marginBottom:3}}>
+              {['average','weighted'].map(v => (
+                <div key={v} style={{flex:1, textAlign:"center", padding:"2px",
+                  background: exp55Progress.currentVariant===v ? "#5500aa" : "#ddbcff",
+                  color:      exp55Progress.currentVariant===v ? "#fff"    : "#330066",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {v === 'average' ? '⚖️ Avg' : '🎯 Wtd'}
+                </div>
+              ))}
+            </div>
+            {exp55Progress.phase === 'training' && (
+              <>
+                <div style={{marginBottom:2}}>
+                  Train trial: <span style={{float:"right", fontWeight:700}}>{exp55Progress.trainTrial ?? '—'}/{exp55Progress.trainingTrials ?? 10}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Patterns so far: <span style={{float:"right", fontWeight:700, color:"#5500aa"}}>{exp55Progress.trainedPatterns ?? 0}</span>
+                </div>
+              </>
+            )}
+            {exp55Progress.phase === 'testing' && (
+              <>
+                <div style={{marginBottom:2}}>
+                  Objective: <span style={{float:"right", fontWeight:700}}>{exp55Progress.currentObjective ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Condition: <span style={{float:"right", fontWeight:700}}>{exp55Progress.currentCondition ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Trained patterns: <span style={{float:"right", fontWeight:700, color:"#5500aa"}}>{exp55Progress.totalTrainedPatterns ?? 0}</span>
+                </div>
+              </>
+            )}
+            <div>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp55Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 5.5 idle hint ── */}
+        {experimentMode && selectedExp===5.5 && !exp55Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#f8f0ff", borderRadius:3, border:"1px solid #cc99ff", color:"#330066"}}>
+            <strong>⚖️ Average</strong> — all 5 rewards equal weight<br/>
+            <strong>🎯 Weighted</strong> — commercial priority mix<br/>
+            Phase 1 accumulates patterns into one shared LTM<br/>
+            across 10 training trials per variant.<br/>
+            Phase 2 copies trained LTM → tests each objective.<br/>
+            Key metric: gen. index vs Exp 5 baseline.<br/>
+            Results auto-download as JSON.
+          </div>
+        )}
+
+        {/* ── Experiment 5.5.5 controls ── */}
+        {experimentMode && selectedExp==='5.5.5' && (
+          <div>
+            <div style={{fontSize:6, color:"#440033", marginBottom:4, lineHeight:1.6}}>
+              <strong>Weight Optimisation</strong><br/>
+              🔍 Grid search: 5 weight combos<br/>
+              Same pipeline as Exp 5.5, directly comparable<br/>
+              5 × (10 train + 50 test) = <strong>300 trials</strong>
+            </div>
+            {exp555Status !== 'running' ? (
+              <button onClick={handleRunExp555} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#770077", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 5.5.5 (300 runs)
+              </button>
+            ) : (
+              <button onClick={handleStopExp555} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 5.5.5
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 5.5.5 progress panel ── */}
+        {experimentMode && selectedExp==='5.5.5' && exp555Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#ffe8ff", borderRadius:3, border:"1px solid #cc77cc"}}>
+            <div style={{color:"#770077", fontWeight:700, marginBottom:4}}>
+              {exp555Status==='complete' ? '✓ EXP 5.5.5 COMPLETE — JSON saved' : 'EXP 5.5.5 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp555Progress.completedTrials ?? 0}/{exp555Progress.totalTrials ?? 300}</span>
+            </div>
+            <div style={{height:5, background:"#eebcee", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#770077",
+                width:`${exp555Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Phase badges */}
+            <div style={{display:"flex", gap:3, marginBottom:3}}>
+              {['training','testing'].map(p => (
+                <div key={p} style={{flex:1, textAlign:"center", padding:"2px",
+                  background: exp555Progress.phase===p ? "#770077" : "#eebcee",
+                  color:      exp555Progress.phase===p ? "#fff"    : "#440033",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {p === 'training' ? '🏋️ Training' : '🧪 Testing'}
+                </div>
+              ))}
+            </div>
+            {/* Combo mini-badges */}
+            <div style={{display:"flex", gap:2, marginBottom:3, flexWrap:"wrap"}}>
+              {['current','pro_food','balanced','efficiency_first','smart_balance'].map(c => (
+                <div key={c} style={{flex:"0 0 auto", padding:"1px 3px",
+                  background: exp555Progress.currentCombo===c ? "#770077" : "#eebcee",
+                  color:      exp555Progress.currentCombo===c ? "#fff"    : "#440033",
+                  borderRadius:2, fontSize:4.5, fontWeight:700}}>
+                  {c === 'current'          ? '🎯cur'
+                   : c === 'pro_food'       ? '🍎pfood'
+                   : c === 'balanced'       ? '⚖️bal'
+                   : c === 'efficiency_first' ? '🔋eff'
+                   : '🌟smart'}
+                </div>
+              ))}
+            </div>
+            {exp555Progress.phase === 'training' ? (
+              <>
+                <div style={{marginBottom:2}}>
+                  Combo: <span style={{float:"right", fontWeight:700, maxWidth:"55%", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{exp555Progress.comboLabel ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Train trial: <span style={{float:"right", fontWeight:700}}>{exp555Progress.trainTrial ?? '—'}/{exp555Progress.trainingTrials ?? 10}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Patterns: <span style={{float:"right", fontWeight:700, color:"#770077"}}>{exp555Progress.trainedPatterns ?? 0}</span>
+                </div>
+              </>
+            ) : (
+              <>
+                <div style={{marginBottom:2}}>
+                  Combo: <span style={{float:"right", fontWeight:700, maxWidth:"50%", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{exp555Progress.comboLabel ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Objective: <span style={{float:"right", fontWeight:700}}>{exp555Progress.currentObjective ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Condition: <span style={{float:"right", fontWeight:700}}>{exp555Progress.currentCondition ?? '—'}</span>
+                </div>
+              </>
+            )}
+            <div>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp555Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 5.5.5 idle hint ── */}
+        {experimentMode && selectedExp==='5.5.5' && !exp555Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#fff0ff", borderRadius:3, border:"1px solid #ddaadd", color:"#440033"}}>
+            <strong>🎯 Current</strong> — Exp 5.5 weighted (control)<br/>
+            <strong>🍎 Pro-Food</strong> — baseline:0.40 (recovery)<br/>
+            <strong>⚖️ Balanced</strong> — equal 0.20 all (Exp 5.5 avg)<br/>
+            <strong>🔋 Eff-First</strong> — efficiency:0.30 (upper bound)<br/>
+            <strong>🌟 Smart</strong> — hypothesis winner<br/>
+            Ranked by mean D-vs-A gen. index.<br/>
+            JSON includes _ranking + _winner.<br/>
+            Results auto-download as JSON.
+          </div>
+        )}
+
+        {/* ── Experiment 6 controls ── */}
+        {experimentMode && selectedExp===6 && (
+          <div>
+            <div style={{fontSize:6, color:"#002244", marginBottom:4, lineHeight:1.6}}>
+              <strong>Transfer Learning</strong><br/>
+              10 training + 5 domains × 2 cond × 5 trials = <strong>60 trials</strong><br/>
+              🏭🚀📡⚡🛡️ Do patterns transfer?
+            </div>
+            {exp6Status !== 'running' ? (
+              <button onClick={handleRunExp6} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#004488", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 6 (60 trials)
+              </button>
+            ) : (
+              <button onClick={handleStopExp6} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 6
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 6 progress panel ── */}
+        {experimentMode && selectedExp===6 && exp6Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#e8f0ff", borderRadius:3, border:"1px solid #6699cc"}}>
+            <div style={{color:"#004488", fontWeight:700, marginBottom:4}}>
+              {exp6Status==='complete' ? '✓ EXP 6 COMPLETE — JSON saved' : 'EXP 6 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp6Progress.completedTrials ?? 0}/{exp6Progress.totalTrials ?? 60}</span>
+            </div>
+            <div style={{height:5, background:"#b8cce8", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#004488",
+                width:`${exp6Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Phase badges */}
+            <div style={{display:"flex", gap:2, marginBottom:3}}>
+              {['training','transfer'].map(p => (
+                <div key={p} style={{flex:1, textAlign:"center", padding:"2px 3px",
+                  background: exp6Progress.phase===p ? "#004488" : "#b8cce8",
+                  color:      exp6Progress.phase===p ? "#fff"    : "#002244",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {p==='training' ? '⚙️ TRAIN' : '🚀 TRANSFER'}
+                </div>
+              ))}
+            </div>
+            {/* Domain badges */}
+            <div style={{display:"flex", gap:2, marginBottom:3, flexWrap:"wrap"}}>
+              {[
+                {name:'warehouse', emoji:'🏭'},
+                {name:'physics',   emoji:'🚀'},
+                {name:'noise',     emoji:'📡'},
+                {name:'speed',     emoji:'⚡'},
+                {name:'safety',    emoji:'🛡️'},
+              ].map(d => (
+                <div key={d.name} style={{flex:"0 0 auto", padding:"2px 4px",
+                  background: exp6Progress.currentDomain===d.name ? "#004488" : "#b8cce8",
+                  color:      exp6Progress.currentDomain===d.name ? "#fff"    : "#002244",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {d.emoji}
+                </div>
+              ))}
+            </div>
+            {exp6Progress.phase === 'training' ? (
+              <div>
+                <div style={{marginBottom:2}}>
+                  Train trial: <span style={{float:"right", fontWeight:700}}>{exp6Progress.trainTrial ?? '—'}/{exp6Progress.trainingTrials ?? 10}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Patterns: <span style={{float:"right", fontWeight:700, color:"#004488"}}>{exp6Progress.trainedPatterns ?? 0}</span>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div style={{marginBottom:2}}>
+                  Domain: <span style={{float:"right", fontWeight:700, maxWidth:"55%", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{exp6Progress.domainLabel ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Condition: <span style={{float:"right", fontWeight:700}}>{exp6Progress.currentCondition ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Trained patterns: <span style={{float:"right", fontWeight:700, color:"#004488"}}>{exp6Progress.totalTrainedPatterns ?? 0}</span>
+                </div>
+              </div>
+            )}
+            <div style={{marginTop:2, borderTop:"1px solid #6699cc", paddingTop:2}}>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp6Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 6 idle hint ── */}
+        {experimentMode && selectedExp===6 && !exp6Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#eef4ff", borderRadius:3, border:"1px solid #99bbdd", color:"#002244"}}>
+            <strong>🏭 Warehouse</strong> — source control (same domain)<br/>
+            <strong>🚀 Mars Gravity</strong> — 0.38g physics transfer<br/>
+            <strong>📡 High Noise</strong> — 20% sensor degradation<br/>
+            <strong>⚡ Speed</strong> — double-reward objective<br/>
+            <strong>🛡️ Safety</strong> — wall-bounce penalty<br/>
+            Conditions: A (no memory) vs frozen_D (no new consolidation).<br/>
+            Transfer efficiency = target advantage / source advantage × 100%.<br/>
+            Results auto-download as JSON.
+          </div>
+        )}
+
+        {/* ── Experiment 8 controls ── */}
+        {experimentMode && selectedExp===8 && (
+          <div>
+            <div style={{fontSize:6, color:"#1a2e00", marginBottom:4, lineHeight:1.6}}>
+              <strong>Weight Optimization</strong><br/>
+              10 configs × (10 train + 5 obj × 2 cond × 3 test) = <strong>400 trials</strong><br/>
+              Beats +11.27%? T-test vs baseline_equal.
+            </div>
+            {exp8Status !== 'running' ? (
+              <button onClick={handleRunExp8} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#224400", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 8 (400 trials)
+              </button>
+            ) : (
+              <button onClick={handleStopExp8} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 8
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 8 progress panel ── */}
+        {experimentMode && selectedExp===8 && exp8Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#f0f8e8", borderRadius:3, border:"1px solid #88bb44"}}>
+            <div style={{color:"#224400", fontWeight:700, marginBottom:4}}>
+              {exp8Status==='complete' ? '✓ EXP 8 COMPLETE — JSON saved' : 'EXP 8 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp8Progress.completedTrials ?? 0}/{exp8Progress.totalTrials ?? 400}</span>
+            </div>
+            <div style={{height:5, background:"#c8e8a0", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#224400",
+                width:`${exp8Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Phase badges */}
+            <div style={{display:"flex", gap:2, marginBottom:3}}>
+              {['training','testing'].map(p => (
+                <div key={p} style={{flex:1, textAlign:"center", padding:"2px 3px",
+                  background: exp8Progress.phase===p ? "#224400" : "#c8e8a0",
+                  color:      exp8Progress.phase===p ? "#fff"    : "#1a2e00",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {p==='training' ? '⚙️ TRAIN' : '🔬 TEST'}
+                </div>
+              ))}
+            </div>
+            {/* Hypothesis badges */}
+            <div style={{display:"flex", gap:2, marginBottom:3, flexWrap:"wrap"}}>
+              {['baseline','speed','efficiency','robustness','compound','food'].map(h => (
+                <div key={h} style={{flex:"0 0 auto", padding:"2px 4px",
+                  background: exp8Progress.hypothesis===h ? "#224400" : "#c8e8a0",
+                  color:      exp8Progress.hypothesis===h ? "#fff"    : "#1a2e00",
+                  borderRadius:2, fontSize:4.5, fontWeight:700}}>
+                  {h}
+                </div>
+              ))}
+            </div>
+            {exp8Progress.phase === 'training' ? (
+              <div>
+                <div style={{marginBottom:2}}>
+                  Config: <span style={{float:"right", fontWeight:700, maxWidth:"55%", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{exp8Progress.configLabel ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Train trial: <span style={{float:"right", fontWeight:700}}>{exp8Progress.trainTrial ?? '—'}/{exp8Progress.trainingTrials ?? 10}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Patterns: <span style={{float:"right", fontWeight:700, color:"#224400"}}>{exp8Progress.trainedPatterns ?? 0}</span>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div style={{marginBottom:2}}>
+                  Config: <span style={{float:"right", fontWeight:700, maxWidth:"50%", overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap"}}>{exp8Progress.configLabel ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Objective: <span style={{float:"right", fontWeight:700}}>{exp8Progress.currentObjective ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Condition: <span style={{float:"right", fontWeight:700}}>{exp8Progress.currentCondition ?? '—'}</span>
+                </div>
+              </div>
+            )}
+            <div style={{marginTop:2, borderTop:"1px solid #88bb44", paddingTop:2}}>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp8Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 8 idle hint ── */}
+        {experimentMode && selectedExp===8 && !exp8Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#f4fce8", borderRadius:3, border:"1px solid #aabb77", color:"#1a2e00"}}>
+            <strong>H1 Speed</strong> — food:30/40, reduce efficiency<br/>
+            <strong>H2 Efficiency</strong> — balance:30/40, reduce eff<br/>
+            <strong>H3 Robustness</strong> — accuracy+balance up, speed down<br/>
+            <strong>H4 Compound</strong> — food+balance up, mixed reductions<br/>
+            <strong>H5 Baseline</strong> — equal 20/20/20/20/20 (control)<br/>
+            T-test each config vs baseline_equal.<br/>
+            Winner if improvement &gt; 0.5% AND p &lt; 0.05.<br/>
+            JSON includes _ranking, _tTests, _conclusion.
+          </div>
+        )}
+
+        {/* ── Experiment 9 controls ── */}
+        {experimentMode && selectedExp===9 && (
+          <div>
+            <div style={{fontSize:6, color:"#002233", marginBottom:4, lineHeight:1.6}}>
+              <strong>Learning Dynamics</strong><br/>
+              6 checkpoints × 2 reps × 20 tests = <strong>394 trials</strong><br/>
+              Curve shape, convergence, overfitting check.
+            </div>
+            {exp9Status !== 'running' ? (
+              <button onClick={handleRunExp9} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#005566", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ▶ RUN EXP 9 (394 trials)
+              </button>
+            ) : (
+              <button onClick={handleStopExp9} style={{width:"100%", padding:"9px 4px", fontSize:8, letterSpacing:2, fontFamily:"inherit", background:"#ff5533", color:"#ffffff", border:"none", borderRadius:3, cursor:"pointer"}}>
+                ■ ABORT EXP 9
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* ── Experiment 9 progress panel ── */}
+        {experimentMode && selectedExp===9 && exp9Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#e8f8ff", borderRadius:3, border:"1px solid #55aacc"}}>
+            <div style={{color:"#005566", fontWeight:700, marginBottom:4}}>
+              {exp9Status==='complete' ? '✓ EXP 9 COMPLETE — JSON saved' : 'EXP 9 RUNNING…'}
+            </div>
+            <div style={{marginBottom:2}}>
+              Trials: <span style={{float:"right", fontWeight:700}}>{exp9Progress.completedTrials ?? 0}/{exp9Progress.totalTrials ?? 394}</span>
+            </div>
+            <div style={{height:5, background:"#aaddef", borderRadius:2, marginBottom:3}}>
+              <div style={{height:"100%", borderRadius:2, background:"#005566",
+                width:`${exp9Progress.percentComplete ?? 0}%`, transition:"width 0.4s"}}/>
+            </div>
+            {/* Phase badges */}
+            <div style={{display:"flex", gap:2, marginBottom:3}}>
+              {['training','testing'].map(p => (
+                <div key={p} style={{flex:1, textAlign:"center", padding:"2px 3px",
+                  background: exp9Progress.phase===p ? "#005566" : "#aaddef",
+                  color:      exp9Progress.phase===p ? "#fff"    : "#002233",
+                  borderRadius:2, fontSize:5, fontWeight:700}}>
+                  {p==='training' ? '⚙️ TRAIN' : '🔬 TEST'}
+                </div>
+              ))}
+            </div>
+            {/* Checkpoint badges */}
+            <div style={{display:"flex", gap:2, marginBottom:3}}>
+              {[0,2,5,10,20,40].map(cp => (
+                <div key={cp} style={{flex:1, textAlign:"center", padding:"2px 2px",
+                  background: exp9Progress.checkpoint===cp ? "#005566" : "#aaddef",
+                  color:      exp9Progress.checkpoint===cp ? "#fff"    : "#002233",
+                  borderRadius:2, fontSize:4.5, fontWeight:700}}>
+                  {cp===0 ? '∅' : cp}
+                </div>
+              ))}
+            </div>
+            {exp9Progress.phase === 'training' ? (
+              <div>
+                <div style={{marginBottom:2}}>
+                  Checkpoint: <span style={{float:"right", fontWeight:700}}>{exp9Progress.checkpoint} trials</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Rep: <span style={{float:"right", fontWeight:700}}>{(exp9Progress.rep ?? 0) + 1} / 2</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Train trial: <span style={{float:"right", fontWeight:700}}>{exp9Progress.trainTrial ?? '—'}/{exp9Progress.totalTrainTrials ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Patterns: <span style={{float:"right", fontWeight:700, color:"#005566"}}>{exp9Progress.trainedPatterns ?? 0}</span>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div style={{marginBottom:2}}>
+                  Checkpoint: <span style={{float:"right", fontWeight:700}}>{exp9Progress.checkpoint} trials · rep {(exp9Progress.rep ?? 0) + 1}/2</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Objective: <span style={{float:"right", fontWeight:700}}>{exp9Progress.currentObjective ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Condition: <span style={{float:"right", fontWeight:700}}>{exp9Progress.currentCondition ?? '—'}</span>
+                </div>
+                <div style={{marginBottom:2}}>
+                  Patterns avail.: <span style={{float:"right", fontWeight:700, color:"#005566"}}>{exp9Progress.totalTrainedPatterns ?? 0}</span>
+                </div>
+              </div>
+            )}
+            <div style={{marginTop:2, borderTop:"1px solid #55aacc", paddingTop:2}}>
+              Complete: <span style={{float:"right", fontWeight:700}}>{exp9Progress.percentComplete ?? '0.0'}%</span>
+            </div>
+          </div>
+        )}
+
+        {/* ── Experiment 9 idle hint ── */}
+        {experimentMode && selectedExp===9 && !exp9Progress && (
+          <div style={{fontSize:6, padding:"8px", background:"#eef8ff", borderRadius:3, border:"1px solid #88ccdd", color:"#002233"}}>
+            <strong>∅ 0 trials</strong> — pure reactive baseline<br/>
+            <strong>2 trials</strong> — very early learning<br/>
+            <strong>5 trials</strong> — quarter-way to plateau<br/>
+            <strong>10 trials</strong> — half-way learning<br/>
+            <strong>20 trials</strong> — near convergence<br/>
+            <strong>40 trials</strong> — overfitting check<br/>
+            Curve classified: exponential / sigmoid / linear.<br/>
+            JSON: _advantageCurve, _curveType, _convergencePoint,<br/>
+            _deploymentGuidance, _overfitting.
+          </div>
+        )}
+
         {/* ── Experiment 1 live status ── */}
         {experimentMode && selectedExp===1 && expUI ? (
           <div style={{fontSize:6, padding:"8px", background:"#f5eeff", borderRadius:3, border:"1px solid #cc88ff"}}>
@@ -1244,7 +2328,25 @@ export default function NeuroAgent() {
         </div>
 
         <div style={{fontSize:6, lineHeight:2.2, color:"#2a4880", padding:"8px", background:"#ffffff", borderRadius:3, border:"1px solid #d0d8e8", marginTop:"auto"}}>
-          {experimentMode && selectedExp===2
+          {experimentMode && selectedExp===9
+            ? <><span style={{color:"#005566"}}>▶</span> 394 trials, 6 checkpoints<br/><span style={{color:"#005566"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#005566"}}>✓</span> ~30–35 min runtime</>
+            : experimentMode && selectedExp===8
+            ? <><span style={{color:"#224400"}}>▶</span> 400 trials, 10 weight configs<br/><span style={{color:"#224400"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#224400"}}>✓</span> ~35–45 min runtime</>
+            : experimentMode && selectedExp===6
+            ? <><span style={{color:"#004488"}}>▶</span> 60 trials, 5 transfer domains<br/><span style={{color:"#004488"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#004488"}}>✓</span> ~25–35 min runtime</>
+            : experimentMode && selectedExp==='5.5.5'
+            ? <><span style={{color:"#770077"}}>▶</span> 300 trials, 5 weight combos<br/><span style={{color:"#770077"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#770077"}}>✓</span> ~25–35 min runtime</>
+            : experimentMode && selectedExp===5.5
+            ? <><span style={{color:"#5500aa"}}>▶</span> 120 trials, 2 training variants<br/><span style={{color:"#5500aa"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#5500aa"}}>✓</span> ~15–20 min runtime</>
+            : experimentMode && selectedExp===5
+            ? <><span style={{color:"#884400"}}>▶</span> 50 runs, 5 reward variants<br/><span style={{color:"#884400"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#884400"}}>✓</span> ~5–8 min runtime</>
+            : experimentMode && selectedExp===4.5
+            ? <><span style={{color:"#007755"}}>▶</span> 160 trials, 2 variants<br/><span style={{color:"#007755"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#007755"}}>✓</span> ~10–15 min runtime</>
+            : experimentMode && selectedExp===4
+            ? <><span style={{color:"#006644"}}>▶</span> 220 trials, 2 phases<br/><span style={{color:"#006644"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#006644"}}>✓</span> ~10–15 min runtime</>
+            : experimentMode && selectedExp===3
+            ? <><span style={{color:"#cc6600"}}>▶</span> 900 runs, 3 stressor profiles<br/><span style={{color:"#cc6600"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#cc6600"}}>✓</span> ~20–25 min runtime</>
+            : experimentMode && selectedExp===2
             ? <><span style={{color:"#006699"}}>▶</span> 300 agent-runs, async<br/><span style={{color:"#006699"}}>↓</span> Auto-downloads JSON<br/><span style={{color:"#006699"}}>✓</span> Check downloads folder</>
             : experimentMode
             ? <><span style={{color:"#aa00cc"}}>▶</span> 20 trials, random order<br/><span style={{color:"#aa00cc"}}>↓</span> JSON per trial + summary<br/><span style={{color:"#aa00cc"}}>✓</span> Check downloads folder</>

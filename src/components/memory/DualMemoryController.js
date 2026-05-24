@@ -23,6 +23,8 @@
  * Date: May 2026
  */
 
+import { CONTROLLER_CONFIG } from './EXPERIMENT_CONFIG.js';
+
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 /** Rolling window sizes used for running averages and recent-action logs. */
@@ -79,16 +81,16 @@ class DualMemoryController {
 
     // ── Config ────────────────────────────────────────────────────────────
     /** @type {number} Confidence floor for LTM override [0, 1] */
-    this.ltmConfidenceThreshold = config.ltmConfidenceThreshold ?? 0.30;
+    this.ltmConfidenceThreshold = config.ltmConfidenceThreshold ?? CONTROLLER_CONFIG.LTM_CONFIDENCE_THRESHOLD;
 
     /** @type {number} ε-greedy exploration probability [0, 1] */
-    this.explorationRate = config.explorationRate ?? 0.2;
+    this.explorationRate = config.explorationRate ?? CONTROLLER_CONFIG.EXPLORATION_RATE;
 
     /**
      * @type {number} STM blend weight [0, 1].
      * At default 0.6: blended selections are 60 % Hopfield, 40 % LTM on average.
      */
-    this.actionWeightSTM = config.actionWeightSTM ?? 0.6;
+    this.actionWeightSTM = config.actionWeightSTM ?? CONTROLLER_CONFIG.ACTION_WEIGHT_STM;
 
     // ── State ─────────────────────────────────────────────────────────────
     /**

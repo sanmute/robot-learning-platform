@@ -1,0 +1,1947 @@
+{
+  "experiment": 5.5,
+  "name": "Multi-Objective Learning",
+  "timestamp": "2026-05-24T06:40:48.015Z",
+  "summary": {
+    "average": {
+      "_variantLabel": "Equal Weight (Average)",
+      "baseline": {
+        "A": {
+          "n": 5,
+          "mean": 28.8,
+          "std": 6.675,
+          "sem": 2.985,
+          "min": 20,
+          "max": 40,
+          "meanFoodEaten": 28.8,
+          "meanWallBounces": 6.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 30,
+          "std": 3.742,
+          "sem": 1.673,
+          "min": 23,
+          "max": 34,
+          "meanFoodEaten": 30,
+          "meanWallBounces": 5.8
+        },
+        "_generalizationIndex": 4.2
+      },
+      "efficiency": {
+        "A": {
+          "n": 5,
+          "mean": 288,
+          "std": 44.452,
+          "sem": 19.88,
+          "min": 226,
+          "max": 356,
+          "meanFoodEaten": 31.2,
+          "meanWallBounces": 7.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 290,
+          "std": 22.45,
+          "sem": 10.04,
+          "min": 256,
+          "max": 326,
+          "meanFoodEaten": 31.4,
+          "meanWallBounces": 6.6
+        },
+        "_generalizationIndex": 0.7
+      },
+      "accuracy": {
+        "A": {
+          "n": 5,
+          "mean": 286,
+          "std": 25.361,
+          "sem": 11.342,
+          "min": 256,
+          "max": 332,
+          "meanFoodEaten": 30,
+          "meanWallBounces": 7
+        },
+        "D": {
+          "n": 5,
+          "mean": 272,
+          "std": 56.823,
+          "sem": 25.412,
+          "min": 202,
+          "max": 366,
+          "meanFoodEaten": 28.6,
+          "meanWallBounces": 7
+        },
+        "_generalizationIndex": -4.9
+      },
+      "speed": {
+        "A": {
+          "n": 5,
+          "mean": 480,
+          "std": 72.664,
+          "sem": 32.496,
+          "min": 400,
+          "max": 600,
+          "meanFoodEaten": 30,
+          "meanWallBounces": 8.6
+        },
+        "D": {
+          "n": 5,
+          "mean": 448,
+          "std": 120.399,
+          "sem": 53.844,
+          "min": 300,
+          "max": 640,
+          "meanFoodEaten": 28.4,
+          "meanWallBounces": 6.6
+        },
+        "_generalizationIndex": -6.7
+      },
+      "balance": {
+        "A": {
+          "n": 5,
+          "mean": 315.5,
+          "std": 30.524,
+          "sem": 13.651,
+          "min": 275.5,
+          "max": 355.5,
+          "meanFoodEaten": 34.4,
+          "meanWallBounces": 11
+        },
+        "D": {
+          "n": 5,
+          "mean": 334.7,
+          "std": 7.047,
+          "sem": 3.152,
+          "min": 326,
+          "max": 347.5,
+          "meanFoodEaten": 35.6,
+          "meanWallBounces": 6.2
+        },
+        "_generalizationIndex": 6.1
+      },
+      "_avgGeneralizationIndex": -0.1
+    },
+    "weighted": {
+      "_variantLabel": "Weighted (Commercial Priority)",
+      "baseline": {
+        "A": {
+          "n": 5,
+          "mean": 32.6,
+          "std": 5.463,
+          "sem": 2.443,
+          "min": 27,
+          "max": 40,
+          "meanFoodEaten": 32.6,
+          "meanWallBounces": 6.8
+        },
+        "D": {
+          "n": 5,
+          "mean": 29.2,
+          "std": 4.445,
+          "sem": 1.988,
+          "min": 24,
+          "max": 36,
+          "meanFoodEaten": 29.2,
+          "meanWallBounces": 7.2
+        },
+        "_generalizationIndex": -10.4
+      },
+      "efficiency": {
+        "A": {
+          "n": 5,
+          "mean": 260,
+          "std": 20.591,
+          "sem": 9.209,
+          "min": 236,
+          "max": 286,
+          "meanFoodEaten": 28.4,
+          "meanWallBounces": 8.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 282,
+          "std": 61.514,
+          "sem": 27.51,
+          "min": 206,
+          "max": 376,
+          "meanFoodEaten": 30.6,
+          "meanWallBounces": 10
+        },
+        "_generalizationIndex": 8.5
+      },
+      "accuracy": {
+        "A": {
+          "n": 5,
+          "mean": 247.6,
+          "std": 48.833,
+          "sem": 21.839,
+          "min": 160,
+          "max": 308,
+          "meanFoodEaten": 26.2,
+          "meanWallBounces": 7.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 263.6,
+          "std": 53.895,
+          "sem": 24.102,
+          "min": 182,
+          "max": 322,
+          "meanFoodEaten": 27.6,
+          "meanWallBounces": 6.2
+        },
+        "_generalizationIndex": 6.5
+      },
+      "speed": {
+        "A": {
+          "n": 5,
+          "mean": 468,
+          "std": 108.517,
+          "sem": 48.53,
+          "min": 320,
+          "max": 620,
+          "meanFoodEaten": 29.4,
+          "meanWallBounces": 5.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 516,
+          "std": 49.639,
+          "sem": 22.199,
+          "min": 440,
+          "max": 580,
+          "meanFoodEaten": 31.8,
+          "meanWallBounces": 6
+        },
+        "_generalizationIndex": 10.3
+      },
+      "balance": {
+        "A": {
+          "n": 5,
+          "mean": 279.2,
+          "std": 43.906,
+          "sem": 19.635,
+          "min": 229,
+          "max": 337.5,
+          "meanFoodEaten": 30.2,
+          "meanWallBounces": 7.2
+        },
+        "D": {
+          "n": 5,
+          "mean": 269.7,
+          "std": 38.226,
+          "sem": 17.095,
+          "min": 219,
+          "max": 321.5,
+          "meanFoodEaten": 29.4,
+          "meanWallBounces": 8.2
+        },
+        "_generalizationIndex": -3.4
+      },
+      "_avgGeneralizationIndex": 2.3
+    }
+  },
+  "trials": [
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 28,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:16.443Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 6,
+        "objectiveScore": 31,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:16.728Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 40,
+        "wallBounces": 6,
+        "objectiveScore": 40,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:17.017Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 25,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:17.291Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 20,
+        "wallBounces": 6,
+        "objectiveScore": 20,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:17.569Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 6,
+        "objectiveScore": 23,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:17.874Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 4,
+        "objectiveScore": 31,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 55,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:18.165Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 10,
+        "objectiveScore": 30,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:18.457Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 5,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:18.752Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 4,
+        "objectiveScore": 34,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:19.047Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 5,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:19.318Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 7,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:19.601Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 9,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:19.882Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 4,
+        "objectiveScore": 276,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:20.174Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 11,
+        "objectiveScore": 356,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:20.462Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 7,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:20.770Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 4,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:21.060Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 5,
+        "objectiveScore": 326,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:21.357Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:21.659Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 10,
+        "objectiveScore": 296,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:21.958Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 7,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:22.227Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 9,
+        "objectiveScore": 272,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:22.492Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 4,
+        "objectiveScore": 332,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:22.771Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 8,
+        "objectiveScore": 284,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:23.059Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 7,
+        "objectiveScore": 256,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:23.348Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 9,
+        "objectiveScore": 202,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:23.654Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 6,
+        "objectiveScore": 288,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:23.954Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 7,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:24.254Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 7,
+        "objectiveScore": 366,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:24.553Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 278,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:24.856Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 3,
+        "objectiveScore": 600,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:25.144Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 10,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:25.432Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 14,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:25.717Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 8,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:26.000Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 8,
+        "objectiveScore": 460,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:26.289Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 21,
+        "wallBounces": 3,
+        "objectiveScore": 300,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:26.582Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 7,
+        "objectiveScore": 520,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:26.877Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 8,
+        "objectiveScore": 360,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:27.172Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 5,
+        "objectiveScore": 640,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:27.472Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 10,
+        "objectiveScore": 420,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:27.773Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 11,
+        "objectiveScore": 321.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:28.049Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 15,
+        "objectiveScore": 275.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:28.332Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 39,
+        "wallBounces": 15,
+        "objectiveScore": 355.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:28.625Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 6,
+        "objectiveScore": 339,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:28.916Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 8,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:29.204Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 3,
+        "objectiveScore": 333.5,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:29.509Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 4,
+        "objectiveScore": 332,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:29.806Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 9,
+        "objectiveScore": 334.5,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:30.103Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 8,
+        "objectiveScore": 326,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:30.412Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "average",
+      "variantLabel": "Equal Weight (Average)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 7,
+        "objectiveScore": 347.5,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 54,
+        "trainedPatternsAvailable": 54,
+        "timestamp": "2026-05-24T06:40:30.703Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 6,
+        "objectiveScore": 31,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:33.899Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 40,
+        "wallBounces": 7,
+        "objectiveScore": 40,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:34.184Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 9,
+        "objectiveScore": 27,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:34.469Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 38,
+        "wallBounces": 7,
+        "objectiveScore": 38,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:34.744Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 5,
+        "objectiveScore": 27,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:35.010Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 9,
+        "objectiveScore": 25,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:35.299Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 1,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 6,
+        "objectiveScore": 29,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:35.595Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 2,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 7,
+        "objectiveScore": 36,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:35.883Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 3,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 8,
+        "objectiveScore": 24,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 42,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:36.178Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "baseline",
+      "trial": 4,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 6,
+        "objectiveScore": 32,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:36.478Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 6,
+        "objectiveScore": 276,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:36.748Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 9,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:37.035Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 5,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:37.324Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 29,
+        "wallBounces": 4,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:37.609Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 17,
+        "objectiveScore": 236,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:37.899Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 0,
+      "results": {
+        "foodCollected": 40,
+        "wallBounces": 6,
+        "objectiveScore": 376,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:38.202Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 1,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 12,
+        "objectiveScore": 286,
+        "ltmUsageRate": 0.02,
+        "ltmPatternCount": 57,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:38.493Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 2,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 7,
+        "objectiveScore": 226,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:38.784Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 3,
+      "results": {
+        "foodCollected": 23,
+        "wallBounces": 16,
+        "objectiveScore": 206,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:39.069Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "efficiency",
+      "trial": 4,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 9,
+        "objectiveScore": 316,
+        "ltmUsageRate": 0.006,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:39.361Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 32,
+        "wallBounces": 6,
+        "objectiveScore": 308,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:39.636Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 9,
+        "objectiveScore": 242,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:39.922Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 6,
+        "objectiveScore": 268,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:40.201Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 18,
+        "wallBounces": 10,
+        "objectiveScore": 160,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:40.472Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 5,
+        "objectiveScore": 260,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:40.757Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 0,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 6,
+        "objectiveScore": 228,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 39,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:41.066Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 1,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 4,
+        "objectiveScore": 322,
+        "ltmUsageRate": 0.01,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:41.361Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 2,
+      "results": {
+        "foodCollected": 19,
+        "wallBounces": 4,
+        "objectiveScore": 182,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:41.651Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 3,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 10,
+        "objectiveScore": 320,
+        "ltmUsageRate": 0.005,
+        "ltmPatternCount": 39,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:41.947Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "accuracy",
+      "trial": 4,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 7,
+        "objectiveScore": 266,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:42.241Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 7,
+        "objectiveScore": 400,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:42.522Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 37,
+        "wallBounces": 3,
+        "objectiveScore": 620,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:42.812Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 4,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:43.083Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 22,
+        "wallBounces": 7,
+        "objectiveScore": 320,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:43.351Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 34,
+        "wallBounces": 5,
+        "objectiveScore": 560,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:43.634Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 0,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 8,
+        "objectiveScore": 540,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:43.941Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 1,
+      "results": {
+        "foodCollected": 30,
+        "wallBounces": 4,
+        "objectiveScore": 480,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:44.231Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 2,
+      "results": {
+        "foodCollected": 33,
+        "wallBounces": 10,
+        "objectiveScore": 540,
+        "ltmUsageRate": 0.008,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:44.528Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 3,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 4,
+        "objectiveScore": 580,
+        "ltmUsageRate": 0.009,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:44.820Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "speed",
+      "trial": 4,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 4,
+        "objectiveScore": 440,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:45.116Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 25,
+        "wallBounces": 6,
+        "objectiveScore": 229,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:45.395Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 36,
+        "wallBounces": 7,
+        "objectiveScore": 337.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:45.683Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 9,
+        "objectiveScore": 324.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:45.969Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 27,
+        "wallBounces": 11,
+        "objectiveScore": 241.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:46.253Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "A",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 28,
+        "wallBounces": 3,
+        "objectiveScore": 263.5,
+        "ltmUsageRate": 0,
+        "ltmPatternCount": 0,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:46.537Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 0,
+      "results": {
+        "foodCollected": 26,
+        "wallBounces": 10,
+        "objectiveScore": 233,
+        "ltmUsageRate": 0.007,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:46.845Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 1,
+      "results": {
+        "foodCollected": 24,
+        "wallBounces": 6,
+        "objectiveScore": 219,
+        "ltmUsageRate": 0.003,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:47.141Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 2,
+      "results": {
+        "foodCollected": 35,
+        "wallBounces": 11,
+        "objectiveScore": 321.5,
+        "ltmUsageRate": 0.011,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:47.427Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 3,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 11,
+        "objectiveScore": 281.5,
+        "ltmUsageRate": 0.012,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:47.719Z"
+      }
+    },
+    {
+      "experiment": 5.5,
+      "variant": "weighted",
+      "variantLabel": "Weighted (Commercial Priority)",
+      "condition": "D",
+      "testObjective": "balance",
+      "trial": 4,
+      "results": {
+        "foodCollected": 31,
+        "wallBounces": 3,
+        "objectiveScore": 293.5,
+        "ltmUsageRate": 0.004,
+        "ltmPatternCount": 38,
+        "trainedPatternsAvailable": 38,
+        "timestamp": "2026-05-24T06:40:48.015Z"
+      }
+    }
+  ]
+}
