@@ -17,7 +17,7 @@ COPY . .
 # Build in dependency order
 RUN npm run build -w packages/shared
 RUN npm run build -w packages/training
-RUN npm run build -w apps/web
+RUN cd apps/web && npx vite build
 # build:api runs `prisma generate && tsc`
 RUN npm run build -w apps/api
 
