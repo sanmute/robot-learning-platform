@@ -5,13 +5,47 @@ import { api } from '../api';
 import NavBar from '../components/NavBar';
 import LearningCurveChart from '../components/LearningCurveChart';
 
-// ── Constants ─────────────────────────────────────────────────────────────────
+// ── Robot presets ─────────────────────────────────────────────────────────────
+//
+// Research-validated defaults per environment type.
+// Warehouse: Exp 8 "Speed Moderate" config — best generalisation advantage.
+// Manufacturing / Space: derived from multi-objective ablation results.
 
-const ROBOT_TYPES: { value: RobotType; label: string; emoji: string }[] = [
-  { value: 'warehouse',      label: 'Warehouse',     emoji: '🏭' },
-  { value: 'manufacturing',  label: 'Manufacturing', emoji: '⚙️' },
-  { value: 'space',          label: 'Space',          emoji: '🚀' },
-];
+type RobotPreset = {
+  value:   RobotType;
+  label:   string;
+  emoji:   string;
+  hint:    string;
+  weights: Objectives;
+};
+
+const ROBOT_PRESETS: Record<RobotType, RobotPreset> = {
+  warehouse: {
+    value:   'warehouse',
+    label:   'Warehouse',
+    emoji:   '🏭',
+    hint:    'Optimised for food collection and movement efficiency',
+    weights: { food: 30, efficiency: 20, speed: 20, accuracy: 20, balance: 10 },
+  },
+  manufacturing: {
+    value:   'manufacturing',
+    label:   'Manufacturing',
+    emoji:   '⚙️',
+    hint:    'Optimised for precision and process efficiency',
+    weights: { food: 20, efficiency: 35, speed: 10, accuracy: 30, balance: 5 },
+  },
+  space: {
+    value:   'space',
+    label:   'Space',
+    emoji:   '🚀',
+    hint:    'Optimised for speed and navigation in open environments',
+    weights: { food: 15, efficiency: 25, speed: 35, accuracy: 10, balance: 15 },
+  },
+};
+
+const PRESET_LIST = Object.values(ROBOT_PRESETS);
+
+// ── Other constants ───────────────────────────────────────────────────────────
 
 const OBJECTIVE_LABELS: Record<keyof Objectives, string> = {
   food:       'Food Collection',
@@ -19,10 +53,6 @@ const OBJECTIVE_LABELS: Record<keyof Objectives, string> = {
   speed:      'Movement Speed',
   accuracy:   'Navigation Accuracy',
   balance:    'Multi-task Balance',
-};
-
-const DEFAULT_WEIGHTS: Objectives = {
-  food: 20, efficiency: 20, speed: 20, accuracy: 20, balance: 20,
 };
 
 type Step = 1 | 2 | 3;
@@ -56,33 +86,49 @@ export default function Train() {
 
   // Step 1 — config form
   const [configName, setConfigName] = useState('My Robot Config');
-  const [robotType, setRobotType] = useState<RobotType>('warehouse');
-  const [weights, setWeights] = useState<Objectives>({ ...DEFAULT_WEIGHTS });
+  const [robotType, setRobotType]   = useState<RobotType>('warehouse');
+  const [weights, setWeights]       = useState<Objectives>({ ...ROBOT_PRESETS.warehouse.weights });
 
   // Step 2 — progress + live data
-  const [step, setStep]         = useState<Step>(1);
-  const [jobId, setJobId]       = useState<string | null>(null);
-  const [progress, setProgress] = useState(0);
-  const [logs, setLogs]         = useState<string[]>([]);
-  const [liveCurve, setLiveCurve] = useState<number[]>([]);
+  const [step, setStep]             = useState<Step>(1);
+  const [jobId, setJobId]           = useState<string | null>(null);
+  const [progress, setProgress]     = useState(0);
+  const [logs, setLogs]             = useState<string[]>([]);
+  const [liveCurve, setLiveCurve]   = useState<number[]>([]);
 
   // Step 3 — results
   const [result, setResult] = useState<{ advantage: number; learningCurve: number[] } | null>(null);
 
   // Errors / loading
-  const [error, setError]         = useState<string | null>(null);
+  const [error, setError]           = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   // Auto-scroll ref for log panel
   const logRef = useRef<HTMLDivElement>(null);
 
-  // ── Weight helpers ──────────────────────────────────────────────────────────
+  // ── Derived ─────────────────────────────────────────────────────────────────
 
   const totalWeight  = Object.values(weights).reduce((a, b) => a + b, 0);
   const weightsValid = Math.round(totalWeight) === 100;
 
+  // True whenever sliders differ from the recommended preset for this robot type
+  const preset     = ROBOT_PRESETS[robotType];
+  const isModified = (Object.keys(preset.weights) as (keyof Objectives)[])
+    .some((key) => weights[key] !== preset.weights[key]);
+
+  // ── Handlers ────────────────────────────────────────────────────────────────
+
+  const handleRobotTypeChange = (type: RobotType) => {
+    setRobotType(type);
+    setWeights({ ...ROBOT_PRESETS[type].weights });
+  };
+
   const handleWeightChange = (key: keyof Objectives, value: number) => {
     setWeights((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleResetWeights = () => {
+    setWeights({ ...ROBOT_PRESETS[robotType].weights });
   };
 
   // ── Step 1 → 2: start training ──────────────────────────────────────────────
@@ -118,7 +164,6 @@ export default function Train() {
 
     const poll = setInterval(async () => {
       try {
-        // Status + logs fetched in parallel
         const [status, logData] = await Promise.all([
           api.getJobStatus(jobId),
           api.getJobLogs(jobId),
@@ -157,7 +202,7 @@ export default function Train() {
   const handleDownload = async () => {
     if (!jobId) return;
     try {
-      const res = await api.downloadModel(jobId);
+      const res  = await api.downloadModel(jobId);
       const blob = await res.blob();
       const url  = URL.createObjectURL(blob);
       const a    = document.createElement('a');
@@ -170,9 +215,7 @@ export default function Train() {
     }
   };
 
-  const handleViewResults = () => {
-    if (jobId) navigate(`/results/${jobId}`);
-  };
+  const handleViewResults = () => { if (jobId) navigate(`/results/${jobId}`); };
 
   const handleReset = () => {
     setStep(1);
@@ -182,7 +225,8 @@ export default function Train() {
     setLogs([]);
     setLiveCurve([]);
     setError(null);
-    setWeights({ ...DEFAULT_WEIGHTS });
+    setRobotType('warehouse');
+    setWeights({ ...ROBOT_PRESETS.warehouse.weights });
   };
 
   // ── Render ───────────────────────────────────────────────────────────────────
@@ -243,20 +287,26 @@ export default function Train() {
                 Robot environment
               </label>
               <div className="grid grid-cols-3 gap-3">
-                {ROBOT_TYPES.map(({ value, label, emoji }) => (
-                  <button
-                    key={value}
-                    onClick={() => setRobotType(value)}
-                    className={`rounded-xl border-2 p-3 text-center transition ${
-                      robotType === value
-                        ? 'border-brand-600 bg-brand-50 text-brand-700'
-                        : 'border-gray-200 hover:border-gray-300'
-                    }`}
-                  >
-                    <div className="mb-1 text-2xl">{emoji}</div>
-                    <div className="text-sm font-medium">{label}</div>
-                  </button>
-                ))}
+                {PRESET_LIST.map(({ value, label, emoji, hint }) => {
+                  const active = robotType === value;
+                  return (
+                    <button
+                      key={value}
+                      onClick={() => handleRobotTypeChange(value)}
+                      className={`rounded-xl border-2 p-3 text-center transition ${
+                        active
+                          ? 'border-brand-600 bg-brand-50 text-brand-700'
+                          : 'border-gray-200 hover:border-gray-300 text-gray-700'
+                      }`}
+                    >
+                      <div className="mb-1 text-2xl">{emoji}</div>
+                      <div className="text-sm font-medium">{label}</div>
+                      <div className={`mt-1 text-xs leading-tight ${active ? 'text-brand-500' : 'text-gray-400'}`}>
+                        {hint}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -264,12 +314,22 @@ export default function Train() {
             <div>
               <div className="mb-3 flex items-center justify-between">
                 <label className="text-sm font-medium text-gray-700">Objective weights</label>
-                <span className={`text-sm font-semibold ${weightsValid ? 'text-green-600' : 'text-red-600'}`}>
-                  {totalWeight}/100
-                </span>
+                <div className="flex items-center gap-3">
+                  {isModified && (
+                    <button
+                      onClick={handleResetWeights}
+                      className="flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium text-brand-600 ring-1 ring-brand-200 hover:bg-brand-50 transition"
+                    >
+                      ↺ Reset to recommended
+                    </button>
+                  )}
+                  <span className={`text-sm font-semibold ${weightsValid ? 'text-green-600' : 'text-red-600'}`}>
+                    {totalWeight}/100
+                  </span>
+                </div>
               </div>
               <div className="space-y-4">
-                {(Object.keys(DEFAULT_WEIGHTS) as (keyof Objectives)[]).map((key) => (
+                {(Object.keys(preset.weights) as (keyof Objectives)[]).map((key) => (
                   <div key={key}>
                     <div className="mb-1 flex items-center justify-between text-sm">
                       <span className="text-gray-700">{OBJECTIVE_LABELS[key]}</span>
