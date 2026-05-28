@@ -29,6 +29,8 @@ ENV NODE_ENV=production
 # Cloud Run injects PORT; default to 8080
 ENV PORT=8080
 
+RUN apk add --no-cache openssl
+
 # Production deps only
 COPY package*.json ./
 COPY apps/api/package*.json ./apps/api/
