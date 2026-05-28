@@ -6,6 +6,7 @@
  */
 
 import { prisma } from '../db';
+import { Prisma } from '@prisma/client';
 import { trainModel } from '@robotrain/training';
 
 const POLL_INTERVAL_MS = 2_000;
@@ -57,7 +58,7 @@ async function processNextJob(): Promise<void> {
         jobId: job.id,
         advantage: result.advantage,
         learningCurve: result.learningCurve,
-        modelData: result.modelData,
+        modelData: result.modelData as unknown as Prisma.InputJsonValue,
       },
     });
 
