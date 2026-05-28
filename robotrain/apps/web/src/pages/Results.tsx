@@ -153,7 +153,7 @@ export default function Results() {
                 <dt className="text-gray-500">Job ID</dt>
                 <dd className="font-mono text-xs text-gray-700 break-all">{job.id}</dd>
               </div>
-              {Object.entries(config.weights as Record<string, number>).map(([key, val]) => (
+              {Object.entries(config.weights as unknown as Record<string, number>).map(([key, val]) => (
                 <div key={key}>
                   <dt className="text-gray-500 capitalize">{key} weight</dt>
                   <dd className="font-medium text-gray-900">{val}%</dd>
