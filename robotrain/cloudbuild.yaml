@@ -1,14 +1,13 @@
 steps:
-  # ── Build & push Docker image ─────────────────────────────────────────────
   - name: 'gcr.io/cloud-builders/docker'
     id: 'build-image'
     args:
       - 'build'
       - '--tag=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:$COMMIT_SHA'
       - '--tag=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:latest'
-      - '--file=apps/api/Dockerfile'
+      - '--file=robotrain/apps/api/Dockerfile'
       - '--cache-from=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:latest'
-      - '.'
+      - 'robotrain'
 
   - name: 'gcr.io/cloud-builders/docker'
     id: 'push-image'
@@ -17,7 +16,6 @@ steps:
       - '--all-tags'
       - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain'
 
-  # ── Deploy to Cloud Run ───────────────────────────────────────────────────
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'deploy'
     entrypoint: gcloud
@@ -43,7 +41,7 @@ images:
   - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:latest'
 
 substitutions:
-  _REGION: us-central1
+  _REGION: europe-west1
   _REPO_NAME: robotrain
   _INSTANCE_NAME: robotrain-db
 
