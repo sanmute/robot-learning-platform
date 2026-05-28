@@ -4,12 +4,13 @@ export type RobotType = 'warehouse' | 'manufacturing' | 'space';
 
 export type JobStatus = 'pending' | 'running' | 'done' | 'failed';
 
-export interface Objectives {
+export type Objectives = {
   food: number;
   efficiency: number;
   speed: number;
   accuracy: number;
   balance: number;
+  [key: string]: number;
 }
 
 // ── API resource shapes ──────────────────────────────────────────────────────
