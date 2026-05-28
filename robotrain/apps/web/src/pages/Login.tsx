@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+/// <reference types="vite/client" />
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { useAuth } from '../App';
