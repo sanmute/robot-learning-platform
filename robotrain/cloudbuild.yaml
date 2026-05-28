@@ -1,0 +1,51 @@
+steps:
+  # ── Build & push Docker image ─────────────────────────────────────────────
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build-image'
+    args:
+      - 'build'
+      - '--tag=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:$COMMIT_SHA'
+      - '--tag=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:latest'
+      - '--file=apps/api/Dockerfile'
+      - '--cache-from=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:latest'
+      - '.'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push-image'
+    args:
+      - 'push'
+      - '--all-tags'
+      - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain'
+
+  # ── Deploy to Cloud Run ───────────────────────────────────────────────────
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'deploy'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'robotrain'
+      - '--image=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:$COMMIT_SHA'
+      - '--region=$_REGION'
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+      - '--add-cloudsql-instances=$PROJECT_ID:$_REGION:$_INSTANCE_NAME'
+      - '--memory=512Mi'
+      - '--cpu=1'
+      - '--min-instances=0'
+      - '--max-instances=10'
+      - '--set-env-vars=NODE_ENV=production'
+      - >-
+        --set-secrets=DATABASE_URL=DATABASE_URL:latest,JWT_SECRET=JWT_SECRET:latest,GOOGLE_CLIENT_ID=GOOGLE_CLIENT_ID:latest,GOOGLE_CLIENT_SECRET=GOOGLE_CLIENT_SECRET:latest,GOOGLE_CALLBACK_URL=GOOGLE_CALLBACK_URL:latest
+
+images:
+  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:$COMMIT_SHA'
+  - '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/robotrain:latest'
+
+substitutions:
+  _REGION: us-central1
+  _REPO_NAME: robotrain
+  _INSTANCE_NAME: robotrain-db
+
+options:
+  logging: CLOUD_LOGGING_ONLY

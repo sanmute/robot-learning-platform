@@ -1,0 +1,24 @@
+{
+  "name": "robotrain",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/api",
+    "apps/web",
+    "packages/training",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w apps/api\" \"npm run dev -w apps/web\"",
+    "build:packages": "npm run build -w packages/shared && npm run build -w packages/training",
+    "build:web": "npm run build -w apps/web",
+    "build:api": "npm run build -w apps/api",
+    "build": "npm run build:packages && npm run build:web && npm run build:api",
+    "start": "npm run start -w apps/api",
+    "migrate:dev": "npm run migrate:dev -w apps/api",
+    "migrate:deploy": "npm run migrate:deploy -w apps/api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
