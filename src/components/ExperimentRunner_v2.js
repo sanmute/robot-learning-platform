@@ -37,6 +37,8 @@ import {
   EXP6_TRANSFER_LEARNING_CONFIG,
   EXP8_WEIGHT_OPTIMIZATION_CONFIG,
   EXP9_LEARNING_DYNAMICS_CONFIG,
+  EXP10_REWARD_COHERENCE_CONFIG,
+  EXP10B_COLLISION_CALIBRATION_CONFIG,
   getEXP3Config,
   getAgentStartPosition,
   createAgentForCondition,
@@ -434,8 +436,10 @@ export class ExperimentRunner {
       5.5:   { name: 'Multi-Objective Learning'  },
       '5.5.5': { name: 'Weight Optimisation'       },
       6:     { name: 'Generalization & Transfer' },
-      8:     { name: 'Weight Optimization (10 configs)' },
-      9:     { name: 'Learning Dynamics & Curves'      },
+      8:     { name: 'Weight Optimization (10 configs)'   },
+      9:     { name: 'Learning Dynamics & Curves'        },
+      10:    { name: 'Reward Signal Coherence (Exp 10a)' },
+      '10b': { name: 'Collision Penalty Calibration (Exp 10b)' },
     };
 
     this.progress = {
@@ -446,7 +450,7 @@ export class ExperimentRunner {
       isRunning:         false,
     };
 
-    this.results  = { 1: [], 2: [], 3: [], 4: [], 4.5: [], 5: [], 5.5: [], '5.5.5': [], 6: [], 8: [], 9: [] };
+    this.results  = { 1: [], 2: [], 3: [], 4: [], 4.5: [], 5: [], 5.5: [], '5.5.5': [], 6: [], 8: [], 9: [], 10: [], '10b': [] };
     this._stopped = false;
 
     /**
@@ -501,6 +505,8 @@ export class ExperimentRunner {
       6:       () => this.runExp6(),
       8:       () => this.runExp8(),
       9:       () => this.runExp9(),
+      10:      () => this.runExp10(),
+      '10b':   () => this.runExp10b(),
     };
 
     if (dispatch[expNum]) await dispatch[expNum]();
@@ -1239,7 +1245,8 @@ export class ExperimentRunner {
     let ax     = SIM_W / 2 + (Math.random() - 0.5) * 40;
     let ay     = SIM_H / 2 + (Math.random() - 0.5) * 40;
     let aAngle = Math.random() * Math.PI * 2;
-    let foodEaten = 0;
+    let foodEaten  = 0;
+    let wallBounces = 0;  // tracked so EXP10 collision-penalty variants work correctly
 
     for (let frame = 0; frame < duration; frame++) {
       if (this._stopped) break;
@@ -1259,13 +1266,16 @@ export class ExperimentRunner {
 
       const moved = _moveAgent(ax, ay, aAngle, action, obstacles);
       ax = moved.x; ay = moved.y; aAngle = moved.angle;
+      if (moved.bounced) wallBounces++;
 
       const ate    = _checkFoodCollision(ax, ay, foods);
       foodEaten   += ate;
       agent.score  = foodEaten;
 
-      // Combined multi-objective signal drives consolidation
-      const reward = combinedPerFrameReward(ate, frame, duration);
+      // Combined multi-objective signal drives consolidation.
+      // wallBounces passed as 4th arg; EXP5 variants ignore it (≤3 params),
+      // EXP10 collision-penalty variants use it via `?? 0` guard.
+      const reward = combinedPerFrameReward(ate, frame, duration, wallBounces);
       if (agent.controller) agent.controller.evaluateAction(sensoryState, action, reward);
       if (agent.stm)        agent.stm.add(new STMFrame(frame, sensoryState, newState, action, reward, attn));
       if (agent.engine)     agent.engine.update(frame, frame);
@@ -1342,7 +1352,9 @@ export class ExperimentRunner {
       foodEaten   += ate;
       agent.score  = foodEaten;
 
-      const reward = objPerFrameFn(ate, frame, duration);
+      // wallBounces passed as 4th arg; EXP5 variants ignore it (≤3 params),
+      // EXP10 collision-penalty variants use it via `?? 0` guard.
+      const reward = objPerFrameFn(ate, frame, duration, wallBounces);
       if (agent.controller) agent.controller.evaluateAction(sensoryState, action, reward);
       if (agent.stm)        agent.stm.add(new STMFrame(frame, sensoryState, newState, action, reward, attn));
       if (agent.engine)     agent.engine.update(frame, frame);
@@ -1961,6 +1973,256 @@ export class ExperimentRunner {
                 lastResult:          result,
               });
             }
+          }
+        }
+      }
+    }
+  }
+
+  // ── EXPERIMENT 10: Reward Signal Coherence ──────────────────────────────
+  //
+  //   Hypothesis: agents trained with coherent per-frame / terminal reward
+  //   signals (same function family at training and test time) show higher
+  //   and more consistent D-vs-A advantage than agents trained with the
+  //   incoherent EXP5/EXP5.5 mix.
+  //
+  //   Control  (incoherent): EXP5 per-frame training + EXP5.5 terminal scoring
+  //   Coherent:              EXP10 per-frame training + EXP10 terminal scoring
+  //
+  //   2 groups × 5 variants × (TRAINING_TRIALS + TEST_TRIALS × 2 conditions)
+  //
+  async runExp10() {
+    const cfg = EXP10_REWARD_COHERENCE_CONFIG;
+
+    // EXP5 per-frame lookup for control group
+    const exp5VariantByName = Object.fromEntries(
+      EXP5_REWARD_VARIATION_CONFIG.REWARD_VARIANTS.map(v => [v.name, v]),
+    );
+
+    // EXP5.5 terminal scoring for control group test phase
+    const exp5_5FinalScore = EXP5_5_MULTI_OBJECTIVE_CONFIG.REWARD_FUNCTIONS;
+
+    // Total trials: 2 groups × 5 variants × (training + test_per_cond × n_conds)
+    const trialsPerVariant =
+      cfg.TRAINING_TRIALS + cfg.TEST_TRIALS_PER_OBJ * cfg.TEST_CONDITIONS.length;
+    this.progress.totalTrials    = 2 * cfg.COHERENT_VARIANTS.length * trialsPerVariant;
+    this.progress.completedTrials = 0;
+
+    for (const groupName of ['control', 'coherent']) {
+      if (this._stopped) return;
+
+      for (const variant of cfg.COHERENT_VARIANTS) {
+        if (this._stopped) return;
+
+        // ── Select reward functions for this group ──────────────────────
+        // Training: per-frame signal that drives consolidation
+        const trainPerFrameFn = groupName === 'coherent'
+          ? variant.perFrameReward
+          : (exp5VariantByName[variant.name]?.perFrameReward ?? ((ate) => ate > 0 ? 1.0 : -0.01));
+
+        // Testing per-frame: same as training (coherence/incoherence is in the
+        // relationship between the per-frame signal and the terminal score)
+        const testPerFrameFn = trainPerFrameFn;
+
+        // Terminal scoring for test results
+        const testFinalFn = groupName === 'coherent'
+          ? variant.finalScore
+          : (exp5_5FinalScore[variant.name] ?? ((food) => food));
+
+        // ── Training phase ─────────────────────────────────────────────
+        const trainingLtm = new LongTermMemory(1000);
+
+        for (let t = 0; t < cfg.TRAINING_TRIALS; t++) {
+          if (this._stopped) return;
+
+          await this._runMultiObjTrainingTrial({
+            trainingLtm,
+            combinedPerFrameReward: trainPerFrameFn,
+            obstacleCount: cfg.OBSTACLE_COUNT,
+            foodCount:     cfg.FOOD_COUNT,
+            duration:      this.sharedParams.TRIAL_DURATION,
+          });
+
+          this.progress.completedTrials++;
+          this._emitProgress({
+            phase:               'training',
+            group:               groupName,
+            variant:             variant.name,
+            trainingTrial:       t + 1,
+            totalTrainingTrials: cfg.TRAINING_TRIALS,
+            ltmPatterns:         trainingLtm.stats()?.totalPatterns ?? 0,
+          });
+        }
+
+        const totalTrainedPatterns = trainingLtm.stats()?.totalPatterns ?? 0;
+
+        // ── Testing phase ──────────────────────────────────────────────
+        for (const condition of cfg.TEST_CONDITIONS) {
+          for (let trial = 0; trial < cfg.TEST_TRIALS_PER_OBJ; trial++) {
+            if (this._stopped) return;
+
+            const raw = await this._runMultiObjTestTrial({
+              variant,
+              trainingLtm,
+              condition,
+              objectiveKey:        variant.name,
+              objFinalFn:          testFinalFn,
+              objPerFrameFn:       testPerFrameFn,
+              obstacleCount:       cfg.OBSTACLE_COUNT,
+              foodCount:           cfg.FOOD_COUNT,
+              duration:            this.sharedParams.TRIAL_DURATION,
+              trial,
+              totalTrainedPatterns,
+            });
+
+            const result = {
+              experiment:   10,
+              group:        groupName,    // 'control' | 'coherent'
+              variantName:  variant.name,
+              variantLabel: variant.label,
+              condition:    raw.condition,
+              trial:        raw.trial,
+              results:      raw.results,
+            };
+
+            this.results[10].push(result);
+            this.progress.completedTrials++;
+            this._emitProgress({
+              phase:             'testing',
+              group:             groupName,
+              variant:           variant.name,
+              currentCondition:  condition,
+              trial,
+              totalTrainedPatterns,
+              lastResult:        result,
+            });
+          }
+        }
+      }
+    }
+  }
+
+  // ── EXPERIMENT 10b: Collision Penalty Calibration ────────────────────────
+  //
+  //   ISO/TS 15066 context: hardware (LIDAR, ultrasonic, force/torque sensors)
+  //   provides the hard safety backstop in HRC environments.  Each wall bounce
+  //   maps to a situation that would trigger speed-/force-limiting.  This
+  //   experiment finds the optimal per-frame collision penalty that minimises
+  //   hardware-intervention frequency while keeping task performance positive.
+  //
+  //   Per penalty variant: one shared LTM trained on all 5 coherent objectives
+  //   (combined equal-weight signal), then tested per objective.
+  //
+  //   3 penalties × (10 training + 5 obj × 2 cond × 3 test) = 120 trials
+  //
+  async runExp10b() {
+    const cfg = EXP10B_COLLISION_CALIBRATION_CONFIG;
+
+    // Total: 3 penalty variants × (TRAINING_TRIALS + 5 obj × conditions × trials)
+    const trialsPerPenalty =
+      cfg.TRAINING_TRIALS +
+      (cfg.BASE_COHERENT_VARIANTS.length + 1) * // +1 for accuracy
+        cfg.TEST_CONDITIONS.length * cfg.TEST_TRIALS_PER_OBJ;
+    this.progress.totalTrials    = cfg.PENALTY_VARIANTS.length * trialsPerPenalty;
+    this.progress.completedTrials = 0;
+
+    for (const penaltyVariant of cfg.PENALTY_VARIANTS) {
+      if (this._stopped) return;
+
+      const penalty = penaltyVariant.collisionPenalty; // e.g. -1.0, -2.0, -5.0
+
+      // Build the full 5-variant set for this penalty level.
+      // The accuracy variant's perFrameReward uses Math.abs(penalty) so the
+      // formula is: ate ? +1.0 : -0.02 - wallBounces × |penalty|
+      const accuracyVariant = {
+        ...cfg.ACCURACY_BASE,
+        perFrameReward: (ate, _f, _d, wallBounces) =>
+          ate > 0 ? 1.0 : -0.02 - (wallBounces ?? 0) * Math.abs(penalty),
+      };
+      const allVariants = [...cfg.BASE_COHERENT_VARIANTS, accuracyVariant]; // length 5
+
+      // Equal-weight combined signal for training (same pattern as EXP5.5)
+      const weight = 1 / allVariants.length;
+      const combinedPerFrameReward = (ate, frame, duration, wallBounces) =>
+        allVariants.reduce(
+          (sum, v) => sum + v.perFrameReward(ate, frame, duration, wallBounces) * weight,
+          0,
+        );
+
+      // ── Training phase ─────────────────────────────────────────────────────
+      const trainingLtm = new LongTermMemory(1000);
+
+      for (let t = 0; t < cfg.TRAINING_TRIALS; t++) {
+        if (this._stopped) return;
+
+        await this._runMultiObjTrainingTrial({
+          trainingLtm,
+          combinedPerFrameReward,
+          obstacleCount: cfg.OBSTACLE_COUNT,
+          foodCount:     cfg.FOOD_COUNT,
+          duration:      this.sharedParams.TRIAL_DURATION,
+        });
+
+        this.progress.completedTrials++;
+        this._emitProgress({
+          phase:          'training',
+          penaltyName:    penaltyVariant.name,
+          penaltyLabel:   penaltyVariant.label,
+          penalty,
+          trainingTrial:  t + 1,
+          totalTrainingTrials: cfg.TRAINING_TRIALS,
+          ltmPatterns:    trainingLtm.stats()?.totalPatterns ?? 0,
+        });
+      }
+
+      const totalTrainedPatterns = trainingLtm.stats()?.totalPatterns ?? 0;
+
+      // ── Testing phase — one cell per (objective × condition) ───────────────
+      for (const objVariant of allVariants) {
+        for (const condition of cfg.TEST_CONDITIONS) {
+          for (let trial = 0; trial < cfg.TEST_TRIALS_PER_OBJ; trial++) {
+            if (this._stopped) return;
+
+            const raw = await this._runMultiObjTestTrial({
+              // variant arg is used only for name/label in the raw result record
+              variant:         { name: penaltyVariant.name, label: penaltyVariant.label },
+              trainingLtm,
+              condition,
+              objectiveKey:    objVariant.name,
+              objFinalFn:      objVariant.finalScore,
+              objPerFrameFn:   objVariant.perFrameReward,
+              obstacleCount:   cfg.OBSTACLE_COUNT,
+              foodCount:       cfg.FOOD_COUNT,
+              duration:        this.sharedParams.TRIAL_DURATION,
+              trial,
+              totalTrainedPatterns,
+            });
+
+            const result = {
+              experiment:      '10b',
+              penaltyName:     penaltyVariant.name,
+              penaltyLabel:    penaltyVariant.label,
+              collisionPenalty: penalty,
+              objectiveKey:    objVariant.name,
+              objectiveLabel:  objVariant.label,
+              condition:       raw.condition,
+              trial:           raw.trial,
+              results:         raw.results,
+            };
+
+            this.results['10b'].push(result);
+            this.progress.completedTrials++;
+            this._emitProgress({
+              phase:             'testing',
+              penaltyName:       penaltyVariant.name,
+              penaltyLabel:      penaltyVariant.label,
+              penalty,
+              currentObjective:  objVariant.name,
+              currentCondition:  condition,
+              trial,
+              totalTrainedPatterns,
+              lastResult:        result,
+            });
           }
         }
       }
@@ -2679,6 +2941,203 @@ export class ExperimentRunner {
       return summary;
     }
 
+    // ── Experiment 10b: penalty × objective × condition; safety/performance ──
+    if (expNum === '10b') {
+      const cfg      = EXP10B_COLLISION_CALIBRATION_CONFIG;
+      const summary  = {};
+      const penalties  = [...new Set(results.map(r => r.penaltyName))];
+      const objectives = [...new Set(results.map(r => r.objectiveKey))];
+      const conditions = [...new Set(results.map(r => r.condition))];
+
+      const penaltySummaryRows = []; // for the cross-penalty comparison table
+
+      for (const penName of penalties) {
+        const penMeta = results.find(r => r.penaltyName === penName);
+        summary[penName] = {
+          _label:            penMeta?.penaltyLabel    ?? penName,
+          _collisionPenalty: penMeta?.collisionPenalty ?? null,
+        };
+
+        const objGenIndices    = [];  // D-vs-A advantage per objective
+        const bounceReductions = [];  // % bounce reduction D-vs-A per objective
+
+        for (const obj of objectives) {
+          const condStats = {};
+
+          for (const cond of conditions) {
+            const filtered = results.filter(
+              r => r.penaltyName === penName && r.objectiveKey === obj && r.condition === cond
+            );
+            const vals = filtered
+              .map(r => r.results.objectiveScore)
+              .filter(v => typeof v === 'number' && !isNaN(v));
+            if (!vals.length) { condStats[cond] = null; continue; }
+            const n    = vals.length;
+            const mean = vals.reduce((a, b) => a + b, 0) / n;
+            const std  = Math.sqrt(vals.reduce((sq, x) => sq + (x - mean) ** 2, 0) / n);
+            condStats[cond] = {
+              n,
+              mean:            +mean.toFixed(3),
+              std:             +std.toFixed(3),
+              sem:             +(std / Math.sqrt(n)).toFixed(3),
+              min:             +Math.min(...vals).toFixed(3),
+              max:             +Math.max(...vals).toFixed(3),
+              meanFoodEaten:   +(filtered.reduce((s, r) => s + (r.results.foodCollected ?? 0), 0) / n).toFixed(3),
+              meanWallBounces: +(filtered.reduce((s, r) => s + (r.results.wallBounces    ?? 0), 0) / n).toFixed(2),
+            };
+          }
+
+          const objLabel = results.find(r => r.objectiveKey === obj)?.objectiveLabel ?? obj;
+          summary[penName][obj] = { _objectiveLabel: objLabel, ...condStats };
+
+          // D-vs-A advantage on objective score
+          if (condStats.D && condStats.A && condStats.A.mean !== 0) {
+            const gi = +((condStats.D.mean - condStats.A.mean) / Math.abs(condStats.A.mean) * 100).toFixed(1);
+            summary[penName][obj]._generalizationIndex = gi;
+            objGenIndices.push(gi);
+          }
+
+          // Bounce reduction: (A bounces − D bounces) / A bounces × 100
+          // Positive = D has fewer bounces = fewer hardware interventions needed
+          const aBounces = condStats.A?.meanWallBounces;
+          const dBounces = condStats.D?.meanWallBounces;
+          if (typeof aBounces === 'number' && typeof dBounces === 'number' && aBounces > 0) {
+            const br = +((aBounces - dBounces) / aBounces * 100).toFixed(1);
+            summary[penName][obj]._bounceReductionPct = br;
+            bounceReductions.push(br);
+          }
+        }
+
+        const avgAdvantage = objGenIndices.length
+          ? +(objGenIndices.reduce((a, b) => a + b, 0) / objGenIndices.length).toFixed(2)
+          : null;
+
+        const accuracyAdvantage = summary[penName]['accuracy']?._generalizationIndex ?? null;
+
+        const avgBounceReduction = bounceReductions.length
+          ? +(bounceReductions.reduce((a, b) => a + b, 0) / bounceReductions.length).toFixed(2)
+          : null;
+
+        // safety_score = accuracy_advantage × 0.4 + avg_bounce_reduction × 0.6
+        // Bounce reduction weighted more — hardware backstop means intervention
+        // frequency matters more than accuracy-objective score advantage alone.
+        const safetyScore = (typeof accuracyAdvantage === 'number' && typeof avgBounceReduction === 'number')
+          ? +(accuracyAdvantage * 0.4 + avgBounceReduction * 0.6).toFixed(2)
+          : null;
+
+        summary[penName]._avgGeneralizationIndex = avgAdvantage;
+        summary[penName]._accuracyAdvantage      = accuracyAdvantage;
+        summary[penName]._avgBounceReduction     = avgBounceReduction;
+        summary[penName]._safetyScore            = safetyScore;
+
+        penaltySummaryRows.push({
+          penaltyName:      penName,
+          penaltyLabel:     penMeta?.penaltyLabel    ?? penName,
+          collisionPenalty: penMeta?.collisionPenalty ?? null,
+          avgAdvantage,
+          accuracyAdvantage,
+          avgBounceReduction,
+          safetyScore,
+        });
+      }
+
+      // Sort by safetyScore descending — best tradeoff first
+      penaltySummaryRows.sort((a, b) => (b.safetyScore ?? -Infinity) - (a.safetyScore ?? -Infinity));
+      const optimal = penaltySummaryRows[0] ?? null;
+
+      summary._penaltyComparison = penaltySummaryRows;
+      summary._optimalPenalty    = optimal
+        ? { name: optimal.penaltyName, value: optimal.collisionPenalty, safetyScore: optimal.safetyScore }
+        : null;
+      summary._hypothesis =
+        'There exists an optimal collision penalty in −1.0 to −5.0 that reduces ' +
+        'wall bounces (hardware interventions) while maintaining positive task advantage.';
+      summary._conclusion = optimal?.safetyScore !== null
+        ? optimal.safetyScore > 0
+          ? `✅ Optimal penalty: ${optimal.collisionPenalty} (${optimal.penaltyLabel}) — safety_score: ${optimal.safetyScore}`
+          : `⚠ No penalty achieves positive safety_score — penalty may be over-deterring task performance`
+        : 'Insufficient data';
+      summary._safetyScoreFormula = 'safety_score = accuracy_advantage × 0.4 + avg_bounce_reduction × 0.6';
+      summary._isoNote            = 'Bounce reduction maps to reducing ISO/TS 15066 force/speed-limiting triggers';
+      summary._experimentVersion  = cfg.EXPERIMENT_VERSION;
+
+      return summary;
+    }
+
+    // ── Experiment 10: group × variant × condition; coherence delta ─────────
+    if (expNum === 10) {
+      const summary    = {};
+      const groups     = [...new Set(results.map(r => r.group))];      // ['control','coherent']
+      const variants   = [...new Set(results.map(r => r.variantName))];
+      const conditions = [...new Set(results.map(r => r.condition))];
+
+      for (const grp of groups) {
+        summary[grp] = {};
+        const variantGenIndices = [];
+
+        for (const vName of variants) {
+          const vLabel = results.find(r => r.variantName === vName)?.variantLabel ?? vName;
+          const condStats = {};
+
+          for (const cond of conditions) {
+            const filtered = results.filter(
+              r => r.group === grp && r.variantName === vName && r.condition === cond
+            );
+            const vals = filtered
+              .map(r => r.results.objectiveScore)
+              .filter(v => typeof v === 'number' && !isNaN(v));
+            if (!vals.length) { condStats[cond] = null; continue; }
+            const n    = vals.length;
+            const mean = vals.reduce((a, b) => a + b, 0) / n;
+            const std  = Math.sqrt(vals.reduce((sq, x) => sq + (x - mean) ** 2, 0) / n);
+            condStats[cond] = {
+              n,
+              mean:            +mean.toFixed(3),
+              std:             +std.toFixed(3),
+              sem:             +(std / Math.sqrt(n)).toFixed(3),
+              min:             +Math.min(...vals).toFixed(3),
+              max:             +Math.max(...vals).toFixed(3),
+              meanFoodEaten:   +(filtered.reduce((s, r) => s + (r.results.foodCollected ?? 0), 0) / n).toFixed(3),
+              meanWallBounces: +(filtered.reduce((s, r) => s + (r.results.wallBounces    ?? 0), 0) / n).toFixed(1),
+            };
+          }
+
+          summary[grp][vName] = { _variantLabel: vLabel, ...condStats };
+
+          if (condStats.D && condStats.A && condStats.A.mean !== 0) {
+            const gi = +((condStats.D.mean - condStats.A.mean) / Math.abs(condStats.A.mean) * 100).toFixed(1);
+            summary[grp][vName]._generalizationIndex = gi;
+            variantGenIndices.push(gi);
+          }
+        }
+
+        summary[grp]._avgGeneralizationIndex = variantGenIndices.length
+          ? +(variantGenIndices.reduce((a, b) => a + b, 0) / variantGenIndices.length).toFixed(1)
+          : null;
+      }
+
+      // Coherence delta: coherent avg GI − control avg GI
+      const ctrlGI  = summary['control']?._avgGeneralizationIndex;
+      const coherGI = summary['coherent']?._avgGeneralizationIndex;
+      summary._coherenceDelta = (typeof ctrlGI === 'number' && typeof coherGI === 'number')
+        ? +(coherGI - ctrlGI).toFixed(2)
+        : null;
+      summary._hypothesis =
+        'Coherent reward signals (EXP10) should produce higher D-vs-A advantage than ' +
+        'the incoherent EXP5/EXP5.5 mix (control)';
+      summary._conclusion = summary._coherenceDelta !== null
+        ? summary._coherenceDelta > 0.5
+          ? `✅ Coherent signals improve consistency: +${summary._coherenceDelta}% avg D-vs-A advantage`
+          : summary._coherenceDelta < -0.5
+            ? `❌ Incoherent baseline outperformed by ${Math.abs(summary._coherenceDelta)}% — hypothesis not supported`
+            : `➡ No significant difference (Δ = ${summary._coherenceDelta}%) — coherence not critical at this scale`
+        : 'Insufficient data';
+      summary._collisionPenalty = EXP10_REWARD_COHERENCE_CONFIG.COLLISION_PENALTY;
+      summary._experimentVersion = EXP10_REWARD_COHERENCE_CONFIG.EXPERIMENT_VERSION;
+
+      return summary;
+    }
+
     // ── Experiments 4 / 4.5: use mean_per_agent (multi-agent aggregate) ───────
     const conditions = [...new Set(results.map(r => r.condition))];
     const summary    = {};
@@ -2713,7 +3172,9 @@ export class ExperimentRunner {
       return null;
     }
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filename  = `exp${expNum}_results_${timestamp}.json`;
+    const filename  = expNum === 10    ? `EXP10A_RESULTS_${timestamp}.json`
+                    : expNum === '10b' ? `EXP10B_RESULTS_${timestamp}.json`
+                    : `exp${expNum}_results_${timestamp}.json`;
     const data = {
       experiment: expNum,
       name:       this.expParams[expNum]?.name ?? `Experiment ${expNum}`,

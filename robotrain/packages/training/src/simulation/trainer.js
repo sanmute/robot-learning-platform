@@ -23,11 +23,65 @@
 
 import { ExperimentRunner } from './ExperimentRunner.js';
 import { LongTermMemory } from './memory/LTM.js';
-import {
-  EXP5_REWARD_VARIATION_CONFIG,
-  EXP5_5_MULTI_OBJECTIVE_CONFIG,
-  EXPERIMENT_CONFIG,
-} from './EXPERIMENT_CONFIG.js';
+import { EXPERIMENT_CONFIG } from './EXPERIMENT_CONFIG.js';
+
+// ── Coherent reward variants (Exp 10a / 10b) ──────────────────────────────────
+//
+//   These replace the original incoherent EXP5 training signals + EXP5.5
+//   terminal scoring.  Exp 10a established that aligning per-frame and
+//   final-score reward functions improves D-vs-A learning consistency.
+//
+//   Accuracy collision penalty:
+//     Exp 10b: -2.0 is optimal (positive advantage on all 5 objectives,
+//              best safety_score = accuracy_adv×0.4 + bounce_reduction×0.6)
+//     For human-collaborative environments use -5.0 (see RESEARCH_ROADMAP.md)
+//     Hardware sensors (LIDAR, ultrasonic, F/T) provide hard safety guarantee
+//     per ISO/TS 15066; this penalty reduces frequency of hardware-intervention
+//     triggers (each wall bounce ≈ a situation that would activate force/speed
+//     limiting).
+//
+const COHERENT_VARIANTS = [
+  {
+    name:  'baseline',
+    label: 'Baseline: Maximize Food',
+    perFrameReward: (ate) => ate > 0 ? 1.0 : -0.01,
+    finalScore:     (food) => food,
+  },
+  {
+    name:  'efficiency',
+    label: 'Efficiency: Food per Energy',
+    perFrameReward: (ate, frame, duration) =>
+      ate > 0 ? 1.0 : -0.05 - (frame / duration) * 0.02,
+    finalScore: (food, frames) => food - frames * 0.001,
+  },
+  {
+    name:  'accuracy',
+    label: 'Safety: Minimal Wall Contact',
+    // Exp 10b: -2.0 collision penalty optimal for performance (all 5 objectives positive)
+    // For human-collaborative environments use -5.0 (see RESEARCH_ROADMAP.md)
+    // Hardware sensors (LIDAR, ultrasonic, F/T) provide hard safety guarantee;
+    // this penalty reduces frequency of hardware intervention triggers.
+    perFrameReward: (ate, _frame, _duration, wallBounces) =>
+      ate > 0 ? 1.0 : -0.02 - (wallBounces ?? 0) * 2.0,
+    finalScore: (food, _frames, wallBounces) => food - wallBounces * 0.05,
+  },
+  {
+    name:  'speed',
+    label: 'Speed: Time Pressure',
+    perFrameReward: (ate) => ate > 0 ? 2.0 : -0.02,
+    finalScore: (food, frames) => food * 2 - frames * 0.01,
+  },
+  {
+    name:  'balance',
+    label: 'Balance: Multi-Objective',
+    perFrameReward: (ate, frame, duration, wallBounces) =>
+      ate > 0 ? 1.5 : -0.03 - (frame / duration) * 0.01 - (wallBounces ?? 0) * 0.05,
+    finalScore: (food, frames, wallBounces) =>
+      food * 1.5 - frames * 0.0005 - wallBounces * 0.05,
+  },
+];
+
+const coherentByName = Object.fromEntries(COHERENT_VARIANTS.map(v => [v.name, v]));
 
 const TRAINING_TRIALS    = 10;
 const TEST_TRIALS_PER_OBJ = 3;
@@ -54,9 +108,9 @@ export async function runTraining(config, onProgress, onLog, onCurvePoint) {
   const runner = new ExperimentRunner();
   const log = (msg) => onLog?.(msg);
 
-  // ── Map user weights to EXP5 variant names ─────────────────────────────────
+  // ── Map user weights to coherent variant names ────────────────────────────
   //   User:  { food, efficiency, speed, accuracy, balance }  (integers, sum 100)
-  //   EXP5:  { baseline (=food), efficiency, speed, accuracy, balance }  (floats, sum 1)
+  //   Internal: { baseline (=food), efficiency, speed, accuracy, balance } (floats, sum 1)
   const rawW  = config.weights ?? {};
   const total = Object.values(rawW).reduce((a, b) => a + b, 0) || 100;
 
@@ -68,17 +122,16 @@ export async function runTraining(config, onProgress, onLog, onCurvePoint) {
     efficiency: (rawW.efficiency ?? 20) / total,
   };
 
-  const exp5ByName = Object.fromEntries(
-    EXP5_REWARD_VARIATION_CONFIG.REWARD_VARIANTS.map(v => [v.name, v]),
-  );
-
-  const combinedPerFrameReward = (ate, frame, duration) =>
+  // Combined per-frame reward: Σ weight[key] × coherentVariant.perFrameReward(...)
+  // Uses Exp 10a coherent signals — wallBounces passed as 4th arg so the
+  // accuracy (-2.0) and balance variants can apply their collision deterrents.
+  const combinedPerFrameReward = (ate, frame, duration, wallBounces) =>
     Object.entries(trainWeights).reduce((sum, [key, w]) => {
-      const fn = exp5ByName[key]?.perFrameReward ?? ((a) => a > 0 ? 1.0 : -0.01);
-      return sum + fn(ate, frame, duration) * w;
+      const fn = coherentByName[key]?.perFrameReward ?? ((a) => a > 0 ? 1.0 : -0.01);
+      return sum + fn(ate, frame, duration, wallBounces) * w;
     }, 0);
 
-  const testObjectives = Object.keys(EXP5_5_MULTI_OBJECTIVE_CONFIG.REWARD_FUNCTIONS);
+  const testObjectives = COHERENT_VARIANTS.map(v => v.name); // ['baseline','efficiency','accuracy','speed','balance']
   let   done           = 0;
 
   const tick = async () => {
@@ -132,8 +185,10 @@ export async function runTraining(config, onProgress, onLog, onCurvePoint) {
   const learningCurve = [];
 
   for (const objKey of testObjectives) {
-    const objFinalFn    = EXP5_5_MULTI_OBJECTIVE_CONFIG.REWARD_FUNCTIONS[objKey];
-    const objPerFrameFn = exp5ByName[objKey]?.perFrameReward ?? ((a) => a > 0 ? 1.0 : -0.01);
+    // Coherent: per-frame and terminal scoring both come from the same variant
+    // (Exp 10a finding — aligned signals give better D-vs-A consistency)
+    const objFinalFn    = coherentByName[objKey]?.finalScore     ?? ((food) => food);
+    const objPerFrameFn = coherentByName[objKey]?.perFrameReward ?? ((a) => a > 0 ? 1.0 : -0.01);
 
     for (const cond of ['A', 'D']) {
       for (let t = 0; t < TEST_TRIALS_PER_OBJ; t++) {

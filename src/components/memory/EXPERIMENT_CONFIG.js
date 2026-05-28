@@ -953,3 +953,182 @@ export const EXP9_LEARNING_DYNAMICS_CONFIG = {
 
   // (0+2+5+10+20+40) × 2 training + 6 × 2 × 5 × 2 × 2 testing = 154 + 240 = 394 total
 };
+
+// ── Experiment 10: Reward Signal Coherence ────────────────────────────────────
+//
+//   Hypothesis: per-frame training reward signals that are coherent with the
+//   final scoring function produce more consistent and positive learning
+//   advantages across all objectives.
+//
+//   Two groups run under identical conditions:
+//     Control  — trained on EXP5 reward signals (same as Exp 8/9),
+//                tested with EXP5_5 terminal scoring  ← incoherent
+//     Coherent — trained on the COHERENT_VARIANTS per-frame signals below,
+//                tested with the SAME variant's finalScore  ← aligned
+//
+//   Safety focus: accuracy variant uses a −0.5 per-bounce collision penalty
+//   (Exp 10a).  The primary safety question is whether memory-guided agents
+//   (condition D) accumulate measurably fewer wall bounces than the reactive
+//   baseline (condition A) when trained on coherent collision-averse signals.
+//
+//   Total: 2 groups × (10 training + 5 obj × 2 cond × 3 test) = 80 trials (~8 s)
+
+export const EXP10_REWARD_COHERENCE_CONFIG = {
+  description: 'Tests whether coherent per-frame/final reward signals improve learning consistency. Uses -0.5 collision penalty for safety objective (Exp 10a).',
+
+  COHERENT_VARIANTS: [
+    {
+      name:  'baseline',
+      label: 'Baseline: Maximize Food',
+      perFrameReward: (ate) => ate > 0 ? 1.0 : -0.01,
+      finalScore:     (food) => food,
+    },
+    {
+      name:  'efficiency',
+      label: 'Efficiency: Food per Energy',
+      perFrameReward: (ate, frame, duration) =>
+        ate > 0 ? 1.0 : -0.05 - (frame / duration) * 0.02,
+      finalScore: (food, frames) => food - frames * 0.001,
+    },
+    {
+      name:  'accuracy',
+      label: 'Safety: Minimal Wall Contact',
+      // Exp 10a: moderate collision penalty (−0.5 per bounce).
+      // Rationale: in real deployments (warehouses, factories) collisions are
+      // extremely expensive — this penalty must be strong enough to deter them
+      // while still allowing the agent to learn nuanced avoidance behaviour.
+      // Follow-up Exp 10b will test −2.0 if this proves insufficient.
+      perFrameReward: (ate, _frame, _duration, wallBounces) =>
+        ate > 0 ? 1.0 : -0.02 - (wallBounces ?? 0) * 0.5,
+      finalScore: (food, _frames, wallBounces) => food - wallBounces * 0.05,
+    },
+    {
+      name:  'speed',
+      label: 'Speed: Time Pressure',
+      perFrameReward: (ate) => ate > 0 ? 2.0 : -0.02,
+      finalScore: (food, frames) => food * 2 - frames * 0.01,
+    },
+    {
+      name:  'balance',
+      label: 'Balance: Multi-Objective',
+      perFrameReward: (ate, frame, duration, wallBounces) =>
+        ate > 0 ? 1.5 : -0.03 - (frame / duration) * 0.01 - (wallBounces ?? 0) * 0.05,
+      finalScore: (food, frames, wallBounces) =>
+        food * 1.5 - frames * 0.0005 - wallBounces * 0.05,
+    },
+  ],
+
+  COMPLEXITY_LEVEL:    2,
+  OBSTACLE_COUNT:      15,
+  FOOD_COUNT:          20,
+  TRAINING_TRIALS:     10,
+  TEST_TRIALS_PER_OBJ: 3,
+  TEST_CONDITIONS:     ['A', 'D'],
+  // 10 training + 5 obj × 2 conditions × 3 trials = 40 trials per group (same as production)
+
+  // Experiment ladder for thesis:
+  //   Exp 10a (this):  −0.5 collision penalty — does coherence help?
+  //   Exp 10b (next):  −2.0 collision penalty — safety/performance tradeoff?
+  //   Exp 11 (future): hard constraint — collision ends trial immediately
+  COLLISION_PENALTY:   -0.5,
+  EXPERIMENT_VERSION:  '10a',
+};
+
+// ── Experiment 10b: Collision Penalty Calibration ─────────────────────────────
+//
+//   Context: In human-robot collaborative environments, passive safety hardware
+//   (LIDAR, ultrasonic, force/torque sensors) provides an always-on, zero-cost
+//   safety backstop per ISO/TS 15066.  The learning system's role is NOT to provide
+//   a hard safety guarantee (hardware does that) but to reduce the frequency of
+//   situations where hardware intervention is needed — while maintaining task
+//   performance.  Each wall bounce represents a situation that would trigger
+//   speed-limiting or force-limiting in a real deployment.
+//
+//   Exp 10a showed that −0.5 penalty hurt the accuracy objective advantage (−15.4%)
+//   while improving speed/task metrics.  This experiment sweeps the penalty range
+//   −1.0 → −5.0 to find the tradeoff that best balances:
+//     • bounce reduction (fewer hardware interventions)
+//     • maintained positive task advantage (memory still helps vs reactive baseline)
+//
+//   Key metric: safety_score = accuracy_advantage × 0.4 + avg_bounce_reduction × 0.6
+//   (bounce reduction weighted more heavily because the hardware backstop means
+//   intervention-frequency matters more than accuracy-objective performance alone)
+//
+//   Total: 3 penalties × (10 training + 5 obj × 2 cond × 3 trials) = 120 trials
+
+export const EXP10B_COLLISION_CALIBRATION_CONFIG = {
+  description:
+    'Calibrates collision penalty to find optimal safety/performance tradeoff. ' +
+    'Hardware sensors (LIDAR/ultrasonic) provide hard safety guarantee per ISO/TS 15066; ' +
+    'this system reduces intervention frequency. Each wall bounce = potential hardware trigger.',
+
+  PENALTY_VARIANTS: [
+    {
+      name:             'penalty_1_0',
+      label:            'Soft deterrent (-1.0)',
+      collisionPenalty: -1.0,
+      description:      'Double Exp 10a — light deterrent',
+    },
+    {
+      name:             'penalty_2_0',
+      label:            'Moderate deterrent (-2.0)',
+      collisionPenalty: -2.0,
+      description:      'Strong deterrent, performance-preserving',
+    },
+    {
+      name:             'penalty_5_0',
+      label:            'Strong deterrent (-5.0)',
+      collisionPenalty: -5.0,
+      description:      'Near-absolute deterrent, upper bound',
+    },
+  ],
+
+  // Non-accuracy coherent variants — identical across all penalty levels.
+  // These 4 + the penalty-varied accuracy variant form the full 5-objective set.
+  BASE_COHERENT_VARIANTS: [
+    {
+      name:  'baseline',
+      label: 'Baseline: Maximize Food',
+      perFrameReward: (ate) => ate > 0 ? 1.0 : -0.01,
+      finalScore: (food) => food,
+    },
+    {
+      name:  'efficiency',
+      label: 'Efficiency: Food per Energy',
+      perFrameReward: (ate, frame, duration) =>
+        ate > 0 ? 1.0 : -0.05 - (frame / duration) * 0.02,
+      finalScore: (food, frames) => food - frames * 0.001,
+    },
+    {
+      name:  'speed',
+      label: 'Speed: Time Pressure',
+      perFrameReward: (ate) => ate > 0 ? 2.0 : -0.02,
+      finalScore: (food, frames) => food * 2 - frames * 0.01,
+    },
+    {
+      name:  'balance',
+      label: 'Balance: Multi-Objective',
+      perFrameReward: (ate, frame, duration, wallBounces) =>
+        ate > 0 ? 1.5 : -0.03 - (frame / duration) * 0.01 - (wallBounces ?? 0) * 0.05,
+      finalScore: (food, frames, wallBounces) =>
+        food * 1.5 - frames * 0.0005 - wallBounces * 0.05,
+    },
+  ],
+
+  // Accuracy variant skeleton — runner substitutes perFrameReward per penalty level.
+  // finalScore is penalty-independent (terminal bounce count, not per-frame signal).
+  ACCURACY_BASE: {
+    name:       'accuracy',
+    label:      'Safety: Minimal Wall Contact',
+    finalScore: (food, _frames, wallBounces) => food - wallBounces * 0.05,
+  },
+
+  COMPLEXITY_LEVEL:    2,
+  OBSTACLE_COUNT:      15,
+  FOOD_COUNT:          20,
+  TRAINING_TRIALS:     10,
+  TEST_TRIALS_PER_OBJ: 3,
+  TEST_CONDITIONS:     ['A', 'D'],
+  // 3 penalty variants × (10 training + 5 obj × 2 cond × 3 test) = 120 trials
+  EXPERIMENT_VERSION:  '10b',
+};
