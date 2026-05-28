@@ -39,6 +39,8 @@ model TrainingJob {
   progress   Int       @default(0)
   startedAt  DateTime?
   finishedAt DateTime?
+  logs       String[]  @default([])
+  liveCurve  Float[]   @default([])
 
   result TrainingResult?
 }

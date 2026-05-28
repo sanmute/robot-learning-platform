@@ -3,16 +3,22 @@
  *
  * Polls the database every 2 seconds for pending jobs.
  * Processes one job at a time (concurrency = 1 at MVP scale).
+ *
+ * Log lines and the live learning curve are persisted to the TrainingJob row
+ * so that any Cloud Run instance can serve the /logs polling endpoint.
+ * Writes are fire-and-forget to avoid blocking the simulation loop.
  */
 
 import { prisma } from '../db';
 import { Prisma } from '@prisma/client';
 import { trainModel } from '@robotrain/training';
-import { initJob, appendLog, appendCurvePoint, clearJob } from './logStore';
 
 const POLL_INTERVAL_MS = 2_000;
 
 let busy = false;
+
+// Kept purely for relative-timestamp formatting — loss on restart is harmless.
+const jobStartTimes = new Map<string, number>();
 
 export function startJobRunner(): void {
   console.log('🔄 Job runner started — polling every 2 s');
@@ -31,11 +37,9 @@ async function processNextJob(): Promise<void> {
   if (!job) return;
 
   busy = true;
+  jobStartTimes.set(job.id, Date.now());
 
   console.log(`⚙️  Processing job ${job.id} (config: ${job.config.name})`);
-
-  // Initialise live data store for this job
-  initJob(job.id);
 
   try {
     await prisma.trainingJob.update({
@@ -56,10 +60,20 @@ async function processNextJob(): Promise<void> {
         });
       },
       (message: string) => {
-        appendLog(job.id, message);
+        const startedAt = jobStartTimes.get(job.id) ?? Date.now();
+        const elapsed   = ((Date.now() - startedAt) / 1000).toFixed(1);
+        const line      = `[${elapsed}s] ${message}`;
+        // Fire-and-forget — training loop must not be blocked by log I/O
+        prisma.trainingJob.update({
+          where: { id: job.id },
+          data:  { logs: { push: line } },
+        }).catch((e) => console.error('log write failed:', e));
       },
       (value: number) => {
-        appendCurvePoint(job.id, value);
+        prisma.trainingJob.update({
+          where: { id: job.id },
+          data:  { liveCurve: { push: value } },
+        }).catch((e) => console.error('curve write failed:', e));
       },
     );
 
@@ -86,8 +100,6 @@ async function processNextJob(): Promise<void> {
     }).catch(() => null); // best-effort
   } finally {
     busy = false;
-    // Keep live data around a few seconds so a final poll can read it,
-    // then clean up. (No hard requirement to delete immediately.)
-    setTimeout(() => clearJob(job.id), 30_000);
+    jobStartTimes.delete(job.id);
   }
 }

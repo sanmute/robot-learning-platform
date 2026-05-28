@@ -2,7 +2,6 @@ import { Router } from 'express';
 import { prisma } from '../db';
 import { AuthRequest } from '../middleware/auth';
 import { CreateJobRequest } from '@robotrain/shared';
-import { getJobData } from '../jobs/logStore';
 
 const router = Router();
 
@@ -74,16 +73,17 @@ router.get('/:id/status', async (req: AuthRequest, res) => {
 });
 
 // ── GET /api/jobs/:id/logs — live log lines + learning curve ─────────────────
-//   Returns empty arrays if the job hasn't started yet or is already done.
+//   Reads directly from the DB so any Cloud Run instance can serve this.
+//   Returns empty arrays if the job hasn't started yet.
 router.get('/:id/logs', async (req: AuthRequest, res) => {
   try {
     const job = await prisma.trainingJob.findFirst({
       where: { id: req.params.id, config: { userId: req.userId } },
+      select: { id: true, logs: true, liveCurve: true },
     });
     if (!job) return res.status(404).json({ error: 'Job not found' });
 
-    const { logs, learningCurve } = getJobData(req.params.id);
-    res.json({ logs, learningCurve });
+    res.json({ logs: job.logs, learningCurve: job.liveCurve });
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch logs' });
   }
