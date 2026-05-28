@@ -63,6 +63,9 @@ export const api = {
   getJobStatus: (id: string): Promise<JobStatusResponse> =>
     request<JobStatusResponse>(`/api/jobs/${id}/status`),
 
+  getJobLogs: (id: string): Promise<{ logs: string[]; learningCurve: number[] }> =>
+    request<{ logs: string[]; learningCurve: number[] }>(`/api/jobs/${id}/logs`),
+
   downloadModel: (id: string): Promise<Response> => {
     const token = getToken();
     return fetch(`/api/jobs/${id}/model`, {

@@ -8,6 +8,7 @@
 import { prisma } from '../db';
 import { Prisma } from '@prisma/client';
 import { trainModel } from '@robotrain/training';
+import { initJob, appendLog, appendCurvePoint, clearJob } from './logStore';
 
 const POLL_INTERVAL_MS = 2_000;
 
@@ -33,6 +34,9 @@ async function processNextJob(): Promise<void> {
 
   console.log(`⚙️  Processing job ${job.id} (config: ${job.config.name})`);
 
+  // Initialise live data store for this job
+  initJob(job.id);
+
   try {
     await prisma.trainingJob.update({
       where: { id: job.id },
@@ -50,6 +54,12 @@ async function processNextJob(): Promise<void> {
           where: { id: job.id },
           data: { progress },
         });
+      },
+      (message: string) => {
+        appendLog(job.id, message);
+      },
+      (value: number) => {
+        appendCurvePoint(job.id, value);
       },
     );
 
@@ -76,5 +86,8 @@ async function processNextJob(): Promise<void> {
     }).catch(() => null); // best-effort
   } finally {
     busy = false;
+    // Keep live data around a few seconds so a final poll can read it,
+    // then clean up. (No hard requirement to delete immediately.)
+    setTimeout(() => clearJob(job.id), 30_000);
   }
 }

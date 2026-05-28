@@ -1,13 +1,22 @@
 /**
- * Training engine stub.
+ * Training engine — real robot-learning simulation.
  *
- * Simulates 40 training iterations (~4 seconds total).
- * Replace this implementation with the real robot-learning simulation.
+ * Delegates to the JS simulation layer (trainer.js) which runs the full
+ * ExperimentRunner pipeline:
  *
- * @param config   Robot configuration (robot type + objectives/weights)
- * @param onProgress  Called each iteration with the current progress % (0–100).
- *                    Return a rejected promise to abort training.
+ *   Phase 1 — 10 training trials (LTM accumulates patterns)
+ *   Phase 2 — 30 test trials (5 objectives × 2 conditions × 3 trials)
+ *
+ * Total: 40 trials (~4 s in Node.js at 2400 frames/trial).
+ *
+ * @param config        Robot configuration (robot type + objectives/weights)
+ * @param onProgress    Called after each trial with progress % (0–100)
+ * @param onLog         Optional — called with each plain log message (no timestamp)
+ * @param onCurvePoint  Optional — called with each running D-vs-A advantage value
  */
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { runTraining } = require('./simulation/trainer.js');
 
 export interface TrainingConfig {
   robotType: string;
@@ -21,37 +30,12 @@ export interface TrainingOutput {
   modelData: Record<string, unknown>;
 }
 
-const ITERATIONS = 40;
-const DELAY_MS = 100; // 40 × 100ms ≈ 4 seconds
-
 export async function trainModel(
   config: TrainingConfig,
   onProgress: (progress: number) => Promise<void>,
+  onLog?: (message: string) => void,
+  onCurvePoint?: (value: number) => void,
 ): Promise<TrainingOutput> {
-  const learningCurve: number[] = [];
-
-  for (let i = 0; i < ITERATIONS; i++) {
-    await new Promise<void>((resolve) => setTimeout(resolve, DELAY_MS));
-
-    // Simulate a learning curve: fast early gains, diminishing returns
-    const base = 11.27 * (1 - Math.exp(-0.15 * (i + 1)));
-    const noise = (Math.random() - 0.5) * 1.2;
-    learningCurve.push(Math.round((base + noise) * 100) / 100);
-
-    const progress = Math.round(((i + 1) / ITERATIONS) * 100);
-    await onProgress(progress);
-  }
-
-  const advantage = 11.27 + (Math.random() * 4 - 2);
-
-  return {
-    advantage: Math.round(advantage * 100) / 100,
-    learningCurve,
-    modelData: {
-      version: '1.0.0',
-      stub: true,
-      config,
-      trainedAt: new Date().toISOString(),
-    },
-  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (runTraining as any)(config, onProgress, onLog, onCurvePoint) as Promise<TrainingOutput>;
 }

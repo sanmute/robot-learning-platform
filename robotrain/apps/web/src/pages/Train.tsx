@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { RobotType, Objectives } from '@robotrain/shared';
 import { api } from '../api';
@@ -8,9 +8,9 @@ import LearningCurveChart from '../components/LearningCurveChart';
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const ROBOT_TYPES: { value: RobotType; label: string; emoji: string }[] = [
-  { value: 'warehouse',      label: 'Warehouse',      emoji: '🏭' },
-  { value: 'manufacturing',  label: 'Manufacturing',  emoji: '⚙️' },
-  { value: 'space',          label: 'Space',           emoji: '🚀' },
+  { value: 'warehouse',      label: 'Warehouse',     emoji: '🏭' },
+  { value: 'manufacturing',  label: 'Manufacturing', emoji: '⚙️' },
+  { value: 'space',          label: 'Space',          emoji: '🚀' },
 ];
 
 const OBJECTIVE_LABELS: Record<keyof Objectives, string> = {
@@ -27,6 +27,28 @@ const DEFAULT_WEIGHTS: Objectives = {
 
 type Step = 1 | 2 | 3;
 
+// ── Log line colour ───────────────────────────────────────────────────────────
+
+function logLineClass(line: string): string {
+  const m = line.toLowerCase();
+  if (m.includes('error') || m.includes('failed')) return 'text-red-400';
+  if (
+    m.includes('converged') ||
+    m.includes('phase 2 complete') ||
+    m.includes('final d-vs-a') ||
+    m.includes('phase 1 complete') ||
+    m.includes('advantage so far')
+  ) return 'text-green-400';
+  if (
+    m.includes('milestone') ||
+    m.includes('consolidation triggered') ||
+    m.includes('memory transfer') ||
+    m.includes('plateau') ||
+    m.includes('refined')
+  ) return 'text-yellow-400';
+  return 'text-gray-300';
+}
+
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function Train() {
@@ -37,21 +59,26 @@ export default function Train() {
   const [robotType, setRobotType] = useState<RobotType>('warehouse');
   const [weights, setWeights] = useState<Objectives>({ ...DEFAULT_WEIGHTS });
 
-  // Step 2 — progress
-  const [step, setStep] = useState<Step>(1);
-  const [jobId, setJobId] = useState<string | null>(null);
+  // Step 2 — progress + live data
+  const [step, setStep]         = useState<Step>(1);
+  const [jobId, setJobId]       = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
+  const [logs, setLogs]         = useState<string[]>([]);
+  const [liveCurve, setLiveCurve] = useState<number[]>([]);
 
   // Step 3 — results
   const [result, setResult] = useState<{ advantage: number; learningCurve: number[] } | null>(null);
 
-  // Errors
-  const [error, setError] = useState<string | null>(null);
+  // Errors / loading
+  const [error, setError]         = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+
+  // Auto-scroll ref for log panel
+  const logRef = useRef<HTMLDivElement>(null);
 
   // ── Weight helpers ──────────────────────────────────────────────────────────
 
-  const totalWeight = Object.values(weights).reduce((a, b) => a + b, 0);
+  const totalWeight  = Object.values(weights).reduce((a, b) => a + b, 0);
   const weightsValid = Math.round(totalWeight) === 100;
 
   const handleWeightChange = (key: keyof Objectives, value: number) => {
@@ -74,23 +101,32 @@ export default function Train() {
       const job = await api.createJob({ configId: config.id });
       setJobId(job.id);
       setProgress(0);
+      setLogs([]);
+      setLiveCurve([]);
       setStep(2);
-    } catch (err: any) {
-      setError(err.message ?? 'Failed to start training. Please try again.');
+    } catch (err: unknown) {
+      setError((err as Error).message ?? 'Failed to start training. Please try again.');
     } finally {
       setSubmitting(false);
     }
   };
 
-  // ── Step 2: poll until done ──────────────────────────────────────────────────
+  // ── Step 2: poll status + logs ───────────────────────────────────────────────
 
   useEffect(() => {
     if (step !== 2 || !jobId) return;
 
     const poll = setInterval(async () => {
       try {
-        const status = await api.getJobStatus(jobId);
+        // Status + logs fetched in parallel
+        const [status, logData] = await Promise.all([
+          api.getJobStatus(jobId),
+          api.getJobLogs(jobId),
+        ]);
+
         setProgress(status.progress);
+        setLogs(logData.logs);
+        setLiveCurve(logData.learningCurve);
 
         if (status.status === 'done') {
           clearInterval(poll);
@@ -109,6 +145,13 @@ export default function Train() {
     return () => clearInterval(poll);
   }, [step, jobId]);
 
+  // Auto-scroll log panel when new lines arrive
+  useEffect(() => {
+    if (logRef.current) {
+      logRef.current.scrollTop = logRef.current.scrollHeight;
+    }
+  }, [logs]);
+
   // ── Step 3 actions ───────────────────────────────────────────────────────────
 
   const handleDownload = async () => {
@@ -116,9 +159,9 @@ export default function Train() {
     try {
       const res = await api.downloadModel(jobId);
       const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href     = url;
       a.download = `model_${jobId}.json`;
       a.click();
       URL.revokeObjectURL(url);
@@ -136,6 +179,8 @@ export default function Train() {
     setJobId(null);
     setProgress(0);
     setResult(null);
+    setLogs([]);
+    setLiveCurve([]);
     setError(null);
     setWeights({ ...DEFAULT_WEIGHTS });
   };
@@ -146,20 +191,21 @@ export default function Train() {
     <div className="min-h-screen bg-gray-50">
       <NavBar />
       <main className="mx-auto max-w-2xl px-4 py-10">
+
         {/* Step indicator */}
         <div className="mb-8 flex items-center gap-2 text-sm">
-          {(['Configure', 'Training', 'Results'] as const).map((label, i) => {
+          {(['Configure', 'Training', 'Results'] as const).map((lbl, i) => {
             const stepNum = (i + 1) as Step;
-            const active = step === stepNum;
-            const done = step > stepNum;
+            const active  = step === stepNum;
+            const done    = step > stepNum;
             return (
-              <div key={label} className="flex items-center gap-2">
+              <div key={lbl} className="flex items-center gap-2">
                 {i > 0 && <div className="h-px w-8 bg-gray-200" />}
                 <div className={`flex items-center gap-1.5 font-medium ${active ? 'text-brand-600' : done ? 'text-green-600' : 'text-gray-400'}`}>
                   <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${active ? 'bg-brand-600 text-white' : done ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-500'}`}>
                     {done ? '✓' : stepNum}
                   </span>
-                  {label}
+                  {lbl}
                 </div>
               </div>
             );
@@ -217,9 +263,7 @@ export default function Train() {
             {/* Objective weights */}
             <div>
               <div className="mb-3 flex items-center justify-between">
-                <label className="text-sm font-medium text-gray-700">
-                  Objective weights
-                </label>
+                <label className="text-sm font-medium text-gray-700">Objective weights</label>
                 <span className={`text-sm font-semibold ${weightsValid ? 'text-green-600' : 'text-red-600'}`}>
                   {totalWeight}/100
                 </span>
@@ -261,21 +305,23 @@ export default function Train() {
           </div>
         )}
 
-        {/* ── Step 2: Progress bar ────────────────────────────────────────── */}
+        {/* ── Step 2: Training in progress ────────────────────────────────── */}
         {step === 2 && (
-          <div className="card space-y-8 text-center">
-            <div>
-              <div className="mb-2 text-5xl">⚙️</div>
-              <h2 className="text-xl font-bold text-gray-900">Training in progress…</h2>
-              <p className="mt-1 text-sm text-gray-500">Your robot is learning. This takes about 4 seconds.</p>
-            </div>
+          <div className="space-y-4">
 
-            <div>
-              <div className="mb-2 flex items-center justify-between text-sm text-gray-600">
-                <span>Progress</span>
-                <span className="font-mono font-semibold">{progress}%</span>
+            {/* Progress header */}
+            <div className="card space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">⚙️</span>
+                <div>
+                  <h2 className="font-bold text-gray-900">Training in progress…</h2>
+                  <p className="text-sm text-gray-500">Your robot is learning. This takes about 4 seconds.</p>
+                </div>
+                <span className="ml-auto font-mono text-sm font-semibold text-brand-600">
+                  {progress}%
+                </span>
               </div>
-              <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200">
+              <div className="h-2.5 w-full overflow-hidden rounded-full bg-gray-200">
                 <div
                   className="h-full rounded-full bg-brand-600 transition-all duration-500"
                   style={{ width: `${progress}%` }}
@@ -283,9 +329,49 @@ export default function Train() {
               </div>
             </div>
 
-            <div className="flex justify-center gap-4 text-sm text-gray-400">
-              <span>⚡ Running {progress} / 100 iterations</span>
+            {/* Live learning curve */}
+            <div className="card">
+              <h3 className="mb-3 text-sm font-semibold text-gray-700">
+                Learning curve
+                <span className="ml-2 text-xs font-normal text-gray-400">
+                  {liveCurve.length > 0
+                    ? `${liveCurve.length} / 30 points`
+                    : 'waiting for first test trial…'}
+                </span>
+              </h3>
+              {liveCurve.length > 0 ? (
+                <LearningCurveChart data={liveCurve} />
+              ) : (
+                <div className="flex h-40 items-center justify-center rounded-lg bg-gray-50 text-sm text-gray-400">
+                  Chart will appear after trial 13…
+                </div>
+              )}
             </div>
+
+            {/* Terminal log */}
+            <div className="overflow-hidden rounded-xl border border-gray-800 bg-gray-900">
+              <div className="flex items-center gap-2 border-b border-gray-800 px-4 py-2">
+                <span className="h-3 w-3 rounded-full bg-red-500/70" />
+                <span className="h-3 w-3 rounded-full bg-yellow-500/70" />
+                <span className="h-3 w-3 rounded-full bg-green-500/70" />
+                <span className="ml-2 font-mono text-xs text-gray-500">training.log</span>
+              </div>
+              <div
+                ref={logRef}
+                className="h-52 overflow-y-auto p-4 font-mono text-xs leading-5"
+              >
+                {logs.length === 0 ? (
+                  <span className="text-gray-600">Waiting for job to start…</span>
+                ) : (
+                  logs.map((line, i) => (
+                    <div key={i} className={logLineClass(line)}>
+                      {line}
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+
           </div>
         )}
 
@@ -295,13 +381,15 @@ export default function Train() {
             <div className="card text-center">
               <div className="mb-4 text-5xl">🏆</div>
               <h2 className="mb-1 text-xl font-bold text-gray-900">Training complete!</h2>
-              <p className="text-sm text-gray-500">Your robot learned to perform {result.advantage.toFixed(2)}% better.</p>
+              <p className="text-sm text-gray-500">
+                Your robot learned to perform {result.advantage.toFixed(2)}% better.
+              </p>
 
               <div className="my-6 inline-block rounded-2xl bg-green-50 px-8 py-4">
                 <div className="text-4xl font-extrabold text-green-600">
                   +{result.advantage.toFixed(2)}%
                 </div>
-                <div className="mt-1 text-sm text-green-700 font-medium">generalization advantage</div>
+                <div className="mt-1 text-sm font-medium text-green-700">generalization advantage</div>
               </div>
 
               <div className="flex flex-wrap justify-center gap-3">
@@ -317,13 +405,14 @@ export default function Train() {
               </div>
             </div>
 
-            {/* Learning curve */}
+            {/* Final learning curve */}
             <div className="card">
               <h3 className="mb-4 font-semibold text-gray-900">Learning curve</h3>
               <LearningCurveChart data={result.learningCurve} advantage={result.advantage} />
             </div>
           </div>
         )}
+
       </main>
     </div>
   );
