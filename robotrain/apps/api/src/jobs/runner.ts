@@ -41,7 +41,7 @@ async function processNextJob(): Promise<void> {
     const result = await trainModel(
       {
         robotType: job.config.robotType,
-        objectives: job.config.objectives as Record<string, number>,
+        objectives: job.config.objectives as unknown as Record<string, number>,
         weights: job.config.weights as Record<string, number>,
       },
       async (progress: number) => {
